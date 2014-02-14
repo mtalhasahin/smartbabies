@@ -1,6 +1,13 @@
 *.class
 
+
 # Package Files #
 *.jar
 *.war
 *.ear
+.settings
+.apt_generated
+.classpath
+.directory
+.factorypath
+.project

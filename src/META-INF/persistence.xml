@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://java.sun.com/xml/ns/persistence
+		http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="primary" transaction-type="JTA">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<jta-data-source>java:websphere/datasources/DB2DS</jta-data-source>
+		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.AnswerOfUser</class>
+		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.Appointment</class>
+		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.Doctor</class>
+		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.DoctorDetail</class>
+		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.Meal</class>
+		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.NutritionCalendar</class>
+		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.OvulationCalendar</class>
+		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.Survey</class>
+		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.SurveyAnswer</class>
+		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.User</class>
+		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.UserDetail</class>
+		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.UserList</class>		
+		<properties>
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="true" />
+		</properties>
+	</persistence-unit>
+</persistence>
