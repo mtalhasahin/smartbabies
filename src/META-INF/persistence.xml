@@ -13,12 +13,12 @@
 		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.DoctorDetail</class>
 		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.Meal</class>
 		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.NutritionCalendar</class>
-		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.OvulationCalendar</class>
 		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.Survey</class>
 		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.SurveyAnswer</class>
 		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.User</class>
 		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.UserDetail</class>
-		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.UserList</class>		
+		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.UserList</class>
+		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.VaccinationCalendar</class>		
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 			<property name="hibernate.show_sql" value="true" />

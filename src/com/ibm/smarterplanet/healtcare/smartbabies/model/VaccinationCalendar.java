@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class OvulationCalendar implements Serializable {
+public class VaccinationCalendar implements Serializable {
 
 	/**
 	 * 

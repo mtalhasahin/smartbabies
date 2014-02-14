@@ -51,7 +51,7 @@ public class User implements Serializable {
 	private List<NutritionCalendar> nutritionCalendars;
 	
 	@OneToMany(mappedBy="user")
-	private List<OvulationCalendar> vaccinationCalendars;
+	private List<VaccinationCalendar> vaccinationCalendars;
 
 	public long getId() {
 		return id;
@@ -149,12 +149,12 @@ public class User implements Serializable {
 		this.nutritionCalendars = nutritionCalendars;
 	}
 
-	public List<OvulationCalendar> getVaccinationCalendars() {
+	public List<VaccinationCalendar> getVaccinationCalendars() {
 		return vaccinationCalendars;
 	}
 
 	public void setVaccinationCalendars(
-			List<OvulationCalendar> vaccinationCalendars) {
+			List<VaccinationCalendar> vaccinationCalendars) {
 		this.vaccinationCalendars = vaccinationCalendars;
 	}
 	
