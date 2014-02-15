@@ -1,7 +1,5 @@
 package com.ibm.smarterplanet.healtcare.smartbabies.controller;
 
-import java.util.logging.Logger;
-
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateful;
 import javax.enterprise.event.Event;
@@ -17,9 +15,6 @@ import com.ibm.smarterplanet.healtcare.smartbabies.model.Doctor;
 @Model
 @Stateful
 public class DoctorRegistration {
-
-	@Inject
-	private Logger logger;
 
 	@Inject
 	private FacesContext facesContext;
