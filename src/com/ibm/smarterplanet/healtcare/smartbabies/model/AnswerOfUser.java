@@ -7,25 +7,27 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
+@XmlRootElement
 public class AnswerOfUser implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
+
 	@ManyToOne
 	private User user;
-	
+
 	@ManyToOne
 	private SurveyAnswer surveyAnswer;
-	
+
 	@ManyToOne
 	private Survey survey;
 
@@ -60,7 +62,5 @@ public class AnswerOfUser implements Serializable {
 	public void setSurvey(Survey survey) {
 		this.survey = survey;
 	}
-	
-	
 
 }

@@ -10,47 +10,49 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
+@XmlRootElement
 public class User implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
-	private String userName;
-	
-	private String userSurname;
-	
-	private String userEmail;
-	
-	private String userPhone;
-	
-	private Date userBirthday;
-	
-	private char userIsDeleted;
-	
-	@OneToOne(mappedBy="user")
+
+	private String name;
+
+	private String surname;
+
+	private String email;
+
+	private String phone;
+
+	private Date birthday;
+
+	private char isDeleted;
+
+	@OneToOne(mappedBy = "user")
 	private UserDetail userDetail;
-	
-	@OneToMany(mappedBy="user")
+
+	@OneToMany(mappedBy = "user")
 	private List<UserList> userLists;
-	
-	@OneToMany(mappedBy="user")
+
+	@OneToMany(mappedBy = "user")
 	private List<AnswerOfUser> answerOfUsers;
 
-	@OneToMany(mappedBy="user")
+	@OneToMany(mappedBy = "user")
 	private List<Appointment> appointments;
-	
-	@OneToMany(mappedBy="user")
+
+	@OneToMany(mappedBy = "user")
 	private List<NutritionCalendar> nutritionCalendars;
-	
-	@OneToMany(mappedBy="user")
+
+	@OneToMany(mappedBy = "user")
 	private List<VaccinationCalendar> vaccinationCalendars;
 
 	public long getId() {
@@ -61,52 +63,52 @@ public class User implements Serializable {
 		this.id = id;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getName() {
+		return name;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getUserSurname() {
-		return userSurname;
+	public String getSurname() {
+		return surname;
 	}
 
-	public void setUserSurname(String userSurname) {
-		this.userSurname = userSurname;
+	public void setSurname(String surname) {
+		this.surname = surname;
 	}
 
-	public String getUserEmail() {
-		return userEmail;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setUserEmail(String userEmail) {
-		this.userEmail = userEmail;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	public String getUserPhone() {
-		return userPhone;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setUserPhone(String userPhone) {
-		this.userPhone = userPhone;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
-	public Date getUserBirthday() {
-		return userBirthday;
+	public Date getBirthday() {
+		return birthday;
 	}
 
-	public void setUserBirthday(Date userBirthday) {
-		this.userBirthday = userBirthday;
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
 	}
 
-	public char getUserIsDeleted() {
-		return userIsDeleted;
+	public char getIsDeleted() {
+		return isDeleted;
 	}
 
-	public void setUserIsDeleted(char userIsDeleted) {
-		this.userIsDeleted = userIsDeleted;
+	public void setIsDeleted(char isDeleted) {
+		this.isDeleted = isDeleted;
 	}
 
 	public UserDetail getUserDetail() {
@@ -157,6 +159,5 @@ public class User implements Serializable {
 			List<VaccinationCalendar> vaccinationCalendars) {
 		this.vaccinationCalendars = vaccinationCalendars;
 	}
-	
 
 }

@@ -10,41 +10,43 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
+@XmlRootElement
 public class Doctor implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
-	private String doctorName;
-	
-	private String doctorSurname;
-	
-	private String doctorEmail;
-	
-	private String doctorPhone;
-	
-	private Date doctorBirthday;
-	
-	private char doctorIsDeleted;
-	
-	@OneToOne(mappedBy="doctor")
+
+	private String name;
+
+	private String surname;
+
+	private String email;
+
+	private String phone;
+
+	private Date birthday;
+
+	private char isDeleted;
+
+	@OneToOne(mappedBy = "doctor")
 	private DoctorDetail doctorDetail;
-	
-	@OneToMany(mappedBy="doctor")
+
+	@OneToMany(mappedBy = "doctor")
 	private List<UserList> userLists;
-	
-	@OneToMany(mappedBy="doctor")
+
+	@OneToMany(mappedBy = "doctor")
 	private List<Appointment> appointments;
-	
-	@OneToMany(mappedBy="doctor")
+
+	@OneToMany(mappedBy = "doctor")
 	private List<NutritionCalendar> nutritionCalendars;
 
 	public long getId() {
@@ -55,52 +57,52 @@ public class Doctor implements Serializable {
 		this.id = id;
 	}
 
-	public String getDoctorName() {
-		return doctorName;
+	public String getName() {
+		return name;
 	}
 
-	public void setDoctorName(String doctorName) {
-		this.doctorName = doctorName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getDoctorSurname() {
-		return doctorSurname;
+	public String getSurname() {
+		return surname;
 	}
 
-	public void setDoctorSurname(String doctorSurname) {
-		this.doctorSurname = doctorSurname;
+	public void setSurname(String surname) {
+		this.surname = surname;
 	}
 
-	public String getDoctorEmail() {
-		return doctorEmail;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setDoctorEmail(String doctorEmail) {
-		this.doctorEmail = doctorEmail;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	public String getDoctorPhone() {
-		return doctorPhone;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setDoctorPhone(String doctorPhone) {
-		this.doctorPhone = doctorPhone;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
-	public Date getDoctorBirthday() {
-		return doctorBirthday;
+	public Date getBirthday() {
+		return birthday;
 	}
 
-	public void setDoctorBirthday(Date doctorBirthday) {
-		this.doctorBirthday = doctorBirthday;
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
 	}
 
-	public char getDoctorIsDeleted() {
-		return doctorIsDeleted;
+	public char getIsDeleted() {
+		return isDeleted;
 	}
 
-	public void setDoctorIsDeleted(char doctorIsDeleted) {
-		this.doctorIsDeleted = doctorIsDeleted;
+	public void setIsDeleted(char isDeleted) {
+		this.isDeleted = isDeleted;
 	}
 
 	public DoctorDetail getDoctorDetail() {
@@ -134,6 +136,5 @@ public class Doctor implements Serializable {
 	public void setNutritionCalendars(List<NutritionCalendar> nutritionCalendars) {
 		this.nutritionCalendars = nutritionCalendars;
 	}
-	
 
 }
