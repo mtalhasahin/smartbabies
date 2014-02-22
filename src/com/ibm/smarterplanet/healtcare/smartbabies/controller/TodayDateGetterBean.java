@@ -9,19 +9,19 @@ import javax.enterprise.inject.Produces;
 
 @Stateless
 public class TodayDateGetterBean {
-	
+
 	private SimpleDateFormat simpleDateFormat;
-	
+
 	private String todayDate;
 
 	@Produces
 	public String getTodayDate() {
 		return todayDate;
 	}
-	
+
 	@PostConstruct
-	public void initNewTodayDate(){
+	public void initNewTodayDate() {
 		simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
-		todayDate = new String(simpleDateFormat.format(new Date()));
+		todayDate = simpleDateFormat.format(new Date());
 	}
 }

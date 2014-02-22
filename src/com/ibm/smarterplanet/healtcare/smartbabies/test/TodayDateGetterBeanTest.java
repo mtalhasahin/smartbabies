@@ -8,22 +8,24 @@ import org.junit.Test;
 
 import com.ibm.smarterplanet.healtcare.smartbabies.controller.TodayDateGetterBean;
 
+@SuppressWarnings({ "deprecation" })
 public class TodayDateGetterBeanTest {
+
+	TodayDateGetterBean todayDateGetterBean = new TodayDateGetterBean();
 
 	@Before
 	public void setUp() throws Exception {
+		todayDateGetterBean.initNewTodayDate();
 	}
 
 	@After
 	public void tearDown() throws Exception {
+		todayDateGetterBean.initNewTodayDate();
 	}
 
-	@SuppressWarnings("deprecation")
 	@Test
 	public void test() {
-		TodayDateGetterBean todayDateGetterBean = new TodayDateGetterBean();
-		todayDateGetterBean.initNewTodayDate();
-		Assert.assertEquals("19-02-2014", todayDateGetterBean.getTodayDate());
-	}	
+		Assert.assertEquals("22-02-2014", todayDateGetterBean.getTodayDate());
+	}
 
 }
