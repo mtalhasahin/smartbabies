@@ -11,32 +11,49 @@ import javax.ejb.Stateless;
 
 @Stateless
 public class DateCalculationBean {
-	
+
 	private SimpleDateFormat simpleDateFormat;
-	
+
 	private Date date;
-	
+
 	private Calendar calendar;
-	
+
 	private Calendar previousCalendar;
-	
+
 	private Calendar nextCalendar;
 
-	public int differenceBetweenTwoDates(String previousDate, String nextDate) {
-		
+	// parametre olarak gelen (dd-MM-yyyy) formatındaki iki tarih arasındaki gün
+	// farkını hesaplar ve bir tamsayı return eder
+	public int differenceBetweenTwoDates(String nextDate, String previousDate) {
+
 		try {
-			previousCalendar.setTime(new SimpleDateFormat("dd-MM-yyyy").parse(previousDate));
-			nextCalendar.setTime(new SimpleDateFormat("dd-MM-yyyy").parse(nextDate));
+			previousCalendar.setTime(new SimpleDateFormat("dd-MM-yyyy")
+					.parse(previousDate));
+			nextCalendar.setTime(new SimpleDateFormat("dd-MM-yyyy")
+					.parse(nextDate));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return nextCalendar.get(Calendar.DAY_OF_YEAR)-previousCalendar.get(Calendar.DAY_OF_YEAR);
+
+		if (nextCalendar.get(Calendar.DAY_OF_YEAR)
+				- previousCalendar.get(Calendar.DAY_OF_YEAR) < 0) {
+			return nextCalendar.get(Calendar.DAY_OF_YEAR)
+					- previousCalendar.get(Calendar.DAY_OF_YEAR) + 365;
+		}
+
+		else {
+			return nextCalendar.get(Calendar.DAY_OF_YEAR)
+					- previousCalendar.get(Calendar.DAY_OF_YEAR);
+		}
 
 	}
 
+	// parametre olarak gelen (dd-MM-yyyy) farmatındaki tarihe, yine parametre
+	// olarak gelen tamsayı kadar gün ekler ve yeni oluşan tarihi return eder
 	public String addingDaystoDate(String startDate, int day) {
 		try {
-			calendar.setTime(new SimpleDateFormat("dd-MM-yyyy").parse(startDate));
+			calendar.setTime(new SimpleDateFormat("dd-MM-yyyy")
+					.parse(startDate));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
@@ -44,13 +61,13 @@ public class DateCalculationBean {
 		date = calendar.getTime();
 		return new String(simpleDateFormat.format(date));
 	}
-	
+
 	@PostConstruct
-	public void initDateCalculate(){
+	public void initDateCalculate() {
 		simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
 		date = new Date();
 		calendar = Calendar.getInstance();
-		
+
 		previousCalendar = new GregorianCalendar();
 		nextCalendar = new GregorianCalendar();
 	}

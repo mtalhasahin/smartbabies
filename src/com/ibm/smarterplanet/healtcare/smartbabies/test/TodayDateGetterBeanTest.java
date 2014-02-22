@@ -24,7 +24,7 @@ public class TodayDateGetterBeanTest {
 	}
 
 	@Test
-	public void test() {
+	public void testTodayDate() {
 		Assert.assertEquals("22-02-2014", todayDateGetterBean.getTodayDate());
 	}
 

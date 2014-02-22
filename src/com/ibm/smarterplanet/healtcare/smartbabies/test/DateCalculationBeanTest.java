@@ -19,7 +19,7 @@ public class DateCalculationBeanTest {
 
 	@Before
 	public void setUp() throws Exception {
-
+		dateCalculationBean.initDateCalculate();
 	}
 
 	@After
@@ -28,15 +28,13 @@ public class DateCalculationBeanTest {
 	}
 
 	@Test
-	public void testAddingDaysToDate() {
-		Assert.assertEquals("01-03-2014",
-				dateCalculationBean.addingDaystoDate("28-02-2014", 1));
+	public void testAddingDaysToDate() {		
+		Assert.assertEquals("26-12-2013",dateCalculationBean.addingDaystoDate("25-01-2014",-30));
 	}
 
 	@Test
-	public void testdifferenceBetweenTwoDates() {
-		Assert.assertEquals(3, dateCalculationBean.differenceBetweenTwoDates(
-				"22-02-2014", "25-02-2014"));
+	public void testdifferenceBetweenTwoDates() {		
+		Assert.assertEquals(3, dateCalculationBean.differenceBetweenTwoDates("25-01-2014","26-12-2013"));
 	}
 
 }
