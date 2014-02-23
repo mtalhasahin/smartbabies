@@ -7,6 +7,8 @@ import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Produces;
 
+//Günün tarih bilgisini getirir
+
 @Stateless
 public class TodayDateGetterBean {
 

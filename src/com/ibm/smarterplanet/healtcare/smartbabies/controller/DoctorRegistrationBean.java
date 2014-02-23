@@ -6,12 +6,15 @@ import javax.ejb.Stateful;
 import javax.enterprise.event.Event;
 import javax.enterprise.inject.Model;
 import javax.enterprise.inject.Produces;
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 
 import com.ibm.smarterplanet.healtcare.smartbabies.model.Doctor;
+
+//Yeni doktor kayıt eder
 
 @Model
 @Stateful
@@ -38,15 +41,21 @@ public class DoctorRegistrationBean {
 
 		try {
 			entityManager.persist(doctor);
-			// success message
+			facesContext.addMessage(null, new FacesMessage(
+					FacesMessage.SEVERITY_INFO, "Registered!",
+					"Registration successful"));
 			doctorEvent.fire(doctor);
 			initNewDoctor();
 
 		} catch (EJBException e) {
-			// error message
+			facesContext.addMessage(null, new FacesMessage(
+					FacesMessage.SEVERITY_ERROR, "Not Registered!",
+					"Registration unsuccessful"));
 
 		} catch (Exception e) {
-			// error message
+			facesContext.addMessage(null, new FacesMessage(
+					FacesMessage.SEVERITY_ERROR, "Not Registered!",
+					"Registration unsuccessful"));
 
 		}
 

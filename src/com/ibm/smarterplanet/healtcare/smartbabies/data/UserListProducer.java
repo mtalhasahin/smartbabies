@@ -16,6 +16,8 @@ import javax.persistence.criteria.Root;
 
 import com.ibm.smarterplanet.healtcare.smartbabies.model.User;
 
+//Kayıtlı kullanıcıları getirir ve bir list'e atar
+
 @RequestScoped
 public class UserListProducer {
 

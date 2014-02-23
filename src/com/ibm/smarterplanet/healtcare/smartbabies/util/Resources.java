@@ -10,21 +10,22 @@ import javax.servlet.http.HttpServletRequest;
 public class Resources {
 
 	@Produces
-	@PersistenceContext(unitName="primary")
+	@PersistenceContext(unitName = "primary")
 	private EntityManager entityManager;
 
 	@Produces
 	@RequestScoped
 	public FacesContext produceFacesContext() {
-			return FacesContext.getCurrentInstance();
-			
+		return FacesContext.getCurrentInstance();
+
 	}
-	
+
 	@Produces
 	@RequestScoped
-	public HttpServletRequest httpServletRequest(){
-		return (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
-		
+	public HttpServletRequest httpServletRequest() {
+		return (HttpServletRequest) FacesContext.getCurrentInstance()
+				.getExternalContext().getRequest();
+
 	}
-	
+
 }

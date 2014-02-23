@@ -11,6 +11,8 @@ import javax.inject.Inject;
 import com.ibm.smarterplanet.healtcare.smartbabies.data.DoctorListProducer;
 import com.ibm.smarterplanet.healtcare.smartbabies.data.UserListProducer;
 
+//Timer durumuna göre çalışır, sistem kullanıcılarının doğum günlerini denetler
+
 @Stateless
 public class BirthdayScannerBean {
 
@@ -30,6 +32,9 @@ public class BirthdayScannerBean {
 		return mailedList;
 	}
 
+	// Sırası ile kullanıcıların ve doktorların doğum günleri ile günün tarihini
+	// karşılaştırır ve bulunan kayıtların mail adreslerini bir list'e ekler
+
 	public void scan() {
 		for (int i = 0; i < userListProducer.getUsers().size(); i++) {
 			if (userListProducer.getUsers().get(i).getBirthday()
@@ -41,7 +46,8 @@ public class BirthdayScannerBean {
 		for (int i = 0; i < doctorListProducer.getDoctors().size(); i++) {
 			if (doctorListProducer.getDoctors().get(i).getBirthday()
 					.equals(todayDateGetterBean.getTodayDate())) {
-				mailedList.add(doctorListProducer.getDoctors().get(i).getEmail());
+				mailedList.add(doctorListProducer.getDoctors().get(i)
+						.getEmail());
 			}
 		}
 

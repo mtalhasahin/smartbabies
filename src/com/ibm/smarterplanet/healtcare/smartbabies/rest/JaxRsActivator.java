@@ -8,12 +8,12 @@ import javax.ws.rs.core.Application;
 
 @ApplicationPath("/rest")
 public class JaxRsActivator extends Application {
-	
+
 	@Override
 	public Set<Class<?>> getClasses() {
-	Set<Class<?>> classes = new HashSet<Class<?>>();
-	classes.add(UserResourceRESTService.class);
-	return classes;
-	} 
+		Set<Class<?>> classes = new HashSet<Class<?>>();
+		classes.add(UserResourceRESTService.class);
+		return classes;
+	}
 
 }

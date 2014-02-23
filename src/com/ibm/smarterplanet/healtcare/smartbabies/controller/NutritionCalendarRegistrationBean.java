@@ -1,8 +1,11 @@
 package com.ibm.smarterplanet.healtcare.smartbabies.controller;
 
 import javax.ejb.EJBException;
+import javax.ejb.Stateful;
 import javax.enterprise.event.Event;
+import javax.enterprise.inject.Model;
 import javax.enterprise.inject.Produces;
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -10,6 +13,10 @@ import javax.persistence.EntityManager;
 
 import com.ibm.smarterplanet.healtcare.smartbabies.model.NutritionCalendar;
 
+//Yeni beslenme takvimi kayıt eder
+
+@Model
+@Stateful
 public class NutritionCalendarRegistrationBean {
 
 	@Inject
@@ -33,15 +40,21 @@ public class NutritionCalendarRegistrationBean {
 
 		try {
 			entityManager.persist(nutritionCalendar);
-			// success message
+			facesContext.addMessage(null, new FacesMessage(
+					FacesMessage.SEVERITY_INFO, "Registered!",
+					"Registration successful"));
 			nutritionCalendarEvent.fire(nutritionCalendar);
 			initNewNutritionCalendar();
 
 		} catch (EJBException e) {
-			// error message
+			facesContext.addMessage(null, new FacesMessage(
+					FacesMessage.SEVERITY_ERROR, "Not Registered!",
+					"Registration unsuccessful"));
 
 		} catch (Exception e) {
-			// error message
+			facesContext.addMessage(null, new FacesMessage(
+					FacesMessage.SEVERITY_ERROR, "Not Registered!",
+					"Registration unsuccessful"));
 
 		}
 

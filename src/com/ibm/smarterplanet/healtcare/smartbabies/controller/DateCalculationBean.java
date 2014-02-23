@@ -9,6 +9,8 @@ import java.util.GregorianCalendar;
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;
 
+//Sistem için gerekli bazı tarih hesaplamalarını yapar
+
 @Stateless
 public class DateCalculationBean {
 
@@ -24,6 +26,7 @@ public class DateCalculationBean {
 
 	// parametre olarak gelen (dd-MM-yyyy) formatındaki iki tarih arasındaki gün
 	// farkını hesaplar ve bir tamsayı return eder
+
 	public int differenceBetweenTwoDates(String nextDate, String previousDate) {
 
 		try {
@@ -50,6 +53,7 @@ public class DateCalculationBean {
 
 	// parametre olarak gelen (dd-MM-yyyy) farmatındaki tarihe, yine parametre
 	// olarak gelen tamsayı kadar gün ekler ve yeni oluşan tarihi return eder
+
 	public String addingDaystoDate(String startDate, int day) {
 		try {
 			calendar.setTime(new SimpleDateFormat("dd-MM-yyyy")

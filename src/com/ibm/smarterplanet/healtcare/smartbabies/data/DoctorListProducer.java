@@ -16,6 +16,8 @@ import javax.persistence.criteria.Root;
 
 import com.ibm.smarterplanet.healtcare.smartbabies.model.Doctor;
 
+//Kayıtlı doktorları getirir ve bir list e atar
+
 @RequestScoped
 public class DoctorListProducer {
 
