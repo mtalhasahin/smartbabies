@@ -1,31 +1,29 @@
 package com.ibm.smarterplanet.healtcare.smartbabies.test;
 
-import junit.framework.Assert;
-
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.testng.annotations.Test;
+import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterTest;
 
 import com.ibm.smarterplanet.healtcare.smartbabies.controller.TodayDateGetterBean;
 
-@SuppressWarnings({ "deprecation" })
 public class TodayDateGetterBeanTest {
 
 	TodayDateGetterBean todayDateGetterBean = new TodayDateGetterBean();
 
-	@Before
+	@Test
+	public void testTodayDate() {
+		Assert.assertEquals("23-02-2014", todayDateGetterBean.getTodayDate());
+	}
+
+	@BeforeTest
 	public void setUp() throws Exception {
 		todayDateGetterBean.initNewTodayDate();
 	}
 
-	@After
+	@AfterTest
 	public void tearDown() throws Exception {
 		todayDateGetterBean.initNewTodayDate();
-	}
-
-	@Test
-	public void testTodayDate() {
-		Assert.assertEquals("22-02-2014", todayDateGetterBean.getTodayDate());
 	}
 
 }
