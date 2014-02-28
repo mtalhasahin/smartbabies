@@ -35,16 +35,16 @@ public class MenstrualCycleCalculationBean {
 
 		int firstMenstruationsPeriodDifference = dateCalculationBean
 				.differenceBetweenTwoDates(
-						menstrualCycle.getPreviousMenstruation(),
-						menstrualCycle.getTwoPreviousMenstruation());
+						menstrualCycle.getPreviousMenstruationDate(),
+						menstrualCycle.getTwoPreviousMenstruationDate());
 
 		// en sondan bir önceki ve en sondan iki önceki menstruasyon gün farkını
 		// tutar
 
 		int secondMenstruationsPeriodDifference = dateCalculationBean
 				.differenceBetweenTwoDates(
-						menstrualCycle.getLastMenstruation(),
-						menstrualCycle.getPreviousMenstruation());
+						menstrualCycle.getLastMenstruationDate(),
+						menstrualCycle.getPreviousMenstruationDate());
 
 		// en son 3 menstruasyon tarihine göre yaklaşık ortalama menstruasyon
 		// periyod gününü tutar
@@ -54,15 +54,15 @@ public class MenstrualCycleCalculationBean {
 		// ortalama menstruasyon period gününe göre bir sonraki yaklaşık
 		// menstruasyon tarihini hesaplar ve atamasını yapar
 
-		menstrualCycle.setNextMenstruation(dateCalculationBean
-				.addingDaystoDate(menstrualCycle.getLastMenstruation(),
+		menstrualCycle.setNextMenstruationDate(dateCalculationBean
+				.addingDaystoDate(menstrualCycle.getLastMenstruationDate(),
 						averageMenstruationPeriod));
 
 		// ortalama menstruasyon period gününe göre bir sonraki yaklaşık ve
 		// doğal gecikmeli menstruasyon tarihini hesaplar ve atamasını yapar
 
-		menstrualCycle.setMaxNextMenstruation(dateCalculationBean
-				.addingDaystoDate(menstrualCycle.getLastMenstruation(), 35));
+		menstrualCycle.setDelayedNextMenstruationDate(dateCalculationBean
+				.addingDaystoDate(menstrualCycle.getLastMenstruationDate(), 35));
 
 	}
 
@@ -73,14 +73,14 @@ public class MenstrualCycleCalculationBean {
 		// ortalama menstruasyon period gününe göre normal ve olası en son
 		// ovulasyon tarihini hesaplar ve atamasını yapar
 
-		menstrualCycle.setOvulation(dateCalculationBean.addingDaystoDate(
-				menstrualCycle.getNextMenstruation(), -14));
+		menstrualCycle.setOvulationDate(dateCalculationBean.addingDaystoDate(
+				menstrualCycle.getNextMenstruationDate(), -14));
 
 		// normal olarak gerçekleşmeyen menstruasyon tarihine göre olası gebelik
 		// gününü hesplar ve atamasını yapar
 
 		menstrualCycle.setPossiblePregnancyDate(dateCalculationBean
-				.addingDaystoDate(menstrualCycle.getNextMenstruation(), -10));
+				.addingDaystoDate(menstrualCycle.getNextMenstruationDate(), -10));
 
 	}
 

@@ -12,7 +12,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @XmlRootElement
-public class Meal implements Serializable {
+public class Menu implements Serializable {
 
 	/**
 	 * 
@@ -21,47 +21,47 @@ public class Meal implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long mealId;
+	private long menuId;
 	
-	private String mealName;
+	private String menuName;
 	
-	private double mealCalorie;
+	private char menuIsDeleted;
 	
-	private char mealIsDeleted;
+	private String menuRepast;
 	
-	@OneToMany(mappedBy="meal")
+	@OneToMany(mappedBy="menu")
 	private List<MealMenu> mealMenus;
 
-	public long getMealId() {
-		return mealId;
+	public long getMenuId() {
+		return menuId;
 	}
 
-	public void setMealId(long mealId) {
-		this.mealId = mealId;
+	public void setMenuId(long menuId) {
+		this.menuId = menuId;
 	}
 
-	public String getMealName() {
-		return mealName;
+	public String getMenuName() {
+		return menuName;
 	}
 
-	public void setMealName(String mealName) {
-		this.mealName = mealName;
+	public void setMenuName(String menuName) {
+		this.menuName = menuName;
 	}
 
-	public double getMealCalorie() {
-		return mealCalorie;
+	public char getMenuIsDeleted() {
+		return menuIsDeleted;
 	}
 
-	public void setMealCalorie(double mealCalorie) {
-		this.mealCalorie = mealCalorie;
+	public void setMenuIsDeleted(char menuIsDeleted) {
+		this.menuIsDeleted = menuIsDeleted;
 	}
 
-	public char getMealIsDeleted() {
-		return mealIsDeleted;
+	public String getMenuRepast() {
+		return menuRepast;
 	}
 
-	public void setMealIsDeleted(char mealIsDeleted) {
-		this.mealIsDeleted = mealIsDeleted;
+	public void setMenuRepast(String menuRepast) {
+		this.menuRepast = menuRepast;
 	}
 
 	public List<MealMenu> getMealMenus() {
@@ -70,6 +70,7 @@ public class Meal implements Serializable {
 
 	public void setMealMenus(List<MealMenu> mealMenus) {
 		this.mealMenus = mealMenus;
-	}	
+	}
 	
+
 }

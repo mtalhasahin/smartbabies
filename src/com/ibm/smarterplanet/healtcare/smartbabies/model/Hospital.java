@@ -6,28 +6,25 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @XmlRootElement
-public class UserList implements Serializable {
-
+public class Hospital implements Serializable {
+	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 	
-	private char userListIsDeleted;
+	private String hospitalName;
 	
-	@ManyToOne
-	private User user;
-	
-	@ManyToOne
+	@OneToOne
 	private Doctor doctor;
 
 	public long getId() {
@@ -38,20 +35,12 @@ public class UserList implements Serializable {
 		this.id = id;
 	}
 
-	public char getUserListIsDeleted() {
-		return userListIsDeleted;
+	public String getHospitalName() {
+		return hospitalName;
 	}
 
-	public void setUserListIsDeleted(char userListIsDeleted) {
-		this.userListIsDeleted = userListIsDeleted;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
+	public void setHospitalName(String hospitalName) {
+		this.hospitalName = hospitalName;
 	}
 
 	public Doctor getDoctor() {
@@ -60,6 +49,7 @@ public class UserList implements Serializable {
 
 	public void setDoctor(Doctor doctor) {
 		this.doctor = doctor;
-	}	
+	}
+			
 
 }

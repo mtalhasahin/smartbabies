@@ -37,17 +37,19 @@ public class BirthdayScannerBean {
 
 	public void scan() {
 		for (int i = 0; i < userListProducer.getUsers().size(); i++) {
-			if (userListProducer.getUsers().get(i).getBirthday()
+			if (userListProducer.getUsers().get(i).getUserBirthday()
 					.equals(todayDateGetterBean.getTodayDate())) {
-				mailedList.add(userListProducer.getUsers().get(i).getEmail());
+				mailedList.add(userListProducer.getUsers().get(i)
+						.getUserEmail());
 			}
 		}
 
 		for (int i = 0; i < doctorListProducer.getDoctors().size(); i++) {
-			if (doctorListProducer.getDoctors().get(i).getBirthday()
+			if (doctorListProducer.getDoctors().get(i).getDoctorDetail()
+					.getDoctorBirthday()
 					.equals(todayDateGetterBean.getTodayDate())) {
 				mailedList.add(doctorListProducer.getDoctors().get(i)
-						.getEmail());
+						.getDoctorEmail());
 			}
 		}
 

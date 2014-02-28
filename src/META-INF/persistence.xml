@@ -9,18 +9,22 @@
 		<jta-data-source>java:websphere/datasources/DB2DS</jta-data-source>
 		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.AnswerOfUser</class>
 		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.Appointment</class>
+		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.Child</class>
 		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.Doctor</class>
 		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.DoctorDetail</class>
+		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.Hospital</class>
 		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.Meal</class>
+		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.MealMenu</class>
+		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.Menu</class>
 		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.NutritionCalendar</class>
+		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.Pregnancy</class>
 		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.Survey</class>
 		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.SurveyAnswer</class>
 		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.User</class>
-		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.UserDetail</class>
-		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.UserList</class>
-		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.VaccinationCalendar</class>		
+		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.VaccinationCalendar</class>
+		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.Vaccine</class>		
 		<properties>
-			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.hbm2ddl.auto" value="create" />
 			<property name="hibernate.show_sql" value="true" />
 		</properties>
 	</persistence-unit>

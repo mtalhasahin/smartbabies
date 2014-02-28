@@ -17,15 +17,15 @@ public class MenstrualCycleCalculationBeanTest {
 	@Test
 	public void testNextMenstruationDateCalculator() {
 		AssertJUnit.assertEquals("23-03-2014",
-				menstrualCycle.getNextMenstruation());
+				menstrualCycle.getNextMenstruationDate());
 		AssertJUnit.assertEquals("29-03-2014",
-				menstrualCycle.getMaxNextMenstruation());
+				menstrualCycle.getDelayedNextMenstruationDate());
 
 	}
 
 	@Test
 	public void testPossiblePregnancyDateCalculator() {
-		Assert.assertEquals("09-03-2014", menstrualCycle.getOvulation());
+		Assert.assertEquals("09-03-2014", menstrualCycle.getOvulationDate());
 		Assert.assertEquals("13-03-2014",
 				menstrualCycle.getPossiblePregnancyDate());
 
@@ -34,9 +34,9 @@ public class MenstrualCycleCalculationBeanTest {
 	@BeforeTest
 	public void setUp() throws Exception {
 		menstrualCycleCalculationBean.initMenstrualCycle();
-		menstrualCycle.setLastMenstruation("22-02-2014");
-		menstrualCycle.setPreviousMenstruation("25-01-2014");
-		menstrualCycle.setTwoPreviousMenstruation("26-12-2013");
+		menstrualCycle.setLastMenstruationDate("22-02-2014");
+		menstrualCycle.setPreviousMenstruationDate("25-01-2014");
+		menstrualCycle.setTwoPreviousMenstruationDate("26-12-2013");
 		menstrualCycleCalculationBean.setMenstrualCycle(menstrualCycle);
 		menstrualCycleCalculationBean.nextMenstruationDateCalculate();
 		menstrualCycleCalculationBean.possiblePregnancyDateCalculate();

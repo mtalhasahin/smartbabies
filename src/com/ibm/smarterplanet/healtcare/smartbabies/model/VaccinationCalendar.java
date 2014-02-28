@@ -1,13 +1,14 @@
 package com.ibm.smarterplanet.healtcare.smartbabies.model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
@@ -21,65 +22,57 @@ public class VaccinationCalendar implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long id;
+	private long vaccinationId;
 	
-	private String vaccinationName;
-	
-	private Date date;
+	@OneToMany(mappedBy="vaccinationCalendar")
+	private List<Vaccine> vaccines;
 	
 	private char vaccinationIsComplete;
 	
 	private char vaccinationIsChild;
 	
-	@ManyToOne
-	private User user;
+	@OneToOne
+	private Pregnancy pregnancy;
 
-	public long getId() {
-		return id;
+	public long getVaccinationId() {
+		return vaccinationId;
 	}
 
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public String getVaccinationName() {
-		return vaccinationName;
-	}
-
-	public void setVaccinationName(String vaccinationName) {
-		this.vaccinationName = vaccinationName;
-	}
-
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
+	public List<Vaccine> getVaccines() {
+		return vaccines;
 	}
 
 	public char getVaccinationIsComplete() {
 		return vaccinationIsComplete;
 	}
 
-	public void setVaccinationIsComplete(char vaccinationIsComplete) {
-		this.vaccinationIsComplete = vaccinationIsComplete;
-	}
-
 	public char getVaccinationIsChild() {
 		return vaccinationIsChild;
+	}
+
+	public Pregnancy getPregnancy() {
+		return pregnancy;
+	}
+
+	public void setVaccinationId(long vaccinationId) {
+		this.vaccinationId = vaccinationId;
+	}
+
+	public void setVaccines(List<Vaccine> vaccines) {
+		this.vaccines = vaccines;
+	}
+
+	public void setVaccinationIsComplete(char vaccinationIsComplete) {
+		this.vaccinationIsComplete = vaccinationIsComplete;
 	}
 
 	public void setVaccinationIsChild(char vaccinationIsChild) {
 		this.vaccinationIsChild = vaccinationIsChild;
 	}
 
-	public User getUser() {
-		return user;
+	public void setPregnancy(Pregnancy pregnancy) {
+		this.pregnancy = pregnancy;
 	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}	
+		
 
 }

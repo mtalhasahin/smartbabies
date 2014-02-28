@@ -17,7 +17,7 @@ import com.ibm.smarterplanet.healtcare.smartbabies.model.User;
 
 @Model
 @Stateful
-public class UserRagistrationBean {
+public class UserRegistrationBean {
 
 	@Inject
 	private FacesContext facesContext;

@@ -1,7 +1,6 @@
 package com.ibm.smarterplanet.healtcare.smartbabies.model;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -23,118 +22,87 @@ public class Doctor implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private long doctorId;
 
-	private String name;
+	private String doctorName;
 
-	private String surname;
+	private String doctorSurname;
 
-	private String email;
+	private String doctorEmail;
 
-	private String phone;
+	private String doctorPhone;
 
-	private Date birthday;
-
-	private char isDeleted;
+	private char doctorIsDeleted;
 
 	@OneToOne(mappedBy = "doctor")
 	private DoctorDetail doctorDetail;
 
 	@OneToMany(mappedBy = "doctor")
-	private List<UserList> userLists;
-
-	@OneToMany(mappedBy = "doctor")
 	private List<Appointment> appointments;
 
-	@OneToMany(mappedBy = "doctor")
-	private List<NutritionCalendar> nutritionCalendars;
-
-	public long getId() {
-		return id;
+	public long getDoctorId() {
+		return doctorId;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public String getDoctorName() {
+		return doctorName;
 	}
 
-	public String getName() {
-		return name;
+	public String getDoctorSurname() {
+		return doctorSurname;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public String getDoctorEmail() {
+		return doctorEmail;
 	}
 
-	public String getSurname() {
-		return surname;
+	public String getDoctorPhone() {
+		return doctorPhone;
 	}
 
-	public void setSurname(String surname) {
-		this.surname = surname;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPhone() {
-		return phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
-	public Date getBirthday() {
-		return birthday;
-	}
-
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
-	}
-
-	public char getIsDeleted() {
-		return isDeleted;
-	}
-
-	public void setIsDeleted(char isDeleted) {
-		this.isDeleted = isDeleted;
+	public char getDoctorIsDeleted() {
+		return doctorIsDeleted;
 	}
 
 	public DoctorDetail getDoctorDetail() {
 		return doctorDetail;
 	}
 
-	public void setDoctorDetail(DoctorDetail doctorDetail) {
-		this.doctorDetail = doctorDetail;
-	}
-
-	public List<UserList> getUserLists() {
-		return userLists;
-	}
-
-	public void setUserLists(List<UserList> userLists) {
-		this.userLists = userLists;
-	}
-
 	public List<Appointment> getAppointments() {
 		return appointments;
+	}
+
+	public void setDoctorId(long doctorId) {
+		this.doctorId = doctorId;
+	}
+
+	public void setDoctorName(String doctorName) {
+		this.doctorName = doctorName;
+	}
+
+	public void setDoctorSurname(String doctorSurname) {
+		this.doctorSurname = doctorSurname;
+	}
+
+	public void setDoctorEmail(String doctorEmail) {
+		this.doctorEmail = doctorEmail;
+	}
+
+	public void setDoctorPhone(String doctorPhone) {
+		this.doctorPhone = doctorPhone;
+	}
+
+	public void setDoctorIsDeleted(char doctorIsDeleted) {
+		this.doctorIsDeleted = doctorIsDeleted;
+	}
+
+	public void setDoctorDetail(DoctorDetail doctorDetail) {
+		this.doctorDetail = doctorDetail;
 	}
 
 	public void setAppointments(List<Appointment> appointments) {
 		this.appointments = appointments;
 	}
-
-	public List<NutritionCalendar> getNutritionCalendars() {
-		return nutritionCalendars;
-	}
-
-	public void setNutritionCalendars(List<NutritionCalendar> nutritionCalendars) {
-		this.nutritionCalendars = nutritionCalendars;
-	}
-
+	
+	
 }

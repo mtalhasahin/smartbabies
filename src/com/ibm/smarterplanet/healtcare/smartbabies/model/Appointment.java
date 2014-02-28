@@ -21,7 +21,7 @@ public class Appointment implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private long appointmentId;
 
 	private Date appointmantDate;
 
@@ -35,12 +35,12 @@ public class Appointment implements Serializable {
 	@ManyToOne
 	private User user;
 
-	public long getId() {
-		return id;
+	public long getAppointmentId() {
+		return appointmentId;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setAppointmentId(long appointmentId) {
+		this.appointmentId = appointmentId;
 	}
 
 	public Date getAppointmantDate() {
@@ -81,6 +81,6 @@ public class Appointment implements Serializable {
 
 	public void setUser(User user) {
 		this.user = user;
-	}
+	}	
 
 }

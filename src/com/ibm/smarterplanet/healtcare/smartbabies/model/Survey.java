@@ -21,7 +21,7 @@ public class Survey implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long id;
+	private long surveyId;
 	
 	private String surveyQuestion;
 	
@@ -31,14 +31,14 @@ public class Survey implements Serializable {
 	private List<SurveyAnswer> surveyAnswers;
 	
 	@OneToMany(mappedBy="survey")
-	private List<AnswerOfUser> answerOfUsers;
+	private List<AnswerOfUser> answerOfUsers;	
 
-	public long getId() {
-		return id;
+	public long getSurveyId() {
+		return surveyId;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setSurveyId(long surveyId) {
+		this.surveyId = surveyId;
 	}
 
 	public String getSurveyQuestion() {

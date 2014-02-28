@@ -1,7 +1,6 @@
 package com.ibm.smarterplanet.healtcare.smartbabies.model;
 
 import java.io.Serializable;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -9,7 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
@@ -23,25 +21,22 @@ public class User implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private long userId;
 
-	private String name;
+	private String userName;
 
-	private String surname;
+	private String userSurname;
 
-	private String email;
+	private String userEmail;
 
-	private String phone;
+	private String userPhone;
 
-	private Date birthday;
+	private String userBirthday;
 
-	private char isDeleted;
-
-	@OneToOne(mappedBy = "user")
-	private UserDetail userDetail;
-
-	@OneToMany(mappedBy = "user")
-	private List<UserList> userLists;
+	private char userIsDeleted;
+	
+	@OneToMany(mappedBy="user")
+	private List<Pregnancy> pregnancies;
 
 	@OneToMany(mappedBy = "user")
 	private List<AnswerOfUser> answerOfUsers;
@@ -49,115 +44,85 @@ public class User implements Serializable {
 	@OneToMany(mappedBy = "user")
 	private List<Appointment> appointments;
 
-	@OneToMany(mappedBy = "user")
-	private List<NutritionCalendar> nutritionCalendars;
-
-	@OneToMany(mappedBy = "user")
-	private List<VaccinationCalendar> vaccinationCalendars;
-
-	public long getId() {
-		return id;
+	public long getUserId() {
+		return userId;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public String getUserName() {
+		return userName;
 	}
 
-	public String getName() {
-		return name;
+	public String getUserSurname() {
+		return userSurname;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public String getUserEmail() {
+		return userEmail;
 	}
 
-	public String getSurname() {
-		return surname;
+	public String getUserPhone() {
+		return userPhone;
 	}
 
-	public void setSurname(String surname) {
-		this.surname = surname;
+	public String getUserBirthday() {
+		return userBirthday;
 	}
 
-	public String getEmail() {
-		return email;
+	public char getUserIsDeleted() {
+		return userIsDeleted;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPhone() {
-		return phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
-	public Date getBirthday() {
-		return birthday;
-	}
-
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
-	}
-
-	public char getIsDeleted() {
-		return isDeleted;
-	}
-
-	public void setIsDeleted(char isDeleted) {
-		this.isDeleted = isDeleted;
-	}
-
-	public UserDetail getUserDetail() {
-		return userDetail;
-	}
-
-	public void setUserDetail(UserDetail userDetail) {
-		this.userDetail = userDetail;
-	}
-
-	public List<UserList> getUserLists() {
-		return userLists;
-	}
-
-	public void setUserLists(List<UserList> userLists) {
-		this.userLists = userLists;
+	public List<Pregnancy> getPregnancies() {
+		return pregnancies;
 	}
 
 	public List<AnswerOfUser> getAnswerOfUsers() {
 		return answerOfUsers;
 	}
 
-	public void setAnswerOfUsers(List<AnswerOfUser> answerOfUsers) {
-		this.answerOfUsers = answerOfUsers;
-	}
-
 	public List<Appointment> getAppointments() {
 		return appointments;
+	}
+
+	public void setUserId(long userId) {
+		this.userId = userId;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public void setUserSurname(String userSurname) {
+		this.userSurname = userSurname;
+	}
+
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
+	}
+
+	public void setUserPhone(String userPhone) {
+		this.userPhone = userPhone;
+	}
+
+	public void setUserBirthday(String userBirthday) {
+		this.userBirthday = userBirthday;
+	}
+
+	public void setUserIsDeleted(char userIsDeleted) {
+		this.userIsDeleted = userIsDeleted;
+	}
+
+	public void setPregnancies(List<Pregnancy> pregnancies) {
+		this.pregnancies = pregnancies;
+	}
+
+	public void setAnswerOfUsers(List<AnswerOfUser> answerOfUsers) {
+		this.answerOfUsers = answerOfUsers;
 	}
 
 	public void setAppointments(List<Appointment> appointments) {
 		this.appointments = appointments;
 	}
-
-	public List<NutritionCalendar> getNutritionCalendars() {
-		return nutritionCalendars;
-	}
-
-	public void setNutritionCalendars(List<NutritionCalendar> nutritionCalendars) {
-		this.nutritionCalendars = nutritionCalendars;
-	}
-
-	public List<VaccinationCalendar> getVaccinationCalendars() {
-		return vaccinationCalendars;
-	}
-
-	public void setVaccinationCalendars(
-			List<VaccinationCalendar> vaccinationCalendars) {
-		this.vaccinationCalendars = vaccinationCalendars;
-	}
+	
 
 }

@@ -4,67 +4,67 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class MenstrualCycle {
+
+	private String lastMenstruationDate;
 	
-	private String lastMenstruation;
+	private String previousMenstruationDate;
 	
-	private String previousMenstruation;
+	private String twoPreviousMenstruationDate;
 	
-	private String twoPreviousMenstruation;
+	private String nextMenstruationDate;
 	
-	private String nextMenstruation;
+	private String delayedNextMenstruationDate;
 	
-	private String maxNextMenstruation;
-	
-	private String ovulation;
+	private String ovulationDate;
 	
 	private String possiblePregnancyDate;
 
-	public String getLastMenstruation() {
-		return lastMenstruation;
+	public String getLastMenstruationDate() {
+		return lastMenstruationDate;
 	}
 
-	public void setLastMenstruation(String lastMenstruation) {
-		this.lastMenstruation = lastMenstruation;
+	public void setLastMenstruationDate(String lastMenstruationDate) {
+		this.lastMenstruationDate = lastMenstruationDate;
 	}
 
-	public String getPreviousMenstruation() {
-		return previousMenstruation;
+	public String getPreviousMenstruationDate() {
+		return previousMenstruationDate;
 	}
 
-	public void setPreviousMenstruation(String previousMenstruation) {
-		this.previousMenstruation = previousMenstruation;
+	public void setPreviousMenstruationDate(String previousMenstruationDate) {
+		this.previousMenstruationDate = previousMenstruationDate;
 	}
 
-	public String getTwoPreviousMenstruation() {
-		return twoPreviousMenstruation;
+	public String getTwoPreviousMenstruationDate() {
+		return twoPreviousMenstruationDate;
 	}
 
-	public void setTwoPreviousMenstruation(String twoPreviousMenstruation) {
-		this.twoPreviousMenstruation = twoPreviousMenstruation;
+	public void setTwoPreviousMenstruationDate(String twoPreviousMenstruationDate) {
+		this.twoPreviousMenstruationDate = twoPreviousMenstruationDate;
 	}
 
-	public String getNextMenstruation() {
-		return nextMenstruation;
+	public String getNextMenstruationDate() {
+		return nextMenstruationDate;
 	}
 
-	public void setNextMenstruation(String nextMenstruation) {
-		this.nextMenstruation = nextMenstruation;
+	public void setNextMenstruationDate(String nextMenstruationDate) {
+		this.nextMenstruationDate = nextMenstruationDate;
 	}
 
-	public String getMaxNextMenstruation() {
-		return maxNextMenstruation;
+	public String getDelayedNextMenstruationDate() {
+		return delayedNextMenstruationDate;
 	}
 
-	public void setMaxNextMenstruation(String maxNextMenstruation) {
-		this.maxNextMenstruation = maxNextMenstruation;
+	public void setDelayedNextMenstruationDate(String delayedNextMenstruationDate) {
+		this.delayedNextMenstruationDate = delayedNextMenstruationDate;
 	}
 
-	public String getOvulation() {
-		return ovulation;
+	public String getOvulationDate() {
+		return ovulationDate;
 	}
 
-	public void setOvulation(String ovulation) {
-		this.ovulation = ovulation;
+	public void setOvulationDate(String ovulationDate) {
+		this.ovulationDate = ovulationDate;
 	}
 
 	public String getPossiblePregnancyDate() {

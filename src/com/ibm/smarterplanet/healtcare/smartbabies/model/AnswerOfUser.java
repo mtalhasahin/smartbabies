@@ -20,7 +20,7 @@ public class AnswerOfUser implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private long answerOfUserId;
 
 	@ManyToOne
 	private User user;
@@ -31,12 +31,12 @@ public class AnswerOfUser implements Serializable {
 	@ManyToOne
 	private Survey survey;
 
-	public long getId() {
-		return id;
+	public long getAnswerOfUserId() {
+		return answerOfUserId;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setAnswerOfUserId(long answerOfUserId) {
+		this.answerOfUserId = answerOfUserId;
 	}
 
 	public User getUser() {
@@ -63,4 +63,5 @@ public class AnswerOfUser implements Serializable {
 		this.survey = survey;
 	}
 
+	
 }

@@ -20,67 +20,47 @@ public class NutritionCalendar implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long id;
-	
-	private String menuInfo;
-	
+	private long nutritionCalendarId;
+		
 	private char nutritionIsDeleted;
 	
 	@ManyToOne
-	private User user;
+	private Pregnancy pregnancy;
 	
 	@ManyToOne
-	private Doctor doctor;
-	
-	@ManyToOne
-	private Meal meal;
+	private MealMenu mealMenu;
 
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public String getMenuInfo() {
-		return menuInfo;
-	}
-
-	public void setMenuInfo(String menuInfo) {
-		this.menuInfo = menuInfo;
+	public long getNutritionCalendarId() {
+		return nutritionCalendarId;
 	}
 
 	public char getNutritionIsDeleted() {
 		return nutritionIsDeleted;
 	}
 
+	public Pregnancy getPregnancy() {
+		return pregnancy;
+	}
+
+	public MealMenu getMealMenu() {
+		return mealMenu;
+	}
+
+	public void setNutritionCalendarId(long nutritionCalendarId) {
+		this.nutritionCalendarId = nutritionCalendarId;
+	}
+
 	public void setNutritionIsDeleted(char nutritionIsDeleted) {
 		this.nutritionIsDeleted = nutritionIsDeleted;
 	}
 
-	public User getUser() {
-		return user;
+	public void setPregnancy(Pregnancy pregnancy) {
+		this.pregnancy = pregnancy;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setMealMenu(MealMenu mealMenu) {
+		this.mealMenu = mealMenu;
 	}
-
-	public Doctor getDoctor() {
-		return doctor;
-	}
-
-	public void setDoctor(Doctor doctor) {
-		this.doctor = doctor;
-	}
-
-	public Meal getMeal() {
-		return meal;
-	}
-
-	public void setMeal(Meal meal) {
-		this.meal = meal;
-	}
-
+	
+	
 }
