@@ -24,7 +24,7 @@ public class Child implements Serializable {
 	
 	private String childName;
 	
-	private char chilGender;
+	private char childGender;
 	
 	private String childBirthdate;
 	
@@ -39,8 +39,8 @@ public class Child implements Serializable {
 		return childName;
 	}
 
-	public char getChilGender() {
-		return chilGender;
+	public char getChildGender() {
+		return childGender;
 	}
 
 	public String getChildBirthdate() {
@@ -59,8 +59,8 @@ public class Child implements Serializable {
 		this.childName = childName;
 	}
 
-	public void setChilGender(char chilGender) {
-		this.chilGender = chilGender;
+	public void setChildGender(char childGender) {
+		this.childGender = childGender;
 	}
 
 	public void setChildBirthdate(String childBirthdate) {

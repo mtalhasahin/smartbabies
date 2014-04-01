@@ -22,14 +22,14 @@ public class VaccinationCalendar implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long vaccinationId;
-	
-	@OneToMany(mappedBy="vaccinationCalendar")
-	private List<Vaccine> vaccines;
+	private long vaccinationId;	
 	
 	private char vaccinationIsComplete;
 	
 	private char vaccinationIsChild;
+	
+	@OneToMany(mappedBy="vaccinationCalendar")
+	private List<Vaccine> vaccines;
 	
 	@OneToOne
 	private Pregnancy pregnancy;
