@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta name="author" content="Mosaddek"/>
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina"/>
+    <link rel="shortcut icon" href="img/favicon.png"/>
+
+    <title>Smart Babies | Giriş</title>
+	<!-- Bootstrap core CSS -->
+    <link href="../frontend/member/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../frontend/member/css/bootstrap-reset.css" rel="stylesheet"/>
+    <!--external css-->
+    <link href="../frontend/member/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="../frontend/member/css/style.css" rel="stylesheet"/>
+    <link href="../frontend/member/css/style-responsive.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+    <script src="../frontend/member/js/html5shiv.js"></script>
+    <script src="../frontend/member/js/respond.min.js"></script>
+    <![endif]-->
+</h:head>
+
+  <h:body class="login-body">
+
+    <div class="container">
+
+      <form class="form-signin" action="/smrtbaby">
+        <h2 class="form-signin-heading">Giriş Yap</h2>
+        <div class="login-wrap">
+            <input id="txtUserName" type="text" class="form-control" placeholder="Kullanıcı Adı" />
+            <input id="txtPassword" type="password" class="form-control" placeholder="Şifre"/>
+            <label class="checkbox">
+                <span class="pull-right">
+                    <a data-toggle="modal" href="#myModal"> Şifreni mi unuttun?</a>
+
+                </span>
+            </label>
+            <button id="btnSignIn" class="btn btn-lg btn-login btn-block" type="submit">Giriş Yap</button>
+            <div class="registration">
+                Hesabın mı yok? 
+                <a class="" href="/smrtbaby/register">
+                    Yeni hesap oluştur
+                </a>
+            </div>
+
+        </div>
+
+          <!-- Modal -->
+          <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                          <h4 class="modal-title">Şifreni mi unuttun?</h4>
+                      </div>
+                      <div class="modal-body">
+                          <p>Şifrenizi sıfırlamak için aşağıya e-posta adresinizi girin.</p>
+                          <input id="txtEmail" type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix"/>
+
+                      </div>
+                      <div class="modal-footer">
+                          <button data-dismiss="modal" id="btnCancel" class="btn btn-default" type="button">Geri</button>
+                          <button id="btnSubmit" class="btn btn-success" type="button">Gönder</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- modal -->
+
+      </form>
+
+    </div>
+
+
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="../frontend/member/js/jquery.js"></script>
+    <script src="../frontend/member/js/bootstrap.min.js"></script>
+
+
+  </h:body>
+</html>
