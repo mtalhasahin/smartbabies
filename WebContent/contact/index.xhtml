@@ -1,37 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Mosaddek">
-    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-    <link rel="shortcut icon" href="img/favicon.png">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta name="author" content="Mosaddek"/>
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina"/>
+    <link rel="shortcut icon" href="../frontend/guest/img/favicon.png"/>
 
     <title>Smart Babies | İletişim</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/theme.css" rel="stylesheet">
-    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    <link href="../frontend/guest/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../frontend/guest/css/theme.css" rel="stylesheet"/>
+    <link href="../frontend/guest/css/bootstrap-reset.css" rel="stylesheet"/>
     <!--external css-->
-    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/flexslider.css"/>
-    <link href="assets/bxslider/jquery.bxslider.css" rel="stylesheet" />
+    <link href="../frontend/guest/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../frontend/guest/css/flexslider.css"/>
+    <link href="../frontend/guest/assets/bxslider/jquery.bxslider.css" rel="stylesheet" />
 
 
       <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/style-responsive.css" rel="stylesheet" />
+    <link href="../frontend/guest/css/style.css" rel="stylesheet"/>
+    <link href="../frontend/guest/css/style-responsive.css" rel="stylesheet" />
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
+      <script src="../frontend/guest/js/html5shiv.js"></script>
+      <script src="../frontend/guest/js/respond.min.js"></script>
     <![endif]-->
-  </head>
+  </h:head>
 
-  <body>
+  <h:body>
      <!--header start-->
     <header class="header-frontend">
         <div class="navbar navbar-default navbar-static-top">
@@ -42,23 +46,23 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">Smart<span>Babies</span></a>
+                    <a class="navbar-brand" href="/smrtbaby">Smart<span>Babies</span></a>
                 </div>
                 <div class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">
-                        <li><a href="index.html">Anasayfa</a></li>
-                        <li><a href="portfolio.html">Gebelik Hesaplama</a></li>
-                        <li><a href="services.html">Haftalara Göre Gebelik</a></li>
+                        <li><a href="/smrtbaby">Anasayfa</a></li>
+                        <li><a href="/smrtbaby/calculator">Gebelik Hesaplama</a></li>
+                        <li><a href="/smrtbaby/weekofpreg">Haftalara Göre Gebelik</a></li>
                          <li class="dropdown ">
                             <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Gebelik Planlaması<b class=" icon-angle-down"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="typography.html">Yumurtalama Dönemi</a></li>
-                                <li><a href="button.html">Gebelik Planı</a></li>
+                                <li><a href="/smrtbaby/ovulation">Yumurtalama Dönemi</a></li>
+                                <li><a href="/smrtbaby/plan">Gebelik Planı</a></li>
                             </ul>
                         </li>
-                        <li><a href="about.html">Hakkında</a></li>
-                        <li class="active"><a href="contact.html">İletişim</a></li>
-                        <li><a href="blog.html">Giriş</a></li>
+                        <li><a href="/smrtbaby/about">Hakkında</a></li>
+                        <li class="active"><a href="/smrtbaby/contact">İletişim</a></li>
+                        <li><a href="/smrtbaby/login">Giriş</a></li>
                     </ul>
                 </div>
             </div>
@@ -75,7 +79,7 @@
                 </div>
                 <div class="col-lg-8 col-sm-8">
                     <ol class="breadcrumb pull-right">
-                        <li><a href="index.html">Anasayfa</a></li>
+                        <li><a href="/smrtbaby">Anasayfa</a></li>
                         <li class="active">İleitşim</li>
                     </ol>
                 </div>
@@ -102,9 +106,9 @@
                     Yazılım Mühendisliği <br/>
                     23100, Elazığ/TÜRKİYE
                 </p>
-                <br>
-                <br>
-                <br>
+                <br/>
+                <br/>
+                <br/>
                 <p>
                     Phone <br/>
                     <span class="muted">+90 (544) 244-8064</span><br/>
@@ -120,15 +124,15 @@
                     <form role="form">
                         <div class="form-group">
                             <label for="name">İsim</label>
-                            <input type="text" placeholder="" id="name" class="form-control">
+                            <input type="text" placeholder="" id="name" class="form-control"/>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="text" placeholder="" id="email" class="form-control">
+                            <input type="text" placeholder="" id="email" class="form-control"/>
                         </div>
                         <div class="form-group">
                             <label for="phone">Telefon</label>
-                            <input type="text" id="phone" class="form-control">
+                            <input type="text" id="phone" class="form-control"/>
                         </div>
                         <div class="form-group">
                             <label for="phone">Mesaj</label>
@@ -179,16 +183,16 @@
     <!--footer end-->
 
   <!-- js placed at the end of the document so the pages load faster -->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/hover-dropdown.js"></script>
-    <script type="text/javascript" src="assets/bxslider/jquery.bxslider.js"></script>
+    <script src="../frontend/guest/js/jquery.js"></script>
+    <script src="../frontend/guest/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../frontend/guest/js/hover-dropdown.js"></script>
+    <script type="text/javascript" src="../frontend/guest/assets/bxslider/jquery.bxslider.js"></script>
 
 
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&AMP;sensor=false"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp;sensor=false"></script>
 
     <!--common script for all pages-->
-    <script src="js/common-scripts.js"></script>
+    <script src="../frontend/guest/js/common-scripts.js"></script>
 
 
   <script>
@@ -214,5 +218,5 @@
 
   </script>
 
-  </body>
+  </h:body>
 </html>
