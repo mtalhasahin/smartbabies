@@ -12,21 +12,22 @@ xmlns:p="http://primefaces.org/ui">
     <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina"/>
     <link rel="shortcut icon" href="../../frontend/member/img/favicon.png"/>
 
-    <title>Smart Babies - Profil</title>
+    <title>Smart Babies - Takvim</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../frontend/member/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="../../frontend/member/css/bootstrap-reset.css" rel="stylesheet"/>
     <!--external css-->
     <link href="../../frontend/member/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="../../frontend/member/assets/fullcalendar/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
     <!-- Custom styles for this template -->
     <link href="../../frontend/member/css/style.css" rel="stylesheet"/>
     <link href="../../frontend/member/css/style-responsive.css" rel="stylesheet" />
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
-      <script src="../../frontend/member/js/html5shiv.js"></script>
-      <script src="../../frontend/member/js/respond.min.js"></script>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
     <![endif]-->
   </h:head>
 
@@ -191,7 +192,7 @@ xmlns:p="http://primefaces.org/ui">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
                   <li>
-                      <a href="/smrtbaby/member/profile" class="active">
+                      <a href="/smrtbaby/member/profile">
                           <i class="icon-user"></i>
                           <span>Profil</span>
                       </a>
@@ -238,7 +239,7 @@ xmlns:p="http://primefaces.org/ui">
                       </ul>
                   </li>
                   <li>
-                      <a href="/smrtbaby/member/calendar">
+                      <a href="/smrtbaby/member/calendar" class="active">
                           <i class="icon-calendar"></i>
                           <span>Takvim</span>
                       </a>
@@ -264,114 +265,33 @@ xmlns:p="http://primefaces.org/ui">
           <section class="wrapper">
               <!-- page start-->
               <div class="row">
-                  <aside class="profile-nav col-lg-3">
-                      <section class="panel">
-                          <div class="user-heading round">
-                              <a href="#">
-                                  <img src="../../frontend/member/img/profile-avatar.jpg" alt=""/>
-                              </a>
-                              <h1>Jonathan Smith</h1>
-                              <p>jsmith@flatlab.com</p>
-                          </div>
-
-                          <ul class="nav nav-pills nav-stacked">
-                              <li class="active"><a href="/smrtbaby/member/profile"> <i class="icon-user"></i> Profil </a></li>
-                              <li><a href="/smrtbaby/member/profile/edit/activity"> <i class="icon-bell-alt"></i> Aktiviteler</a></li>
-                              <li><a href="/smrtbaby/member/profile/edit"> <i class="icon-edit"></i> Profil Düzenle </a></li>
-                          </ul>
-
-                      </section>
+                  <aside class="col-lg-3">
+                      <h4 class="drg-event-title"> Draggable Events</h4>
+                      <div id='external-events'>
+                          <div class='external-event label label-primary'>My Event 1</div>
+                          <div class='external-event label label-success'>My Event 2</div>
+                          <div class='external-event label label-info'>My Event 3</div>
+                          <div class='external-event label label-inverse'>My Event 4</div>
+                          <div class='external-event label label-warning'>My Event 5</div>
+                          <div class='external-event label label-danger'>My Event 6</div>
+                          <div class='external-event label label-default'>My Event 7</div>
+                          <div class='external-event label label-primary'>My Event 8</div>
+                          <div class='external-event label label-info'>My Event 9</div>
+                          <div class='external-event label label-success'>My Event 10</div>
+                          <p class="border-top drp-rmv">
+                              <input type='checkbox' id='drop-remove' />
+                              remove after drop
+                          </p>
+                      </div>
                   </aside>
-                  <aside class="profile-info col-lg-9">
-                      
+                  <aside class="col-lg-9">
                       <section class="panel">
-                          <div class="bio-graph-heading">
-                             Smart Babies'e Hosgeldiniz.<br/> Smarter healthcare for a smarter planet.
-                          </div>
-                          <div class="panel-body bio-graph-info">
-                              <h1>Kişisel Bilgiler</h1>
-                              <div class="row">
-                                  <div class="bio-row">
-                                      <p><span>İsim </span>: Jonathan</p>
-                                  </div>
-                                  <div class="bio-row">
-                                      <p><span>Soyisim </span>: Smith</p>
-                                  </div>
-                                  <div class="bio-row">
-                                      <p><span>Doğum Tarihi</span>: 13 July 1983</p>
-                                  </div>
-                                  <div class="bio-row">
-                                      <p><span>Email </span>: jsmith@flatlab.com</p>
-                                  </div>
-                                  <div class="bio-row">
-                                      <p><span>Telefon </span>: (12) 03 4567890</p>
-                                  </div>
-                              </div>
-                          </div>
-                      </section>
-                      <section>
-                          <div class="row">
-                              <div class="col-lg-6">
-                                  <div class="panel">
-                                      <div class="panel-body">
-                                          <div class="bio-chart">
-                                              <input class="knob" data-width="100" data-height="100" data-displayPrevious="true"  data-thickness=".2" value="35" data-fgColor="#e06b7d" data-bgColor="#e8e8e8"/>
-                                          </div>
-                                          <div class="bio-desk">
-                                              <h4 class="red">Envato Website</h4>
-                                              <p>Started : 15 July</p>
-                                              <p>Deadline : 15 August</p>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-lg-6">
-                                  <div class="panel">
-                                      <div class="panel-body">
-                                          <div class="bio-chart">
-                                              <input class="knob" data-width="100" data-height="100" data-displayPrevious="true"  data-thickness=".2" value="63" data-fgColor="#4CC5CD" data-bgColor="#e8e8e8"/>
-                                          </div>
-                                          <div class="bio-desk">
-                                              <h4 class="terques">ThemeForest CMS </h4>
-                                              <p>Started : 15 July</p>
-                                              <p>Deadline : 15 August</p>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-lg-6">
-                                  <div class="panel">
-                                      <div class="panel-body">
-                                          <div class="bio-chart">
-                                              <input class="knob" data-width="100" data-height="100" data-displayPrevious="true"  data-thickness=".2" value="75" data-fgColor="#96be4b" data-bgColor="#e8e8e8"/>
-                                          </div>
-                                          <div class="bio-desk">
-                                              <h4 class="green">VectorLab Portfolio</h4>
-                                              <p>Started : 15 July</p>
-                                              <p>Deadline : 15 August</p>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-lg-6">
-                                  <div class="panel">
-                                      <div class="panel-body">
-                                          <div class="bio-chart">
-                                              <input class="knob" data-width="100" data-height="100" data-displayPrevious="true"  data-thickness=".2" value="50" data-fgColor="#cba4db" data-bgColor="#e8e8e8"/>
-                                          </div>
-                                          <div class="bio-desk">
-                                              <h4 class="purple">Adobe Muse Template</h4>
-                                              <p>Started : 15 July</p>
-                                              <p>Deadline : 15 August</p>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
+                          <div class="panel-body">
+                              <div id="calendar" class="has-toolbar"></div>
                           </div>
                       </section>
                   </aside>
               </div>
-
               <!-- page end-->
           </section>
       </section>
@@ -390,23 +310,19 @@ xmlns:p="http://primefaces.org/ui">
 
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="../../frontend/member/js/jquery.js"></script>
-    <script src="../../frontend/member/js/bootstrap.min.js"></script>
-    <script class="include" type="text/javascript" src="../../frontend/member/js/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="../../frontend/member/js/jquery.scrollTo.min.js"></script>
-    <script src="../../frontend/member/js/jquery.nicescroll.js" type="text/javascript"></script>
-    <script src="../../frontend/member/assets/jquery-knob/js/jquery.knob.js"></script>
-    <script src="../../frontend/member/js/respond.min.js" ></script>
+  <script type="text/javascript" src="../../frontend/member/js/jquery-ui-1.9.2.custom.min.js"></script>
+  <script src="../../frontend/member/assets/fullcalendar/fullcalendar/fullcalendar.min.js"></script>
+  <script src="../../frontend/member/js/bootstrap.min.js"></script>
+  <script class="include" type="text/javascript" src="../../frontend/member/js/jquery.dcjqaccordion.2.7.js"></script>
+  <script src="../../frontend/member/js/jquery.scrollTo.min.js"></script>
+  <script src="../../frontend/member/js/jquery.nicescroll.js" type="text/javascript"></script>
+  <script src="../../frontend/member/js/respond.min.js" ></script>
 
     <!--common script for all pages-->
     <script src="../../frontend/member/js/common-scripts.js"></script>
 
-  <script>
-
-      //knob
-      $(".knob").knob();
-
-  </script>
-
+    <!--script for this page only-->
+    <script src="../../frontend/member/js/external-dragging-calendar.js"></script>
 
   </h:body>
 </html>
