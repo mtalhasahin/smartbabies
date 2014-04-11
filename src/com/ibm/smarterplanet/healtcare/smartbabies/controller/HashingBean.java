@@ -6,6 +6,8 @@ import java.security.NoSuchAlgorithmException;
 
 import javax.ejb.Stateless;
 
+//Kendisine parametre ile gelen değişkeni MD ile hashing işlemine tabii tutar
+
 @Stateless
 public class HashingBean {
 

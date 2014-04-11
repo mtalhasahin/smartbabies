@@ -3,7 +3,7 @@ package com.ibm.smarterplanet.healtcare.smartbabies.controller;
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Produces;
-import javax.inject.Named;
+import javax.inject.Inject;
 
 import com.ibm.smarterplanet.healtcare.smartbabies.model.MenstrualCycle;
 
@@ -14,9 +14,9 @@ public class MenstrualCycleCalculationBean {
 
 	private MenstrualCycle menstrualCycle;
 
-	private DateCalculationBean dateCalculationBean;
+	@Inject
+	private DateCalculationBean dateCalculationBean;	
 
-	@Named
 	@Produces
 	public MenstrualCycle getMenstrualCycle() {
 		return menstrualCycle;
@@ -61,8 +61,10 @@ public class MenstrualCycleCalculationBean {
 		// ortalama menstruasyon period gününe göre bir sonraki yaklaşık ve
 		// doğal gecikmeli menstruasyon tarihini hesaplar ve atamasını yapar
 
-		menstrualCycle.setDelayedNextMenstruationDate(dateCalculationBean
-				.addingDaystoDate(menstrualCycle.getLastMenstruationDate(), 35));
+		menstrualCycle
+				.setDelayedNextMenstruationDate(dateCalculationBean
+						.addingDaystoDate(
+								menstrualCycle.getLastMenstruationDate(), 35));
 
 	}
 
@@ -79,16 +81,15 @@ public class MenstrualCycleCalculationBean {
 		// normal olarak gerçekleşmeyen menstruasyon tarihine göre olası gebelik
 		// gününü hesplar ve atamasını yapar
 
-		menstrualCycle.setPossiblePregnancyDate(dateCalculationBean
-				.addingDaystoDate(menstrualCycle.getNextMenstruationDate(), -10));
+		menstrualCycle
+				.setPossiblePregnancyDate(dateCalculationBean.addingDaystoDate(
+						menstrualCycle.getNextMenstruationDate(), -10));
 
 	}
 
 	@PostConstruct
 	public void initMenstrualCycle() {
 		menstrualCycle = new MenstrualCycle();
-		dateCalculationBean = new DateCalculationBean();
-		dateCalculationBean.initDateCalculate();
 
 	}
 
