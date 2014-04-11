@@ -8,59 +8,58 @@ import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
+import com.ibm.smarterplanet.healtcare.smartbabies.controller.DoctorRegistrationBean;
 import com.ibm.smarterplanet.healtcare.smartbabies.controller.HashingBean;
-import com.ibm.smarterplanet.healtcare.smartbabies.controller.UserRegistrationBean;
-import com.ibm.smarterplanet.healtcare.smartbabies.model.User;
+import com.ibm.smarterplanet.healtcare.smartbabies.model.Doctor;
 
-//Yeni bir kullanıcı hesabı oluşturur.
+//Yeni bir doktor hesabı oluşturur.
 //Kullanıcı şifresini hashing işlemine tabii tutup, ilgili kaydı gerçekleştirecek EJB ye iletir.
 
 @RequestScoped
-@ManagedBean(name = "UserRegistration")
-public class UserRegistration {
+@ManagedBean(name = "DoctorRegistration")
+public class DoctorRegistration {
 
 	@Inject
 	private FacesContext facesContext;
 
 	@EJB
-	UserRegistrationBean userRegistrationBean;
+	DoctorRegistrationBean doctorRegistrationBean;
 
 	@EJB
 	HashingBean hashingBean;
 
-	private User user;
+	private Doctor doctor;
 
-	public User getUser() {
-		return user;
+	public Doctor getDoctor() {
+		return doctor;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setDoctor(Doctor doctor) {
+		this.doctor = doctor;
 	}
 
-	public void registerUser() {
+	public void registerDoctor() {
 
 		try {
-			user.setUserPassword(hashingBean.Hashing(user.getUserPassword()));
-			userRegistrationBean.registerUser(user);
+
+			doctor.setDoctorPassword(hashingBean.Hashing(doctor
+					.getDoctorPassword()));
+			doctorRegistrationBean.registerDoctor(doctor);
 
 			facesContext.addMessage(null, new FacesMessage(
 					FacesMessage.SEVERITY_INFO, "Registered!",
 					"Registration successful"));
-
-			initNewUser();
 
 		} catch (Exception e) {
 			facesContext.addMessage(null, new FacesMessage(
 					FacesMessage.SEVERITY_ERROR, "Not Registered!",
 					"Registration unsuccessful"));
 		}
-
 	}
 
 	@PostConstruct
-	public void initNewUser() {
-		user = new User();
+	public void initNewDoctor() {
+		doctor = new Doctor();
 	}
 
 }

@@ -34,7 +34,7 @@ public class Doctor implements Serializable {
 
 	private char doctorIsDeleted;
 	
-	private String doktorPassword;
+	private String doctorPassword;
 
 	@OneToOne(mappedBy = "doctor")
 	private DoctorDetail doctorDetail;
@@ -90,12 +90,12 @@ public class Doctor implements Serializable {
 		this.doctorIsDeleted = doctorIsDeleted;
 	}
 
-	public String getDoktorPassword() {
-		return doktorPassword;
+	public String getDoctorPassword() {
+		return doctorPassword;
 	}
 
-	public void setDoktorPassword(String doktorPassword) {
-		this.doktorPassword = doktorPassword;
+	public void setDoctorPassword(String doctorPassword) {
+		this.doctorPassword = doctorPassword;
 	}
 
 	public DoctorDetail getDoctorDetail() {
