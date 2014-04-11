@@ -33,6 +33,8 @@ public class Doctor implements Serializable {
 	private String doctorPhone;
 
 	private char doctorIsDeleted;
+	
+	private String doktorPassword;
 
 	@OneToOne(mappedBy = "doctor")
 	private DoctorDetail doctorDetail;
@@ -44,65 +46,74 @@ public class Doctor implements Serializable {
 		return doctorId;
 	}
 
-	public String getDoctorName() {
-		return doctorName;
-	}
-
-	public String getDoctorSurname() {
-		return doctorSurname;
-	}
-
-	public String getDoctorEmail() {
-		return doctorEmail;
-	}
-
-	public String getDoctorPhone() {
-		return doctorPhone;
-	}
-
-	public char getDoctorIsDeleted() {
-		return doctorIsDeleted;
-	}
-
-	public DoctorDetail getDoctorDetail() {
-		return doctorDetail;
-	}
-
-	public List<Appointment> getAppointments() {
-		return appointments;
-	}
-
 	public void setDoctorId(long doctorId) {
 		this.doctorId = doctorId;
+	}
+
+	public String getDoctorName() {
+		return doctorName;
 	}
 
 	public void setDoctorName(String doctorName) {
 		this.doctorName = doctorName;
 	}
 
+	public String getDoctorSurname() {
+		return doctorSurname;
+	}
+
 	public void setDoctorSurname(String doctorSurname) {
 		this.doctorSurname = doctorSurname;
+	}
+
+	public String getDoctorEmail() {
+		return doctorEmail;
 	}
 
 	public void setDoctorEmail(String doctorEmail) {
 		this.doctorEmail = doctorEmail;
 	}
 
+	public String getDoctorPhone() {
+		return doctorPhone;
+	}
+
 	public void setDoctorPhone(String doctorPhone) {
 		this.doctorPhone = doctorPhone;
+	}
+
+	public char getDoctorIsDeleted() {
+		return doctorIsDeleted;
 	}
 
 	public void setDoctorIsDeleted(char doctorIsDeleted) {
 		this.doctorIsDeleted = doctorIsDeleted;
 	}
 
+	public String getDoktorPassword() {
+		return doktorPassword;
+	}
+
+	public void setDoktorPassword(String doktorPassword) {
+		this.doktorPassword = doktorPassword;
+	}
+
+	public DoctorDetail getDoctorDetail() {
+		return doctorDetail;
+	}
+
 	public void setDoctorDetail(DoctorDetail doctorDetail) {
 		this.doctorDetail = doctorDetail;
+	}
+
+	public List<Appointment> getAppointments() {
+		return appointments;
 	}
 
 	public void setAppointments(List<Appointment> appointments) {
 		this.appointments = appointments;
 	}
+
 	
 	
 }
