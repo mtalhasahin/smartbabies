@@ -54,7 +54,7 @@ public class DateCalculationBean {
 	// parametre olarak gelen (dd-MM-yyyy) farmatındaki tarihe, yine parametre
 	// olarak gelen tamsayı kadar gün ekler ve yeni oluşan tarihi return eder
 
-	public String addingDaystoDate(String startDate, int day) {
+	public String addingDaysToDate(String startDate, int day) {
 		try {
 			calendar.setTime(new SimpleDateFormat("dd-MM-yyyy")
 					.parse(startDate));

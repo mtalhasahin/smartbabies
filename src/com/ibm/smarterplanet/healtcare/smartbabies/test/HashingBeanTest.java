@@ -17,12 +17,12 @@ public class HashingBeanTest {
 				hashingBean.Hashing("SmartBabies"));
 	}
 
-	@BeforeTest
-	public void beforeTest() {
+	@BeforeTest 
+	public void setUp() throws Exception {
 	}
 
 	@AfterTest
-	public void afterTest() {
+	public void tearDown() throws Exception {
 	}
 
 }

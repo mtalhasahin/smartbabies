@@ -74,19 +74,18 @@ JAX-RS Tools Generated - Do not modify</description>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 		<enabled>true</enabled>
-		<async-supported>true</async-supported>
+		<async-supported>false</async-supported>
 	</servlet>
 	<servlet>
 		<servlet-name>Faces Servlet</servlet-name>
 		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 		<enabled>true</enabled>
-		<async-supported>true</async-supported>
+		<async-supported>false</async-supported>
 	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>JAX-RS Servlet</servlet-name>
-		<url-pattern>/jaxrs/*</url-pattern>
 		<url-pattern>/rest/*</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
@@ -97,7 +96,6 @@ JAX-RS Tools Generated - Do not modify</description>
 	<welcome-file-list>
 		<welcome-file>index.xhtml</welcome-file>
 	</welcome-file-list>
-
 
 	<error-page>
 		<error-code>500</error-code>

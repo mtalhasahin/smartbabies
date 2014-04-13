@@ -13,8 +13,8 @@ public class DateCalculationBeanTest {
 
 	@Test
 	public void testAddingDaysToDate() {
-		Assert.assertEquals("26-12-2013",
-				dateCalculationBean.addingDaystoDate("25-01-2014", -30));
+		Assert.assertEquals("02-01-2015",
+				dateCalculationBean.addingDaysToDate("28-03-2014", 280));
 	}
 
 	@Test

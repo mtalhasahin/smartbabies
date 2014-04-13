@@ -15,9 +15,9 @@ public class UserResourceRESTService {
 	
 	private static List<User> testRESTList = new ArrayList<User>();
 	static{
-		testRESTList.add(new User(0, "Batuhan", "ÇIKRIKCI", "batuhancikrikci@gmail.com", "5442448064"));
-		testRESTList.add(new User(1, "Batuhan", "ÇIKRIKCI", "batuhancikrikci@gmail.com", "5442448064"));
-		testRESTList.add(new User(2, "Batuhan", "ÇIKRIKCI", "batuhancikrikci@gmail.com", "5442448064"));
+		testRESTList.add(new User(0, "Batuhan", "CIKRIKCI", "batuhancikrikci@gmail.com", "5442448064"));
+		testRESTList.add(new User(1, "Batuhan", "CIKRIKCI", "batuhancikrikci@gmail.com", "5442448064"));
+		testRESTList.add(new User(2, "Batuhan", "CIKRIKCI", "batuhancikrikci@gmail.com", "5442448064"));
 		testRESTList.add(new User(3, "Batuhan", "ÇIKRIKCI", "batuhancikrikci@gmail.com", "5442448064"));
 		testRESTList.add(new User(4, "Batuhan", "ÇIKRIKCI", "batuhancikrikci@gmail.com", "5442448064"));
 		testRESTList.add(new User(5, "Batuhan", "ÇIKRIKCI", "batuhancikrikci@gmail.com", "5442448064"));

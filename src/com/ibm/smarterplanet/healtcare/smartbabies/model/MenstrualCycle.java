@@ -18,6 +18,8 @@ public class MenstrualCycle {
 	private String ovulationDate;
 	
 	private String possiblePregnancyDate;
+	
+	private int averageMenstruationPeriod;
 
 	public String getLastMenstruationDate() {
 		return lastMenstruationDate;
@@ -74,5 +76,14 @@ public class MenstrualCycle {
 	public void setPossiblePregnancyDate(String possiblePregnancyDate) {
 		this.possiblePregnancyDate = possiblePregnancyDate;
 	}
+
+	public int getAverageMenstruationPeriod() {
+		return averageMenstruationPeriod;
+	}
+
+	public void setAverageMenstruationPeriod(int averageMenstruationPeriod) {
+		this.averageMenstruationPeriod = averageMenstruationPeriod;
+	}
+	
 
 }
