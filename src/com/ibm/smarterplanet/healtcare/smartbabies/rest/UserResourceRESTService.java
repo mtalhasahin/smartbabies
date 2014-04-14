@@ -3,14 +3,14 @@ package com.ibm.smarterplanet.healtcare.smartbabies.rest;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.enterprise.context.RequestScoped;
+import javax.ejb.Stateless;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 @Path("/users")
-@RequestScoped
+@Stateless
 public class UserResourceRESTService {
 	
 	private static List<User> testRESTList = new ArrayList<User>();
@@ -18,9 +18,9 @@ public class UserResourceRESTService {
 		testRESTList.add(new User(0, "Batuhan", "CIKRIKCI", "batuhancikrikci@gmail.com", "5442448064"));
 		testRESTList.add(new User(1, "Batuhan", "CIKRIKCI", "batuhancikrikci@gmail.com", "5442448064"));
 		testRESTList.add(new User(2, "Batuhan", "CIKRIKCI", "batuhancikrikci@gmail.com", "5442448064"));
-		testRESTList.add(new User(3, "Batuhan", "ÇIKRIKCI", "batuhancikrikci@gmail.com", "5442448064"));
-		testRESTList.add(new User(4, "Batuhan", "ÇIKRIKCI", "batuhancikrikci@gmail.com", "5442448064"));
-		testRESTList.add(new User(5, "Batuhan", "ÇIKRIKCI", "batuhancikrikci@gmail.com", "5442448064"));
+		testRESTList.add(new User(3, "Batuhan", "CIKRIKCI", "batuhancikrikci@gmail.com", "5442448064"));
+		testRESTList.add(new User(4, "Batuhan", "CIKRIKCI", "batuhancikrikci@gmail.com", "5442448064"));
+		testRESTList.add(new User(5, "Batuhan", "CIKRIKCI", "batuhancikrikci@gmail.com", "5442448064"));
 	}
 	
 	@GET

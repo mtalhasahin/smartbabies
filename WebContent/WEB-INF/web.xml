@@ -74,14 +74,14 @@ JAX-RS Tools Generated - Do not modify</description>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 		<enabled>true</enabled>
-		<async-supported>false</async-supported>
+		<async-supported>true</async-supported>
 	</servlet>
 	<servlet>
 		<servlet-name>Faces Servlet</servlet-name>
 		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 		<enabled>true</enabled>
-		<async-supported>false</async-supported>
+		<async-supported>true</async-supported>
 	</servlet>
 
 	<servlet-mapping>
@@ -97,10 +97,16 @@ JAX-RS Tools Generated - Do not modify</description>
 		<welcome-file>index.xhtml</welcome-file>
 	</welcome-file-list>
 
+	<context-param>
+		<param-name>primefaces.THEME</param-name>
+		<param-value>bootstrap</param-value>
+	</context-param>
+
 	<error-page>
 		<error-code>500</error-code>
 		<location>/error/500.xhtml</location>
 	</error-page>
+
 	<error-page>
 		<error-code>404</error-code>
 		<location>/error/404.xhtml</location>
