@@ -3,6 +3,7 @@ package com.ibm.smarterplanet.healtcare.smartbabies.rest;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -12,21 +13,23 @@ import javax.ws.rs.core.MediaType;
 @Path("/users")
 @Stateless
 public class UserResourceRESTService {
-	
-	private static List<User> testRESTList = new ArrayList<User>();
-	static{
-		testRESTList.add(new User(0, "Batuhan", "CIKRIKCI", "batuhancikrikci@gmail.com", "5442448064"));
-		testRESTList.add(new User(1, "Batuhan", "CIKRIKCI", "batuhancikrikci@gmail.com", "5442448064"));
-		testRESTList.add(new User(2, "Batuhan", "CIKRIKCI", "batuhancikrikci@gmail.com", "5442448064"));
-		testRESTList.add(new User(3, "Batuhan", "CIKRIKCI", "batuhancikrikci@gmail.com", "5442448064"));
-		testRESTList.add(new User(4, "Batuhan", "CIKRIKCI", "batuhancikrikci@gmail.com", "5442448064"));
-		testRESTList.add(new User(5, "Batuhan", "CIKRIKCI", "batuhancikrikci@gmail.com", "5442448064"));
-	}
-	
+
+	private List<User> users;
+
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<User> getList() {
-		return testRESTList;
-	}	
+	public List<User> getUsers() {
+		return users;
+	}
 
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+
+	@PostConstruct
+	public void initNewUser() {
+		users = new ArrayList<User>();
+		users.add(new User(0, "Batuhan", "CIKRIKCI"));
+
+	}
 }

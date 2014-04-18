@@ -1,23 +1,49 @@
 package com.ibm.smarterplanet.healtcare.smartbabies.rest;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class User {
 
-	public final long id;
-	public final String name;
-	public final String surname;
-	public final String email;
-	public final String phone;
+	private long id;
+	
+	private String name;
+	
+	private String surname;
 
-	public User(long id, String name, String surname, String email, String phone) {
+	public User(long id, String name, String surname) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.surname = surname;
-		this.email = email;
-		this.phone = phone;
 	}
 
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getSurname() {
+		return surname;
+	}
+
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+	
+	
 }
