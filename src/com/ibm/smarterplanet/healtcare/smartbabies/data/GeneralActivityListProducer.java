@@ -19,7 +19,7 @@ import com.ibm.smarterplanet.healtcare.smartbabies.model.Activity;
 //sisteme önceden kayıtlı tüm aktiviteleri(aşı,test,kontrol) getirir ve bir list e atar
 
 @RequestScoped
-public class GeneralActivtyListProducer {
+public class GeneralActivityListProducer {
 
 	@Inject
 	private EntityManager entityManager;

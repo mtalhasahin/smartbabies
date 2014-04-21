@@ -20,7 +20,7 @@ public class Activity implements Serializable {
 
 	private String activityName;
 
-	private String activityDate;
+	private int activityDate;
 
 	private char activityIsChild;
 
@@ -42,11 +42,11 @@ public class Activity implements Serializable {
 		this.activityName = activityName;
 	}
 
-	public String getActivityDate() {
+	public int getActivityDate() {
 		return activityDate;
 	}
 
-	public void setActivityDate(String activityDate) {
+	public void setActivityDate(int activityDate) {
 		this.activityDate = activityDate;
 	}
 

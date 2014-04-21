@@ -51,6 +51,22 @@ public class DateCalculationBean {
 
 	}
 
+	public int differenceBetweenTwoDatesOnlyNegative(String nextDate,
+			String previousDate) {
+
+		try {
+			previousCalendar.setTime(new SimpleDateFormat("dd-MM-yyyy")
+					.parse(previousDate));
+			nextCalendar.setTime(new SimpleDateFormat("dd-MM-yyyy")
+					.parse(nextDate));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return nextCalendar.get(Calendar.DAY_OF_YEAR)
+				- previousCalendar.get(Calendar.DAY_OF_YEAR);
+
+	}
+
 	// parametre olarak gelen (dd-MM-yyyy) farmatındaki tarihe, yine parametre
 	// olarak gelen tamsayı kadar gün ekler ve yeni oluşan tarihi return eder
 
