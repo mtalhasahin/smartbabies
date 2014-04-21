@@ -208,7 +208,6 @@ xmlns:p="http://primefaces.org/ui">
                           <li><a href="/smrtbaby/member/newbaby/earliest">En Uygun</a></li>
                       </ul>
                   </li>
-
                   <li>
                       <a href="/smrtbaby/member/statusofbaby">
                           <i class="icon-heart"></i>
@@ -267,108 +266,98 @@ xmlns:p="http://primefaces.org/ui">
                   <div class="col-lg-12">
                       <section class="panel">
                           <header class="panel-heading">
-                              Forms Wizard
+                              Doğum Yapmak İstediğiniz Burç Bilgisine Göre Aile Planlaması
                           </header>
                           <div class="panel-body">
                               <div class="stepy-tab">
                                   <ul id="default-titles" class="stepy-titles clearfix">
                                       <li id="default-title-0" class="current-step">
-                                          <div>Step 1</div>
+                                          <div>Adım 1</div>
                                       </li>
                                       <li id="default-title-1" class="">
-                                          <div>Step 2</div>
+                                          <div>Adım 2</div>
                                       </li>
                                       <li id="default-title-2" class="">
-                                          <div>Step 3</div>
+                                          <div>Adım 3</div>
                                       </li>
                                   </ul>
                               </div>
                               <form class="form-horizontal" id="default">
-                                  <fieldset title="Step1" class="step" id="default-step-0">
+                                  <fieldset title="Adım 1" class="step" id="default-step-0">
                                       <legend> </legend>
+                                      <header class="panel-heading">Doğum yapmak istediğiniz burç bilgisini seçin.</header>
+                                      <br/>
                                       <div class="form-group">
-                                          <label class="col-lg-2 control-label">Full Name</label>
+                                          <label class="col-lg-2 control-label">Burçlar</label>
                                           <div class="col-lg-10">
-                                              <input type="text" class="form-control" placeholder="Full Name"/>
+                                          
+                                        <h:selectOneMenu styleClass="form-control m-bot15">
+                                        <f:selectItem itemLabel="Seçim" itemValue="-1" />  
+            							<f:selectItem itemLabel="Koç (21 Mart - 20 Nisan)" itemValue="1" />  
+            							<f:selectItem itemLabel="Boğa (21 Nisan - 20 Mayıs)" itemValue="2" />  
+            							<f:selectItem itemLabel="İkizler (21 Mayıs - 21 Haziran)" itemValue="3" />
+            							<f:selectItem itemLabel="Yengeç (22 Haziran - 22 Temmuz)" itemValue="4" />
+            							<f:selectItem itemLabel="Aslan (23 Temmuz - 23 Ağustos)" itemValue="5" />
+            							<f:selectItem itemLabel="Başak (24 Ağustos - 22 Eylül)" itemValue="6" />
+            							<f:selectItem itemLabel="Terazi (23 Eylül - 23 Ekim)" itemValue="7" />
+            							<f:selectItem itemLabel="Akrep (24 Ekim - 22 Kasım)" itemValue="8" />
+            							<f:selectItem itemLabel="Yay (23 Kasım - 21 Aralık)" itemValue="9" />
+            							<f:selectItem itemLabel="Oğlak (22 Aralık - 20 Ocak)" itemValue="10" />
+            							<f:selectItem itemLabel="Kova (21 Ocak - 18 Şubat)" itemValue="11" />
+            							<f:selectItem itemLabel="Balık (19 Şubat - 20 Mart)" itemValue="12" />
+                                          </h:selectOneMenu>
+                                          
                                           </div>
                                       </div>
-                                      <div class="form-group">
-                                          <label class="col-lg-2 control-label">Email Address</label>
-                                          <div class="col-lg-10">
-                                              <input type="text" class="form-control" placeholder="Email Address"/>
-                                          </div>
-                                      </div>
-                                      <div class="form-group">
-                                          <label class="col-lg-2 control-label">User Name</label>
-                                          <div class="col-lg-10">
-                                              <input type="text" class="form-control" placeholder="Username"/>
-                                          </div>
-                                      </div>
-
+                                      
                                   </fieldset>
-                                  <fieldset title="Step 2" class="step" id="default-step-1" >
-                                      <legend> </legend>
+                                  <fieldset title="Adım 2" class="step" id="default-step-1" >
+                                      <legend></legend>
+                                      <header class="panel-heading">Uygun ovulasyon dönemi için son 3 menstruasyon tarihinizi girin.</header>
+                                      <br/>
                                       <div class="form-group">
-                                          <label class="col-lg-2 control-label">Phone</label>
+                                          <label class="col-lg-2 control-label">Son Menstruasyon Tarihiniz</label>
                                           <div class="col-lg-10">
                                               <input type="text" class="form-control" placeholder="Phone"/>
                                           </div>
                                       </div>
                                       <div class="form-group">
-                                          <label class="col-lg-2 control-label">Mobile</label>
+                                          <label class="col-lg-2 control-label">Sondan Bir Önceki Menstruasyon Tarihiniz</label>
+                                          <div class="col-lg-10">
+                                              <input type="text" class="form-control" placeholder="Phone"/>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="col-lg-2 control-label">Sondan İki Önceki Menstruasyon Tarihiniz</label>
+                                          <div class="col-lg-10">
+                                              <input type="text" class="form-control" placeholder="Phone"/>
+                                          </div>
+                                      </div>
+
+                                  </fieldset>
+                                  <fieldset title="Adım 3" class="step" id="default-step-2" >
+                                      <legend> </legend>
+                                       <header class="panel-heading">Beslenme planınız için gerekli bilgileri girin.</header>
+                                       <br/>
+                                       <div class="form-group">
+                                          <label class="col-lg-2 control-label">Şuanki Kilonuz</label>
                                           <div class="col-lg-10">
                                               <input type="text" class="form-control" placeholder="Mobile"/>
                                           </div>
                                       </div>
                                       <div class="form-group">
-                                          <label class="col-lg-2 control-label">Address</label>
+                                          <label class="col-lg-2 control-label">Boyunuz</label>
                                           <div class="col-lg-10">
-                                              <textarea class="form-control" cols="60" rows="5"></textarea>
-                                          </div>
-                                      </div>
-
-                                  </fieldset>
-                                  <fieldset title="Step 3" class="step" id="default-step-2" >
-                                      <legend> </legend>
-                                      <div class="form-group">
-                                          <label class="col-lg-2 control-label">Full Name</label>
-                                          <div class="col-lg-10">
-                                              <p class="form-control-static">Tawseef Ahmed</p>
+                                              <input type="text" class="form-control" placeholder="Mobile"/>
                                           </div>
                                       </div>
                                       <div class="form-group">
-                                          <label class="col-lg-2 control-label">Email Address</label>
+                                          <label class="col-lg-2 control-label">Yaşınız</label>
                                           <div class="col-lg-10">
-                                              <p class="form-control-static">tawseef@vectorlab.com</p>
+                                              <input type="text" class="form-control" placeholder="Mobile"/>
                                           </div>
                                       </div>
-                                      <div class="form-group">
-                                          <label class="col-lg-2 control-label">User Name</label>
-                                          <div class="col-lg-10">
-                                              <p class="form-control-static">tawseef</p>
-                                          </div>
-                                      </div>
-                                      <div class="form-group">
-                                          <label class="col-lg-2 control-label">Phone</label>
-                                          <div class="col-lg-10">
-                                              <p class="form-control-static">01234567</p>
-                                          </div>
-                                      </div>
-                                      <div class="form-group">
-                                          <label class="col-lg-2 control-label">Mobile</label>
-                                          <div class="col-lg-10">
-                                              <p class="form-control-static">01234567</p>
-                                          </div>
-                                      </div>
-                                      <div class="form-group">
-                                          <label class="col-lg-2 control-label">Address</label>
-                                          <div class="col-lg-10">
-                                              <p class="form-control-static">
-                                                  Dreamland Ave, Suite 73
-                                                  AU, PC 1361
-                                                  P: (123) 456-7891 </p>
-                                          </div>
-                                      </div>
+                                      
                                   </fieldset>
                                   <input type="submit" class="finish btn btn-danger" value="Finish"/>
                               </form>
@@ -414,9 +403,9 @@ xmlns:p="http://primefaces.org/ui">
 
       $(function() {
           $('#default').stepy({
-              backLabel: 'Previous',
+              backLabel: 'Önceki',
               block: true,
-              nextLabel: 'Next',
+              nextLabel: 'Sonraki',
               titleClick: true,
               titleTarget: '.stepy-tab'
           });
