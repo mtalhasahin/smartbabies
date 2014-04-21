@@ -21,7 +21,7 @@ public class PregnancyRegistrationBean {
 	public void registerPregnancy(Pregnancy pregnancy) {
 
 		try {
-
+			
 			entityManager.persist(pregnancy);
 			pregnancyEvent.fire(pregnancy);
 

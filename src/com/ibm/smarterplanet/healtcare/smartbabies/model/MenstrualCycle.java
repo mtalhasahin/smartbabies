@@ -1,8 +1,5 @@
 package com.ibm.smarterplanet.healtcare.smartbabies.model;
 
-import javax.xml.bind.annotation.XmlRootElement;
-
-@XmlRootElement
 public class MenstrualCycle {
 
 	private String lastMenstruationDate;

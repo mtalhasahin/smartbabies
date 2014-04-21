@@ -4,31 +4,21 @@ import java.util.ArrayList;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;
-import javax.enterprise.inject.Produces;
 
 import com.ibm.smarterplanet.healtcare.smartbabies.model.MenstrualCycle;
 import com.ibm.smarterplanet.healtcare.smartbabies.model.SexualIntercourseCycle;
 
 //yeni bir gebelik için istenilen doğum tarihine göre
 //uygun cinsel birliktelik tarih aralığını hesaplar
+
 @Stateless
 public class SexualIntercourseCalculationBean {
 
 	private DateCalculationBean dateCalculationBean;
 
-	private SexualIntercourseCycle sexualIntercourseCycle;
-
-	@Produces
-	public SexualIntercourseCycle getSexualIntercourseCycle() {
-		return sexualIntercourseCycle;
-	}
-
-	public void setSexualIntercourseCycle(
+	public SexualIntercourseCycle apropriateSexualIntercourseDate(
+			MenstrualCycle menstrualCycle,
 			SexualIntercourseCycle sexualIntercourseCycle) {
-		this.sexualIntercourseCycle = sexualIntercourseCycle;
-	}
-
-	public void apropriateSexualIntercourseDate(MenstrualCycle menstrualCycle) {
 
 		// anne adayının menstruasyon dönemine göre
 		// uygun ovulasyon dönemini hesaplar
@@ -109,14 +99,15 @@ public class SexualIntercourseCalculationBean {
 			}
 
 		} while (sexualIntercourseCycleList.size() == 0);
+		
+		return sexualIntercourseCycle;
 
 	}
 
 	@PostConstruct
 	public void initNewSexualIntercourse() {
-		sexualIntercourseCycle = new SexualIntercourseCycle();
 		dateCalculationBean = new DateCalculationBean();
-		// dateCalculationBean.initDateCalculate();
+		dateCalculationBean.initDateCalculate();
 	}
 
 }

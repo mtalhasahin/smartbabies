@@ -4,19 +4,21 @@ import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
 import com.ibm.smarterplanet.healtcare.smartbabies.controller.MenstrualCycleCalculationBean;
 import com.ibm.smarterplanet.healtcare.smartbabies.controller.PregnancyRegistrationBean;
+import com.ibm.smarterplanet.healtcare.smartbabies.controller.SexualIntercourseCalculationBean;
 import com.ibm.smarterplanet.healtcare.smartbabies.model.MenstrualCycle;
 import com.ibm.smarterplanet.healtcare.smartbabies.model.Pregnancy;
+import com.ibm.smarterplanet.healtcare.smartbabies.model.SexualIntercourseCycle;
 import com.ibm.smarterplanet.healtcare.smartbabies.model.User;
 
 //Son üç menstruasyon tarihine göre olası bir gebelik tarihi üzerinden, bir gebelik oluşturur
 
-@SessionScoped
+@RequestScoped
 @ManagedBean(name = "PregnancyRegistration")
 public class PregnancyRegistration {
 
@@ -28,6 +30,11 @@ public class PregnancyRegistration {
 
 	@EJB
 	MenstrualCycleCalculationBean menstrualCycleCalculationBean;
+
+	@EJB
+	SexualIntercourseCalculationBean sexualIntercourseCalculationBean;
+
+	private SexualIntercourseCycle sexualIntercourseCycle;
 
 	private Pregnancy pregnancy;
 
@@ -59,41 +66,26 @@ public class PregnancyRegistration {
 		this.user = user;
 	}
 
-	// Kullanıcıdan alınan son üç menstruasyon tarihine göre olası gebelik
-	// başlangıç tarihini hesaplatır
-	public void calculateMenstrualCycle() {
+	public SexualIntercourseCycle getSexualIntercourseCycle() {
+		return sexualIntercourseCycle;
+	}
 
+	public void setSexualIntercourseCycle(
+			SexualIntercourseCycle sexualIntercourseCycle) {
+		this.sexualIntercourseCycle = sexualIntercourseCycle;
+	}
+
+	// olası gebelik tarihi ve kullanıcı bilgilerine göre yeni gebelik kaydı
+	// oluşturur
+	public void registerPregnancy() {
 		try {
 
 			menstrualCycleCalculationBean.setMenstrualCycle(menstrualCycle);
 			menstrualCycleCalculationBean.nextMenstruationDateCalculate();
-			menstrualCycleCalculationBean.possiblePregnancyDateCalculate();
 			menstrualCycle = menstrualCycleCalculationBean.getMenstrualCycle();
 
-			facesContext.addMessage(null, new FacesMessage(
-					FacesMessage.SEVERITY_INFO, "Calculated!",
-					"Calculation successful"));
-
-		} catch (Exception e) {
-
-			facesContext.addMessage(null, new FacesMessage(
-					FacesMessage.SEVERITY_ERROR, "Not Calculated!",
-					"Calculation unsuccessful"));
-
-		}
-
-	}
-
-	// olasık gebelik tarihi ve kullanıcı bilgilerine göre yeni gebelik kaydı
-	// oluşturur
-	// bu kaydın geçerli olması doktor muayenesine bağlıdır
-	public void registerPregnancy() {
-
-		try {
-
+			pregnancy.setPregnancyStartDate(sexualIntercourseCalculationBean.apropriateSexualIntercourseDate(menstrualCycle, sexualIntercourseCycle).getCycleEndDate());
 			pregnancy.setUser(user);
-			pregnancy.setPregnancyStartDate(menstrualCycleCalculationBean
-					.getMenstrualCycle().getPossiblePregnancyDate());
 
 			pregnancyRegistrationBean.registerPregnancy(pregnancy);
 
@@ -115,6 +107,7 @@ public class PregnancyRegistration {
 	@PostConstruct
 	public void initNewPregnancy() {
 		menstrualCycle = new MenstrualCycle();
+		sexualIntercourseCycle = new SexualIntercourseCycle();
 		pregnancy = new Pregnancy();
 		user = new User();
 

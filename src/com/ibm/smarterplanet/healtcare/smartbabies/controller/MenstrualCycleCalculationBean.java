@@ -90,7 +90,7 @@ public class MenstrualCycleCalculationBean {
 	public void initMenstrualCycle() {
 		menstrualCycle = new MenstrualCycle();
 		dateCalculationBean = new DateCalculationBean();
-		//dateCalculationBean.initDateCalculate();
+		dateCalculationBean.initDateCalculate();
 
 	}
 
