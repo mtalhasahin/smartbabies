@@ -16,7 +16,7 @@ import com.ibm.smarterplanet.healtcare.smartbabies.model.Pregnancy;
 import com.ibm.smarterplanet.healtcare.smartbabies.model.SexualIntercourseCycle;
 import com.ibm.smarterplanet.healtcare.smartbabies.model.User;
 
-//Son üç menstruasyon tarihine göre olası bir gebelik tarihi üzerinden, bir gebelik oluşturur
+//Son üç menstruasyon tarihine göre olası bir gebelik tarihi üzerinden, bir gebelik takibi oluşturur
 
 @RequestScoped
 @ManagedBean(name = "PregnancyRegistration")
@@ -85,7 +85,7 @@ public class PregnancyRegistration {
 			menstrualCycle = menstrualCycleCalculationBean.getMenstrualCycle();
 
 			pregnancy.setPregnancyStartDate(sexualIntercourseCalculationBean.apropriateSexualIntercourseDate(menstrualCycle, sexualIntercourseCycle).getCycleEndDate());
-			pregnancy.setUser(user);
+			pregnancy.setUserDetail(user.getUserDetail());
 
 			pregnancyRegistrationBean.registerPregnancy(pregnancy);
 

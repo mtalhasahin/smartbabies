@@ -1,13 +1,11 @@
 package com.ibm.smarterplanet.healtcare.smartbabies.model;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -38,9 +36,6 @@ public class Doctor implements Serializable {
 
 	@OneToOne(mappedBy = "doctor")
 	private DoctorDetail doctorDetail;
-
-	@OneToMany(mappedBy = "doctor")
-	private List<Appointment> appointments;
 
 	public long getDoctorId() {
 		return doctorId;
@@ -105,15 +100,6 @@ public class Doctor implements Serializable {
 	public void setDoctorDetail(DoctorDetail doctorDetail) {
 		this.doctorDetail = doctorDetail;
 	}
-
-	public List<Appointment> getAppointments() {
-		return appointments;
-	}
-
-	public void setAppointments(List<Appointment> appointments) {
-		this.appointments = appointments;
-	}
-
 	
 	
 }

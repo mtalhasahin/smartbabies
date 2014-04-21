@@ -25,7 +25,7 @@ public class Pregnancy implements Serializable {
 	private String pregnancyStartDate;
 	
 	@ManyToOne
-	private User user;
+	private UserDetail userDetail;
 	
 	@ManyToOne
 	private DoctorDetail doctorDetail;
@@ -46,12 +46,12 @@ public class Pregnancy implements Serializable {
 		this.pregnancyStartDate = pregnancyStartDate;
 	}
 
-	public User getUser() {
-		return user;
+	public UserDetail getUserDetail() {
+		return userDetail;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setUserDetail(UserDetail userDetail) {
+		this.userDetail = userDetail;
 	}
 
 	public DoctorDetail getDoctorDetail() {
@@ -61,5 +61,7 @@ public class Pregnancy implements Serializable {
 	public void setDoctorDetail(DoctorDetail doctorDetail) {
 		this.doctorDetail = doctorDetail;
 	}
+
+	
 	
 }

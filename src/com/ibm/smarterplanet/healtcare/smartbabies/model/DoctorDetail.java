@@ -38,52 +38,63 @@ public class DoctorDetail implements Serializable {
 	@OneToMany(mappedBy="doctorDetail")
 	private List<Pregnancy> pregnancies;
 
+	@OneToMany(mappedBy = "doctorDetail")
+	private List<Appointment> appointments;
+
 	public long getDoctorDetailId() {
 		return doctorDetailId;
-	}
-
-	public char getDoctorDetailIsDeleted() {
-		return doctorDetailIsDeleted;
-	}
-
-	public Doctor getDoctor() {
-		return doctor;
-	}
-
-	public Hospital getHospital() {
-		return hospital;
-	}
-
-	public String getDoctorBirthday() {
-		return doctorBirthday;
-	}
-
-	public List<Pregnancy> getPregnancies() {
-		return pregnancies;
 	}
 
 	public void setDoctorDetailId(long doctorDetailId) {
 		this.doctorDetailId = doctorDetailId;
 	}
 
+	public char getDoctorDetailIsDeleted() {
+		return doctorDetailIsDeleted;
+	}
+
 	public void setDoctorDetailIsDeleted(char doctorDetailIsDeleted) {
 		this.doctorDetailIsDeleted = doctorDetailIsDeleted;
+	}
+
+	public Doctor getDoctor() {
+		return doctor;
 	}
 
 	public void setDoctor(Doctor doctor) {
 		this.doctor = doctor;
 	}
 
+	public Hospital getHospital() {
+		return hospital;
+	}
+
 	public void setHospital(Hospital hospital) {
 		this.hospital = hospital;
+	}
+
+	public String getDoctorBirthday() {
+		return doctorBirthday;
 	}
 
 	public void setDoctorBirthday(String doctorBirthday) {
 		this.doctorBirthday = doctorBirthday;
 	}
 
+	public List<Pregnancy> getPregnancies() {
+		return pregnancies;
+	}
+
 	public void setPregnancies(List<Pregnancy> pregnancies) {
 		this.pregnancies = pregnancies;
+	}
+
+	public List<Appointment> getAppointments() {
+		return appointments;
+	}
+
+	public void setAppointments(List<Appointment> appointments) {
+		this.appointments = appointments;
 	}
 	
 	

@@ -30,10 +30,10 @@ public class Appointment implements Serializable {
 	private char appointmentIsDeleted;
 
 	@ManyToOne
-	private Doctor doctor;
+	private DoctorDetail doctorDetail;
 
 	@ManyToOne
-	private User user;
+	private UserDetail userDetail;
 
 	public long getAppointmentId() {
 		return appointmentId;
@@ -67,20 +67,22 @@ public class Appointment implements Serializable {
 		this.appointmentIsDeleted = appointmentIsDeleted;
 	}
 
-	public Doctor getDoctor() {
-		return doctor;
+	public DoctorDetail getDoctorDetail() {
+		return doctorDetail;
 	}
 
-	public void setDoctor(Doctor doctor) {
-		this.doctor = doctor;
+	public void setDoctorDetail(DoctorDetail doctorDetail) {
+		this.doctorDetail = doctorDetail;
 	}
 
-	public User getUser() {
-		return user;
+	public UserDetail getUserDetail() {
+		return userDetail;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
-	}	
+	public void setUserDetail(UserDetail userDetail) {
+		this.userDetail = userDetail;
+	}
+
+	
 
 }

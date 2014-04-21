@@ -1,13 +1,12 @@
 package com.ibm.smarterplanet.healtcare.smartbabies.model;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
@@ -30,21 +29,13 @@ public class User implements Serializable {
 	private String userEmail;
 
 	private String userPhone;
-
-	private String userBirthday;
 	
 	private String userPassword;
 
 	private char userIsDeleted;
 	
-	@OneToMany(mappedBy="user")
-	private List<Pregnancy> pregnancies;
-
-	@OneToMany(mappedBy = "user")
-	private List<AnswerOfUser> answerOfUsers;
-
-	@OneToMany(mappedBy = "user")
-	private List<Appointment> appointments;
+	@OneToOne(mappedBy="user")
+	private UserDetail userDetail;
 
 	public long getUserId() {
 		return userId;
@@ -86,14 +77,6 @@ public class User implements Serializable {
 		this.userPhone = userPhone;
 	}
 
-	public String getUserBirthday() {
-		return userBirthday;
-	}
-
-	public void setUserBirthday(String userBirthday) {
-		this.userBirthday = userBirthday;
-	}
-
 	public String getUserPassword() {
 		return userPassword;
 	}
@@ -110,28 +93,12 @@ public class User implements Serializable {
 		this.userIsDeleted = userIsDeleted;
 	}
 
-	public List<Pregnancy> getPregnancies() {
-		return pregnancies;
+	public UserDetail getUserDetail() {
+		return userDetail;
 	}
 
-	public void setPregnancies(List<Pregnancy> pregnancies) {
-		this.pregnancies = pregnancies;
-	}
-
-	public List<AnswerOfUser> getAnswerOfUsers() {
-		return answerOfUsers;
-	}
-
-	public void setAnswerOfUsers(List<AnswerOfUser> answerOfUsers) {
-		this.answerOfUsers = answerOfUsers;
-	}
-
-	public List<Appointment> getAppointments() {
-		return appointments;
-	}
-
-	public void setAppointments(List<Appointment> appointments) {
-		this.appointments = appointments;
+	public void setUserDetail(UserDetail userDetail) {
+		this.userDetail = userDetail;
 	}
 
 }
