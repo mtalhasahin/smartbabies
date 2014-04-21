@@ -1,4 +1,4 @@
-package com.ibm.smarterplanet.healtcare.smartbabies.controller;
+package com.ibm.smarterplanet.healtcare.smartbabies.util;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;

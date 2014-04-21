@@ -1,14 +1,12 @@
 package com.ibm.smarterplanet.healtcare.smartbabies.model;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
@@ -31,9 +29,6 @@ public class MealMenu implements Serializable {
 	
 	@ManyToOne
 	private Menu menu;
-	
-	@OneToMany(mappedBy="mealMenu")
-	private List<NutritionCalendar> nutritionCalendars;
 
 	public long getMealMenuId() {
 		return mealMenuId;
@@ -66,15 +61,5 @@ public class MealMenu implements Serializable {
 	public void setMenu(Menu menu) {
 		this.menu = menu;
 	}
-
-	public List<NutritionCalendar> getNutritionCalendars() {
-		return nutritionCalendars;
-	}
-
-	public void setNutritionCalendars(List<NutritionCalendar> nutritionCalendars) {
-		this.nutritionCalendars = nutritionCalendars;
-	}
-	
-	
 
 }

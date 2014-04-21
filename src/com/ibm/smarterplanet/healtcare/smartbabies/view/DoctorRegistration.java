@@ -9,8 +9,8 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
 import com.ibm.smarterplanet.healtcare.smartbabies.controller.DoctorRegistrationBean;
-import com.ibm.smarterplanet.healtcare.smartbabies.controller.HashingBean;
 import com.ibm.smarterplanet.healtcare.smartbabies.model.Doctor;
+import com.ibm.smarterplanet.healtcare.smartbabies.util.HashingBean;
 
 //Yeni bir doktor hesabı oluşturur.
 //Kullanıcı şifresini hashing işlemine tabii tutup, ilgili kaydı gerçekleştirecek EJB ye iletir.

@@ -8,9 +8,9 @@ import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
-import com.ibm.smarterplanet.healtcare.smartbabies.controller.HashingBean;
 import com.ibm.smarterplanet.healtcare.smartbabies.controller.UserRegistrationBean;
 import com.ibm.smarterplanet.healtcare.smartbabies.model.User;
+import com.ibm.smarterplanet.healtcare.smartbabies.util.HashingBean;
 
 //Yeni bir kullanıcı hesabı oluşturur.
 //Kullanıcı şifresini hashing işlemine tabii tutup, ilgili kaydı gerçekleştirecek EJB ye iletir.

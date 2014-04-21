@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
 
-import com.ibm.smarterplanet.healtcare.smartbabies.controller.HashingBean;
+import com.ibm.smarterplanet.healtcare.smartbabies.util.HashingBean;
 
 public class HashingBeanTest {
 
