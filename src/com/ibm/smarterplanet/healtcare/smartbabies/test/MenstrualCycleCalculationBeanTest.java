@@ -37,9 +37,9 @@ public class MenstrualCycleCalculationBeanTest {
 		menstrualCycle.setLastMenstruationDate("28-03-2014");
 		menstrualCycle.setPreviousMenstruationDate("28-02-2014");
 		menstrualCycle.setTwoPreviousMenstruationDate("31-01-2014");
-//		menstrualCycleCalculationBean.setMenstrualCycle(menstrualCycle);
-//		menstrualCycleCalculationBean.nextMenstruationDateCalculate();
-//		menstrualCycleCalculationBean.possiblePregnancyDateCalculate();
+		menstrualCycleCalculationBean.setMenstrualCycle(menstrualCycle);
+		menstrualCycleCalculationBean.nextMenstruationDateCalculate();
+		menstrualCycleCalculationBean.possiblePregnancyDateCalculate();
 	}
 
 	@AfterTest
