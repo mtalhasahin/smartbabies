@@ -22,10 +22,6 @@ public class UserResourceRESTService {
 		return users;
 	}
 
-	public void setUsers(List<User> users) {
-		this.users = users;
-	}
-
 	@PostConstruct
 	public void initNewUser() {
 		users = new ArrayList<User>();

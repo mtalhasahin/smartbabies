@@ -26,6 +26,10 @@ public class Activity implements Serializable {
 
 	private char activityType;
 
+	private String activityRealizationDate;
+	
+	private int activityDateDifference;
+
 	public long getActivityId() {
 		return activityId;
 	}
@@ -64,6 +68,22 @@ public class Activity implements Serializable {
 
 	public void setActivityType(char activityType) {
 		this.activityType = activityType;
+	}
+
+	public String getActivityRealizationDate() {
+		return activityRealizationDate;
+	}
+
+	public void setActivityRealizationDate(String activityRealizationDate) {
+		this.activityRealizationDate = activityRealizationDate;
+	}
+
+	public int getActivityDateDifference() {
+		return activityDateDifference;
+	}
+
+	public void setActivityDateDifference(int activityDateDifference) {
+		this.activityDateDifference = activityDateDifference;
 	}
 
 }

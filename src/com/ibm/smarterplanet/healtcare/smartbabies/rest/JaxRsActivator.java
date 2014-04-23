@@ -13,6 +13,7 @@ public class JaxRsActivator extends Application {
 	public Set<Class<?>> getClasses() {
 		Set<Class<?>> classes = new HashSet<Class<?>>();
 		classes.add(UserResourceRESTService.class);
+		classes.add(ActivityRESTService.class);
 		return classes;
 	}
 

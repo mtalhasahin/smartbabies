@@ -18,21 +18,21 @@ import com.ibm.smarterplanet.healtcare.smartbabies.model.Pregnancy;
 public class ActivityCreatorBean {
 
 	@Inject
-	private GeneralActivityListProducer generalActivtyListProducer;
+	private GeneralActivityListProducer generalActivityListProducer;
 
 	private DateCalculationBean dateCalculationBean;
 
 	private TodayDateGetterBean todayDateGetterBean;
 
-	// activtyType 0
+	// activityType 0
 	// aşılar
 	private List<Activity> vaccineActivities;
 
-	// activtyType 1
+	// activityType 1
 	// testler
 	private List<Activity> testActivities;
 
-	// activtyType 2
+	// activityType 2
 	// genel kontroller
 	private List<Activity> checkActivities;
 
@@ -55,28 +55,53 @@ public class ActivityCreatorBean {
 
 		String activityDate = "";
 
-		for (int i = 0; i < generalActivtyListProducer.getActivities().size(); i++) {
+		vaccineActivities.clear();
+		testActivities.clear();
+		checkActivities.clear();
+
+		for (int i = 0; i < generalActivityListProducer.getActivities().size(); i++) {
 
 			activityDate = dateCalculationBean.addingDaysToDate(
 					pregnancy.getPregnancyStartDate(),
-					generalActivtyListProducer.getActivities().get(i)
-							.getActivityDate());
+					(generalActivityListProducer.getActivities().get(i)
+							.getActivityDate() + 280));
 
 			if (dateCalculationBean.differenceBetweenTwoDatesOnlyNegative(
 					activityDate, todayDateGetterBean.getTodayDate()) >= 0) {
-				if (generalActivtyListProducer.getActivities().get(i)
-						.getActivityType() == 0) {
-					vaccineActivities.add(generalActivtyListProducer
+
+				if (generalActivityListProducer.getActivities().get(i)
+						.getActivityType() == '0') {
+					generalActivityListProducer.getActivities().get(i)
+							.setActivityRealizationDate(activityDate);
+					generalActivityListProducer
+							.getActivities()
+							.get(i)
+							.setActivityDateDifference(
+									dateCalculationBean
+											.differenceBetweenTwoDatesOnlyNegative(
+													activityDate,
+													todayDateGetterBean
+															.getTodayDate()));
+					vaccineActivities.add(generalActivityListProducer
 							.getActivities().get(i));
-				} else if (generalActivtyListProducer.getActivities().get(i)
-						.getActivityType() == 1) {
-					testActivities.add(generalActivtyListProducer
+				}
+
+				else if (generalActivityListProducer.getActivities().get(i)
+						.getActivityType() == '1') {
+					generalActivityListProducer.getActivities().get(i)
+							.setActivityRealizationDate(activityDate);
+					testActivities.add(generalActivityListProducer
 							.getActivities().get(i));
-				} else {
-					checkActivities.add(generalActivtyListProducer
+				}
+
+				else {
+					generalActivityListProducer.getActivities().get(i)
+							.setActivityRealizationDate(activityDate);
+					checkActivities.add(generalActivityListProducer
 							.getActivities().get(i));
 				}
 			}
+
 		}
 
 	}

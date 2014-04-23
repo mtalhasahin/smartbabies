@@ -25,8 +25,8 @@ public class DateCalculationBeanTest {
 	
 	@Test
 	public void testdifferenceBetweenTwoDatesOnlyNegative() {
-		Assert.assertEquals(-1, dateCalculationBean.differenceBetweenTwoDatesOnlyNegative(
-				"21-04-2014", "22-04-2014"));
+		Assert.assertEquals(0, dateCalculationBean.differenceBetweenTwoDatesOnlyNegative(
+				"15-04-2013", "23-04-2014"));
 	}
 
 	@BeforeTest

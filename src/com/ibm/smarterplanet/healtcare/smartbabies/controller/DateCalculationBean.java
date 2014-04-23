@@ -62,8 +62,19 @@ public class DateCalculationBean {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return nextCalendar.get(Calendar.DAY_OF_YEAR)
-				- previousCalendar.get(Calendar.DAY_OF_YEAR);
+		
+		if (nextCalendar.get(Calendar.YEAR)- previousCalendar.get(Calendar.YEAR)<0) {
+			
+			return -1*(nextCalendar.get(Calendar.DAY_OF_YEAR)- previousCalendar.get(Calendar.DAY_OF_YEAR) - (360*(nextCalendar.get(Calendar.YEAR)- previousCalendar.get(Calendar.YEAR))));
+			
+		}
+		
+		else {
+			
+			return (nextCalendar.get(Calendar.DAY_OF_YEAR)- previousCalendar.get(Calendar.DAY_OF_YEAR) + (360*(nextCalendar.get(Calendar.YEAR)- previousCalendar.get(Calendar.YEAR))));
+			
+		}
+		
 
 	}
 
