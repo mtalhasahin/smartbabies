@@ -43,16 +43,6 @@ public class ActivityRESTService {
 		return activityCreatorBean.getVaccineActivities();
 	}
 	
-	@GET
-	@Path("/test")
-	@Produces(MediaType.APPLICATION_JSON)
-	public List<Activity> testActivities(){
-		activityCreatorBean.initNewActivity();
-		pregnancy.setPregnancyStartDate("23-04-2014");
-		activityCreatorBean.creatActivity(pregnancy);
-		return activityCreatorBean.getTestActivities();
-	}
-	
 	@PostConstruct
 	public void initPregnancy(){
 		pregnancy = new Pregnancy();

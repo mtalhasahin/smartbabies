@@ -29,21 +29,12 @@ public class ActivityCreatorBean {
 	private List<Activity> vaccineActivities;
 
 	// activityType 1
-	// testler
-	private List<Activity> testActivities;
-
-	// activityType 2
 	// genel kontroller
 	private List<Activity> checkActivities;
 
 	@Produces
 	public List<Activity> getVaccineActivities() {
 		return vaccineActivities;
-	}
-
-	@Produces
-	public List<Activity> getTestActivities() {
-		return testActivities;
 	}
 
 	@Produces
@@ -56,7 +47,6 @@ public class ActivityCreatorBean {
 		String activityDate = "";
 
 		vaccineActivities.clear();
-		testActivities.clear();
 		checkActivities.clear();
 
 		for (int i = 0; i < generalActivityListProducer.getActivities().size(); i++) {
@@ -86,14 +76,6 @@ public class ActivityCreatorBean {
 							.getActivities().get(i));
 				}
 
-				else if (generalActivityListProducer.getActivities().get(i)
-						.getActivityType() == '1') {
-					generalActivityListProducer.getActivities().get(i)
-							.setActivityRealizationDate(activityDate);
-					testActivities.add(generalActivityListProducer
-							.getActivities().get(i));
-				}
-
 				else {
 					generalActivityListProducer.getActivities().get(i)
 							.setActivityRealizationDate(activityDate);
@@ -115,7 +97,6 @@ public class ActivityCreatorBean {
 		dateCalculationBean.initDateCalculate();
 
 		vaccineActivities = new ArrayList<Activity>();
-		testActivities = new ArrayList<Activity>();
 		checkActivities = new ArrayList<Activity>();
 	}
 
