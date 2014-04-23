@@ -25,7 +25,8 @@ public class DateCalculationBean {
 	private Calendar nextCalendar;
 
 	// parametre olarak gelen (dd-MM-yyyy) formatındaki iki tarih arasındaki gün
-	// farkını hesaplar ve bir tamsayı return eder
+	// farkını hesaplar ve bir tamsayı return eder(negatiflik durumu
+	// çıkartılmış)
 
 	public int differenceBetweenTwoDates(String nextDate, String previousDate) {
 
@@ -51,6 +52,9 @@ public class DateCalculationBean {
 
 	}
 
+	// parametre olarak gelen (dd-MM-yyyy) formatındaki iki tarih arasındaki gün
+	// farkını hesaplar ve bir tamsayı return eder(negatiflik durumu dahil)
+
 	public int differenceBetweenTwoDatesOnlyNegative(String nextDate,
 			String previousDate) {
 
@@ -62,19 +66,25 @@ public class DateCalculationBean {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		if (nextCalendar.get(Calendar.YEAR)- previousCalendar.get(Calendar.YEAR)<0) {
-			
-			return -1*(nextCalendar.get(Calendar.DAY_OF_YEAR)- previousCalendar.get(Calendar.DAY_OF_YEAR) - (360*(nextCalendar.get(Calendar.YEAR)- previousCalendar.get(Calendar.YEAR))));
-			
+
+		if (nextCalendar.get(Calendar.YEAR)
+				- previousCalendar.get(Calendar.YEAR) < 0) {
+
+			return -1
+					* (nextCalendar.get(Calendar.DAY_OF_YEAR)
+							- previousCalendar.get(Calendar.DAY_OF_YEAR) - (365 * (nextCalendar
+							.get(Calendar.YEAR) - previousCalendar
+							.get(Calendar.YEAR))));
+
 		}
-		
+
 		else {
-			
-			return (nextCalendar.get(Calendar.DAY_OF_YEAR)- previousCalendar.get(Calendar.DAY_OF_YEAR) + (360*(nextCalendar.get(Calendar.YEAR)- previousCalendar.get(Calendar.YEAR))));
-			
+
+			return (nextCalendar.get(Calendar.DAY_OF_YEAR)
+					- previousCalendar.get(Calendar.DAY_OF_YEAR) + (365 * (nextCalendar
+					.get(Calendar.YEAR) - previousCalendar.get(Calendar.YEAR))));
+
 		}
-		
 
 	}
 
