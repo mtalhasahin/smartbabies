@@ -14,7 +14,7 @@ import com.ibm.smarterplanet.healtcare.smartbabies.controller.SexualIntercourseC
 import com.ibm.smarterplanet.healtcare.smartbabies.model.MenstrualCycle;
 import com.ibm.smarterplanet.healtcare.smartbabies.model.Pregnancy;
 import com.ibm.smarterplanet.healtcare.smartbabies.model.SexualIntercourseCycle;
-import com.ibm.smarterplanet.healtcare.smartbabies.model.User;
+import com.ibm.smarterplanet.healtcare.smartbabies.model.UserDetail;
 
 //Son üç menstruasyon tarihine göre olası bir gebelik tarihi üzerinden, bir gebelik takibi oluşturur
 
@@ -33,14 +33,14 @@ public class PregnancyRegistration {
 
 	@EJB
 	SexualIntercourseCalculationBean sexualIntercourseCalculationBean;
-
+	
 	private SexualIntercourseCycle sexualIntercourseCycle;
 
 	private Pregnancy pregnancy;
 
 	private MenstrualCycle menstrualCycle;
 
-	private User user;
+	private UserDetail userDetail;
 
 	public Pregnancy getPregnancy() {
 		return pregnancy;
@@ -58,12 +58,12 @@ public class PregnancyRegistration {
 		this.menstrualCycle = menstrualCycle;
 	}
 
-	public User getUser() {
-		return user;
+	public UserDetail getUserDetail() {
+		return userDetail;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setUserDetail(UserDetail userDetail) {
+		this.userDetail = userDetail;
 	}
 
 	public SexualIntercourseCycle getSexualIntercourseCycle() {
@@ -85,7 +85,8 @@ public class PregnancyRegistration {
 			menstrualCycle = menstrualCycleCalculationBean.getMenstrualCycle();
 
 			pregnancy.setPregnancyStartDate(sexualIntercourseCalculationBean.apropriateSexualIntercourseDate(menstrualCycle, sexualIntercourseCycle).getCycleEndDate());
-			pregnancy.setUserDetail(user.getUserDetail());
+			
+		//	pregnancy.setUserDetail(userLoginLogout.getCurrentUser().getUserDetail());
 
 			pregnancyRegistrationBean.registerPregnancy(pregnancy);
 
@@ -109,7 +110,6 @@ public class PregnancyRegistration {
 		menstrualCycle = new MenstrualCycle();
 		sexualIntercourseCycle = new SexualIntercourseCycle();
 		pregnancy = new Pregnancy();
-		user = new User();
 
 	}
 

@@ -33,18 +33,18 @@ xmlns:p="http://primefaces.org/ui">
 
     <div class="container">
 
-      <form class="form-signin" action="/smrtbaby">
+      <h:form styleClass="form-signin">
         <h2 class="form-signin-heading">Giriş Yap</h2>
         <div class="login-wrap">
-            <input id="txtUserName" type="text" class="form-control" placeholder="Kullanıcı Adı" />
-            <input id="txtPassword" type="password" class="form-control" placeholder="Şifre"/>
+        <h:inputText styleClass="form-control" value="#{UserLoginLogout.user.userEmail}" />
+        <h:inputSecret styleClass="form-control" value="#{UserLoginLogout.user.userPassword}" />
             <label class="checkbox">
                 <span class="pull-right">
                     <a data-toggle="modal" href="#myModal"> Şifreni mi unuttun?</a>
 
                 </span>
             </label>
-            <button id="btnSignIn" class="btn btn-lg btn-login btn-block" type="submit">Giriş Yap</button>
+            <h:commandButton styleClass="btn btn-lg btn-login btn-block" value="Giriş Yap" action="#{UserLoginLogout.login()}"/>
             <div class="registration">
                 Hesabın mı yok? 
                 <a class="" href="/smrtbaby/register">
@@ -64,19 +64,18 @@ xmlns:p="http://primefaces.org/ui">
                       </div>
                       <div class="modal-body">
                           <p>Şifrenizi sıfırlamak için aşağıya e-posta adresinizi girin.</p>
-                          <input id="txtEmail" type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix"/>
+                          <h:inputText styleClass="form-control placeholder-no-fix" />
 
                       </div>
                       <div class="modal-footer">
                           <button data-dismiss="modal" id="btnCancel" class="btn btn-default" type="button">Geri</button>
-                          <button id="btnSubmit" class="btn btn-success" type="button">Gönder</button>
+                          <h:commandButton styleClass="btn btn-success" value="Gönder"/>
                       </div>
                   </div>
               </div>
           </div>
           <!-- modal -->
-
-      </form>
+</h:form>
 
     </div>
 

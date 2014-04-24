@@ -14,6 +14,7 @@ public class JaxRsActivator extends Application {
 		Set<Class<?>> classes = new HashSet<Class<?>>();
 		classes.add(UserResourceRESTService.class);
 		classes.add(ActivityRESTService.class);
+		classes.add(LoginLogutRESTService.class);
 		return classes;
 	}
 

@@ -43,14 +43,13 @@
 		<h:form styleClass="form-signin">
 			<h2 class="form-signin-heading">Kaydol</h2>
 			<div class="login-wrap">
-				<h:inputText id="firstName" styleClass="form-control" />
-				<h:inputText id="lastName" styleClass="form-control" />
-				<h:inputText id="email" styleClass="form-control" />
-				<h:inputText id="birthday" styleClass="form-control" />
-				<h:inputText id="phone" styleClass="form-control" />
-				<h:inputSecret id="password" styleClass="form-control" />
+				<h:inputText id="firstName" styleClass="form-control" value="#{UserRegistration.user.userName}" />
+				<h:inputText id="lastName" styleClass="form-control" value="#{UserRegistration.user.userSurname}" />
+				<h:inputText id="email" styleClass="form-control" value="#{UserRegistration.user.userEmail}" />
+				<h:inputText id="phone" styleClass="form-control" value="#{UserRegistration.user.userPhone}" />
+				<h:inputSecret id="password" styleClass="form-control" value="#{UserRegistration.user.userPassword}" />
 				<h:commandButton id="submit"
-					styleClass="btn btn-lg btn-login btn-block" value="Gönder" />
+					styleClass="btn btn-lg btn-login btn-block" value="Gönder" action="#{UserRegistration.registerUser()}" />
 				<div class="registration">
 					Zaten Kayıtlıyım. <a href="/smrtbaby/login"> Giriş </a>
 				</div>

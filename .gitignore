@@ -6,6 +6,7 @@
 *.war
 *.ear
 .settings
+.metadata
 .apt_generated
 .classpath
 .directory
