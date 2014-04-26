@@ -31,18 +31,18 @@ public class User implements Serializable {
 	private String userEmail;
 
 	private String userPhone;
-	
+
 	private String userPassword;
-	
+
 	private String userBirthday;
-	
-	private double userHeight;
-	
-	private double userWeight;
+
+	private int userHeight;
+
+	private int userWeight;
 
 	private char userIsDeleted;
-	
-	@OneToMany(mappedBy="user",fetch=FetchType.EAGER)
+
+	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
 	private List<Pregnancy> pregnancies;
 
 	@OneToMany(mappedBy = "user")
@@ -107,19 +107,19 @@ public class User implements Serializable {
 		this.userBirthday = userBirthday;
 	}
 
-	public double getUserHeight() {
+	public int getUserHeight() {
 		return userHeight;
 	}
 
-	public void setUserHeight(double userHeight) {
+	public void setUserHeight(int userHeight) {
 		this.userHeight = userHeight;
 	}
 
-	public double getUserWeight() {
+	public int getUserWeight() {
 		return userWeight;
 	}
 
-	public void setUserWeight(double userWeight) {
+	public void setUserWeight(int userWeight) {
 		this.userWeight = userWeight;
 	}
 

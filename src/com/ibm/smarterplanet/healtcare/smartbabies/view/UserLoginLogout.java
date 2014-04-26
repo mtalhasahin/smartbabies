@@ -23,7 +23,6 @@ public class UserLoginLogout implements Serializable {
 
 	private User user;
 
-	@Produces
 	private static User currentUser;
 
 	@EJB
@@ -32,6 +31,7 @@ public class UserLoginLogout implements Serializable {
 	@EJB
 	HashingBean hashingBean;
 
+	@Produces
 	public User getCurrentUser() {
 		return currentUser;
 	}
