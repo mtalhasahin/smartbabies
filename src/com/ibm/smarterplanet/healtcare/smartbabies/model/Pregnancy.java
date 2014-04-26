@@ -25,10 +25,10 @@ public class Pregnancy implements Serializable {
 	private String pregnancyStartDate;
 	
 	@ManyToOne
-	private UserDetail userDetail;
+	private User user;
 	
 	@ManyToOne
-	private DoctorDetail doctorDetail;
+	private Doctor doctor;
 
 	public long getPregnancyId() {
 		return pregnancyId;
@@ -46,22 +46,21 @@ public class Pregnancy implements Serializable {
 		this.pregnancyStartDate = pregnancyStartDate;
 	}
 
-	public UserDetail getUserDetail() {
-		return userDetail;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUserDetail(UserDetail userDetail) {
-		this.userDetail = userDetail;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
-	public DoctorDetail getDoctorDetail() {
-		return doctorDetail;
+	public Doctor getDoctor() {
+		return doctor;
 	}
 
-	public void setDoctorDetail(DoctorDetail doctorDetail) {
-		this.doctorDetail = doctorDetail;
+	public void setDoctor(Doctor doctor) {
+		this.doctor = doctor;
 	}
-
 	
 	
 }

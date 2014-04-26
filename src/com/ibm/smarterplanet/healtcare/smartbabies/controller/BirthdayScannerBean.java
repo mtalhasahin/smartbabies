@@ -37,7 +37,7 @@ public class BirthdayScannerBean {
 
 	public void scan() {
 		for (int i = 0; i < userListProducer.getUsers().size(); i++) {
-			if (userListProducer.getUsers().get(i).getUserDetail().getUserBirthday()
+			if (userListProducer.getUsers().get(i).getUserBirthday()
 					.equals(todayDateGetterBean.getTodayDate())) {
 				mailedList.add(userListProducer.getUsers().get(i)
 						.getUserEmail());
@@ -45,8 +45,7 @@ public class BirthdayScannerBean {
 		}
 
 		for (int i = 0; i < doctorListProducer.getDoctors().size(); i++) {
-			if (doctorListProducer.getDoctors().get(i).getDoctorDetail()
-					.getDoctorBirthday()
+			if (doctorListProducer.getDoctors().get(i).getDoctorBirthday()
 					.equals(todayDateGetterBean.getTodayDate())) {
 				mailedList.add(doctorListProducer.getDoctors().get(i)
 						.getDoctorEmail());

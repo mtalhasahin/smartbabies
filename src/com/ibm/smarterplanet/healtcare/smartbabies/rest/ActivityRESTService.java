@@ -13,38 +13,48 @@ import javax.ws.rs.core.MediaType;
 import com.ibm.smarterplanet.healtcare.smartbabies.controller.ActivityCreatorBean;
 import com.ibm.smarterplanet.healtcare.smartbabies.model.Activity;
 import com.ibm.smarterplanet.healtcare.smartbabies.model.Pregnancy;
+import com.ibm.smarterplanet.healtcare.smartbabies.view.UserLoginLogout;
 
 @Path("/member/activity")
 @Stateful
 public class ActivityRESTService {
-	
+
 	@EJB
 	ActivityCreatorBean activityCreatorBean;
-	
+
+	private UserLoginLogout userLoginLogout;
+
 	private Pregnancy pregnancy;
-	
+
 	@GET
 	@Path("/check")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Activity> checkActivities(){
+	public List<Activity> checkActivities() {
 		activityCreatorBean.initNewActivity();
+		pregnancy.setPregnancyStartDate(userLoginLogout.getCurrentUser()
+				.getPregnancies()
+				.get(userLoginLogout.getCurrentUser().getPregnancies().size()-1)
+				.getPregnancyStartDate());
 		pregnancy.setPregnancyStartDate("23-04-2014");
 		activityCreatorBean.creatActivity(pregnancy);
 		return activityCreatorBean.getCheckActivities();
 	}
-	
+
 	@GET
 	@Path("/vaccine")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Activity> vaccineActivities(){
+	public List<Activity> vaccineActivities() {
 		activityCreatorBean.initNewActivity();
-		pregnancy.setPregnancyStartDate("23-04-2014");
+		pregnancy.setPregnancyStartDate(userLoginLogout.getCurrentUser()
+				.getPregnancies()
+				.get(userLoginLogout.getCurrentUser().getPregnancies().size()-1)
+				.getPregnancyStartDate());
 		activityCreatorBean.creatActivity(pregnancy);
 		return activityCreatorBean.getVaccineActivities();
 	}
-	
+
 	@PostConstruct
-	public void initPregnancy(){
+	public void initPregnancy() {
 		pregnancy = new Pregnancy();
 	}
 

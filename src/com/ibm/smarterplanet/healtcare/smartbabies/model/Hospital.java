@@ -26,7 +26,7 @@ public class Hospital implements Serializable {
 	private String hospitalName;
 	
 	@OneToMany(mappedBy="hospital")
-	private List<DoctorDetail> doctorDetails;
+	private List<Doctor> doctors;
 
 	public long getId() {
 		return id;
@@ -44,13 +44,13 @@ public class Hospital implements Serializable {
 		this.hospitalName = hospitalName;
 	}
 
-	public List<DoctorDetail> getDoctorDetails() {
-		return doctorDetails;
+	public List<Doctor> getDoctors() {
+		return doctors;
 	}
 
-	public void setDoctorDetails(List<DoctorDetail> doctorDetails) {
-		this.doctorDetails = doctorDetails;
+	public void setDoctors(List<Doctor> doctors) {
+		this.doctors = doctors;
 	}
-			
+
 
 }

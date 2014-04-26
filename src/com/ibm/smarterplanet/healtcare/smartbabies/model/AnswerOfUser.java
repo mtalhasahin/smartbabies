@@ -23,7 +23,7 @@ public class AnswerOfUser implements Serializable {
 	private long answerOfUserId;
 
 	@ManyToOne
-	private UserDetail userDetail;
+	private User user;
 
 	@ManyToOne
 	private SurveyAnswer surveyAnswer;
@@ -39,12 +39,12 @@ public class AnswerOfUser implements Serializable {
 		this.answerOfUserId = answerOfUserId;
 	}
 
-	public UserDetail getUserDetail() {
-		return userDetail;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUserDetail(UserDetail userDetail) {
-		this.userDetail = userDetail;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public SurveyAnswer getSurveyAnswer() {
@@ -62,6 +62,5 @@ public class AnswerOfUser implements Serializable {
 	public void setSurvey(Survey survey) {
 		this.survey = survey;
 	}
-
 	
 }

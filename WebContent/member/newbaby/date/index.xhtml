@@ -269,21 +269,8 @@ xmlns:p="http://primefaces.org/ui">
                               Doğum Yapmak İstediğiniz Tarih Aralığına Göre Aile Planlaması
                           </header>
                           <div class="panel-body">
-                              <div class="stepy-tab">
-                                  <ul id="default-titles" class="stepy-titles clearfix">
-                                      <li id="default-title-0" class="current-step">
-                                          <div>Adım 1</div>
-                                      </li>
-                                      <li id="default-title-1" class="">
-                                          <div>Adım 2</div>
-                                      </li>
-                                      <li id="default-title-2" class="">
-                                          <div>Adım 3</div>
-                                      </li>
-                                  </ul>
-                              </div>
                               <h:form styleClass="form-horizontal">
-                                  <fieldset title="Adım 1" class="step" id="default-step-0">
+                                  <fieldset title="Adım 1" class="step" >
                                       <legend> </legend>
                                       <header class="panel-heading">Doğum yapmak istediğiniz tarih aralığını girin.</header>
                                       <br/>
@@ -302,7 +289,7 @@ xmlns:p="http://primefaces.org/ui">
                                           </div>
                                       </div>
                                   </fieldset>
-                                  <fieldset title="Adım 2" class="step" id="default-step-1" >
+                                  <fieldset title="Adım 2" class="step" >
                                       <legend></legend>
                                       <header class="panel-heading">Uygun ovulasyon dönemi için son 3 menstruasyon tarihinizi girin.</header>
                                       <br/>
@@ -329,26 +316,26 @@ xmlns:p="http://primefaces.org/ui">
                                       </div>
 
                                   </fieldset>
-                                  <fieldset title="Adım 3" class="step" id="default-step-2" >
+                                  <fieldset title="Adım 3" class="step" >
                                       <legend> </legend>
                                        <header class="panel-heading">Beslenme planınız için gerekli bilgileri girin.</header>
                                        <br/>
                                        <div class="form-group">
                                           <label class="col-lg-2 control-label">Şuanki Kilonuz</label>
                                           <div class="col-lg-10">
-                                             <!--  <input type="text" class="form-control" placeholder="Mobile"/> -->
+                                             <h:inputText styleClass="form-control" value="#{PregnancyRegistration.user.userWeight}" /> 
                                           </div>
                                       </div>
                                       <div class="form-group">
                                           <label class="col-lg-2 control-label">Boyunuz</label>
                                           <div class="col-lg-10">
-                                             <!--  <input type="text" class="form-control" placeholder="Mobile"/> -->
+                                          <h:inputText styleClass="form-control" value="#{PregnancyRegistration.user.userHeight}" /> 
                                           </div>
                                       </div>
                                       <div class="form-group">
-                                          <label class="col-lg-2 control-label">Yaşınız</label>
-                                          <div class="col-lg-10">
-                                              <!-- <input type="text" class="form-control" placeholder="Mobile"/> -->
+                                          <label class="col-lg-2 control-label">Doğum Tarihiniz</label>
+                                          <div class="col-lg-10"> 
+                                          <h:inputText styleClass="form-control" value="#{PregnancyRegistration.user.userBirthday}" /> 
                                           </div>
                                       </div>
                                       
@@ -391,22 +378,6 @@ xmlns:p="http://primefaces.org/ui">
 
     <!--script for this page-->
     <script src="../../../frontend/member/js/jquery.stepy.js"></script>
-
-
-  <script>
-
-      //step wizard
-
-      $(function() {
-          $('#default').stepy({
-              backLabel: 'Önceki',
-              block: true,
-              nextLabel: 'Sonraki',
-              titleClick: true,
-              titleTarget: '.stepy-tab'
-          });
-      });
-  </script>
 
 
   </h:body>

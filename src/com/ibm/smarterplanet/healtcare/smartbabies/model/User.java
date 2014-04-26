@@ -1,12 +1,14 @@
 package com.ibm.smarterplanet.healtcare.smartbabies.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
@@ -31,11 +33,23 @@ public class User implements Serializable {
 	private String userPhone;
 	
 	private String userPassword;
+	
+	private String userBirthday;
+	
+	private double userHeight;
+	
+	private double userWeight;
 
 	private char userIsDeleted;
 	
-	@OneToOne(mappedBy="user")
-	private UserDetail userDetail;
+	@OneToMany(mappedBy="user",fetch=FetchType.EAGER)
+	private List<Pregnancy> pregnancies;
+
+	@OneToMany(mappedBy = "user")
+	private List<AnswerOfUser> answerOfUsers;
+
+	@OneToMany(mappedBy = "user")
+	private List<Appointment> appointments;
 
 	public long getUserId() {
 		return userId;
@@ -85,6 +99,30 @@ public class User implements Serializable {
 		this.userPassword = userPassword;
 	}
 
+	public String getUserBirthday() {
+		return userBirthday;
+	}
+
+	public void setUserBirthday(String userBirthday) {
+		this.userBirthday = userBirthday;
+	}
+
+	public double getUserHeight() {
+		return userHeight;
+	}
+
+	public void setUserHeight(double userHeight) {
+		this.userHeight = userHeight;
+	}
+
+	public double getUserWeight() {
+		return userWeight;
+	}
+
+	public void setUserWeight(double userWeight) {
+		this.userWeight = userWeight;
+	}
+
 	public char getUserIsDeleted() {
 		return userIsDeleted;
 	}
@@ -93,12 +131,28 @@ public class User implements Serializable {
 		this.userIsDeleted = userIsDeleted;
 	}
 
-	public UserDetail getUserDetail() {
-		return userDetail;
+	public List<Pregnancy> getPregnancies() {
+		return pregnancies;
 	}
 
-	public void setUserDetail(UserDetail userDetail) {
-		this.userDetail = userDetail;
+	public void setPregnancies(List<Pregnancy> pregnancies) {
+		this.pregnancies = pregnancies;
+	}
+
+	public List<AnswerOfUser> getAnswerOfUsers() {
+		return answerOfUsers;
+	}
+
+	public void setAnswerOfUsers(List<AnswerOfUser> answerOfUsers) {
+		this.answerOfUsers = answerOfUsers;
+	}
+
+	public List<Appointment> getAppointments() {
+		return appointments;
+	}
+
+	public void setAppointments(List<Appointment> appointments) {
+		this.appointments = appointments;
 	}
 
 }

@@ -4,18 +4,16 @@ import java.io.Serializable;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
+import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Produces;
-import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
 
 import com.ibm.smarterplanet.healtcare.smartbabies.controller.UserServiceBean;
 import com.ibm.smarterplanet.healtcare.smartbabies.model.User;
 import com.ibm.smarterplanet.healtcare.smartbabies.util.HashingBean;
 
 @SessionScoped
-@ManagedBean(name = "UserLoginLogout", eager = true)
+@ManagedBean(name = "UserLoginLogout")
 public class UserLoginLogout implements Serializable {
 
 	/**
@@ -25,7 +23,8 @@ public class UserLoginLogout implements Serializable {
 
 	private User user;
 
-	private User currentUser;
+	@Produces
+	private static User currentUser;
 
 	@EJB
 	UserServiceBean userServiceBean;
@@ -33,9 +32,12 @@ public class UserLoginLogout implements Serializable {
 	@EJB
 	HashingBean hashingBean;
 
-	@Produces
 	public User getCurrentUser() {
 		return currentUser;
+	}
+
+	public void setCurrentUser(User currentUser) {
+		UserLoginLogout.currentUser = currentUser;
 	}
 
 	public User getUser() {
@@ -51,18 +53,14 @@ public class UserLoginLogout implements Serializable {
 		currentUser = userServiceBean.findUser(user);
 
 		if (currentUser == null) {
-			FacesContext.getCurrentInstance().addMessage(null,
-					new FacesMessage("Unknown login, try again"));
-			user = null;
-			return "login/index.xhtml?faces-redirect=true";
+			return "/login/index.xhtml?faces-redirect=true";
 		} else {
-			return "member/profile/index.xhtml?faces-redirect=true";
+			return "/member/profile/index.xhtml?faces-redirect=true";
 		}
 	}
 
 	public String logout() {
-		FacesContext.getCurrentInstance().getExternalContext()
-				.invalidateSession();
+		currentUser = null;
 		return "index.xhtml?faces-redirect=true";
 	}
 
