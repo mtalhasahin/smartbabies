@@ -4,9 +4,13 @@ import java.io.Serializable;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.event.Observes;
+import javax.enterprise.event.Reception;
 import javax.enterprise.inject.Produces;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
 
 import com.ibm.smarterplanet.healtcare.smartbabies.controller.UserServiceBean;
 import com.ibm.smarterplanet.healtcare.smartbabies.model.User;
@@ -24,6 +28,9 @@ public class UserLoginLogout implements Serializable {
 	private User user;
 
 	private static User currentUser;
+	
+	@Inject
+	private EntityManager entityManager;
 
 	@EJB
 	UserServiceBean userServiceBean;
@@ -61,9 +68,9 @@ public class UserLoginLogout implements Serializable {
 
 	public String logout() {
 		currentUser = null;
-		return "index.xhtml?faces-redirect=true";
+		return "/login/index.xhtml?faces-redirect=true";
 	}
-
+	
 	@PostConstruct
 	public void initNewCurrentUser() {
 		user = new User();

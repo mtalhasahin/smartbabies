@@ -170,14 +170,20 @@ xmlns:p="http://primefaces.org/ui">
                   <li class="dropdown">
                       <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                           <img alt="" src="../../frontend/member/img/avatar1_small.jpg"/>
-                          <span class="username">Batuhan ÇIKRIKCI</span>
+                          <span class="username">
+                          #{UserLoginLogout.currentUser.userName} #{UserLoginLogout.currentUser.userSurname}
+                          </span>
                           <b class="caret"></b>
                       </a>
                       <ul class="dropdown-menu extended logout">
                           <li><a href="/smrtbaby/member/profile"><i class="icon-suitcase"></i>Profil</a></li>
                           <li><a href="/smrtbaby/member/profile/edit"><i class="icon-edit"></i>Profil Düzenle</a></li>
                           <li><a href="/smrtbaby/member/profile/activity"><i class="icon-bell-alt"></i>Aktiviteler</a></li>
-                          <li><a href="/smrtbaby/login"><i class="icon-key"></i>Çıkış</a></li>
+                          <li>
+                          <h:form>
+                          <h:commandButton styleClass="icon-key" value="Çıkış" action="#{UserLoginLogout.logout()}" />                          
+                          </h:form>
+                          </li>
                       </ul>
                   </li>
                   <!-- user login dropdown end -->
@@ -269,8 +275,8 @@ xmlns:p="http://primefaces.org/ui">
                               <a href="#">
                                   <img src="../../frontend/member/img/profile-avatar.jpg" alt=""/>
                               </a>
-                              <h1>Jonathan Smith</h1>
-                              <p>jsmith@flatlab.com</p>
+                              <h1>#{UserLoginLogout.currentUser.userName} #{UserLoginLogout.currentUser.userSurname}</h1>
+                              <p>#{UserLoginLogout.currentUser.userEmail}</p>
                           </div>
 
                           <ul class="nav nav-pills nav-stacked">
@@ -291,19 +297,19 @@ xmlns:p="http://primefaces.org/ui">
                               <h1>Kişisel Bilgiler</h1>
                               <div class="row">
                                   <div class="bio-row">
-                                      <p><span>İsim </span>: Jonathan</p>
+                                      <p><span>İsim </span>: #{UserLoginLogout.currentUser.userName}</p>
                                   </div>
                                   <div class="bio-row">
-                                      <p><span>Soyisim </span>: Smith</p>
+                                      <p><span>Soyisim </span>: #{UserLoginLogout.currentUser.userSurname}</p>
                                   </div>
                                   <div class="bio-row">
-                                      <p><span>Doğum Tarihi</span>: 13 July 1983</p>
+                                      <p><span>Doğum Tarihi</span>: #{UserLoginLogout.currentUser.userBirthday}</p>
                                   </div>
                                   <div class="bio-row">
-                                      <p><span>Email </span>: jsmith@flatlab.com</p>
+                                      <p><span>Email </span>: #{UserLoginLogout.currentUser.userEmail}</p>
                                   </div>
                                   <div class="bio-row">
-                                      <p><span>Telefon </span>: (12) 03 4567890</p>
+                                      <p><span>Telefon </span>: #{UserLoginLogout.currentUser.userPhone}</p>
                                   </div>
                               </div>
                           </div>

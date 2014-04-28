@@ -2,9 +2,9 @@ package com.ibm.smarterplanet.healtcare.smartbabies.view;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
-import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
@@ -90,21 +90,40 @@ public class PregnancyRegistration {
 	// olası gebelik tarihi ve kullanıcı bilgilerine göre yeni gebelik kaydı
 	// oluşturur
 	public void registerPregnancy() {
-		if (userLoginLogout.getCurrentUser().getPregnancies().size() != 0
-				&& dateCalculationBean.differenceBetweenTwoDates(
-						todayDateGetterBean.getTodayDate(),
-						userLoginLogout
-								.getCurrentUser()
-								.getPregnancies()
-								.get(userLoginLogout.getCurrentUser()
-										.getPregnancies().size() - 1)
-								.getPregnancyStartDate()) < (280 + 90)) {
-			
-			facesContext.addMessage(null, new FacesMessage(
-					FacesMessage.SEVERITY_ERROR, "Not Registered!",
-					"Registration unsuccessful"));
+		if (userLoginLogout.getCurrentUser().getPregnancies().size() > 0) {
+			System.out.println(userLoginLogout.getCurrentUser()
+					.getPregnancies().size());
+			if (dateCalculationBean.differenceBetweenTwoDatesOnlyNegative(
+					todayDateGetterBean.getTodayDate(),
+					userLoginLogout
+							.getCurrentUser()
+							.getPregnancies()
+							.get(userLoginLogout.getCurrentUser()
+									.getPregnancies().size() - 1)
+							.getPregnancyStartDate()) < (280 + 720)) {
 
-		} else {
+				System.out.println(userLoginLogout.getCurrentUser()
+						.getPregnancies().size());
+
+				System.out.println(dateCalculationBean
+						.differenceBetweenTwoDatesOnlyNegative(
+								todayDateGetterBean.getTodayDate(),
+								userLoginLogout
+										.getCurrentUser()
+										.getPregnancies()
+										.get(userLoginLogout.getCurrentUser()
+												.getPregnancies().size() - 1)
+										.getPregnancyStartDate()));
+
+				facesContext.addMessage(null, new FacesMessage(
+						FacesMessage.SEVERITY_ERROR, "Not Registered!",
+						"Registration unsuccessful"));
+
+			}
+
+		}
+
+		else {
 
 			try {
 
@@ -120,10 +139,13 @@ public class PregnancyRegistration {
 								.getCycleEndDate());
 				pregnancy.setUser(userUpdaterBean.updateUserDetail(user,
 						userLoginLogout.getCurrentUser()));
+
 				pregnancyRegistrationBean.registerPregnancy(pregnancy);
 				facesContext.addMessage(null, new FacesMessage(
 						FacesMessage.SEVERITY_INFO, "Registered!",
 						"Registration successful"));
+				
+				userLoginLogout.setCurrentUser(pregnancy.getUser());
 
 				initNewPregnancy();
 
