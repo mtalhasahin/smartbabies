@@ -48,11 +48,15 @@ public class LoginLogutRESTService implements Serializable {
 		user.setUserPassword(hashingBean.Hashing(userPassword));
 		currentUser = userServiceBean.findUser(user); 		
 		if (currentUser == null) {
+			System.out.println("A");
 			user=null;
+			
 			return "<meta http-equiv='refresh' content='0; url=http://192.168.2.50:10080/smartbabies_mobile/apps/services/preview/SmartBabies/common/1.0/default/login.html'/>";
 		}
 		else {
+			System.out.println("B");
 			userLoginLogout.setCurrentUser(currentUser);
+			
 			return "<meta http-equiv='refresh' content='0; url=http://192.168.2.50:10080/smartbabies_mobile/apps/services/preview/SmartBabies/common/1.0/default/menu.html'/>";
 		}
 		

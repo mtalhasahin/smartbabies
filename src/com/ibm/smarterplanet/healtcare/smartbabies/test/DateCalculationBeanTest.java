@@ -18,15 +18,22 @@ public class DateCalculationBeanTest {
 	}
 
 	@Test
+	public void testAddingYearToCurrentYear() {
+		Assert.assertEquals("2015",
+				dateCalculationBean.addingYearToCurrentYear("2014", 3));
+	}
+
+	@Test
 	public void testdifferenceBetweenTwoDates() {
 		Assert.assertEquals(30, dateCalculationBean.differenceBetweenTwoDates(
 				"28-04-2014", "18-04-2016"));
 	}
-	
+
 	@Test
 	public void testdifferenceBetweenTwoDatesOnlyNegative() {
-		Assert.assertEquals(0, dateCalculationBean.differenceBetweenTwoDatesOnlyNegative(
-				"28-04-2014", "18-04-2016"));
+		Assert.assertEquals(0, dateCalculationBean
+				.differenceBetweenTwoDatesOnlyNegative("28-04-2014",
+						"18-04-2016"));
 	}
 
 	@BeforeTest

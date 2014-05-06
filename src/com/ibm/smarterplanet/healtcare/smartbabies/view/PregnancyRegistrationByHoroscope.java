@@ -23,8 +23,8 @@ import com.ibm.smarterplanet.healtcare.smartbabies.model.User;
 // Son üç menstruasyon tarihine göre olası bir gebelik tarihi üzerinden gebelik takibi oluşturur
 
 @RequestScoped
-@ManagedBean(name = "PregnancyRegistration")
-public class PregnancyRegistration {
+@ManagedBean(name = "PregnancyRegistrationByHoroscope")
+public class PregnancyRegistrationByHoroscope {
 
 	@Inject
 	private FacesContext facesContext;
@@ -105,8 +105,113 @@ public class PregnancyRegistration {
 	// oluşturur
 	public void registerPregnancy() {
 		
-		sexualIntercourseCycle.setDesiredStartBornDate(dateCalculationBean.addingDaysToDate(todayDateGetterBean.getTodayDate(), 280));
-		sexualIntercourseCycle.setDesiredEndBornDate(dateCalculationBean.addingDaysToDate(todayDateGetterBean.getTodayDate(), 310));
+		if(selectedHoroscope==1){			
+			sexualIntercourseCycle.setDesiredStartBornDate("21-03-"
+					+ dateCalculationBean.addingYearToCurrentYear(
+							todayDateGetterBean.getCurrentYear(), 1));
+			sexualIntercourseCycle.setDesiredEndBornDate("20-04-"
+					+ dateCalculationBean.addingYearToCurrentYear(
+							todayDateGetterBean.getCurrentYear(), 1));			
+		}
+		else if (selectedHoroscope==2) {
+			sexualIntercourseCycle.setDesiredStartBornDate("21-04-"
+					+ dateCalculationBean.addingYearToCurrentYear(
+							todayDateGetterBean.getCurrentYear(), 1));
+			sexualIntercourseCycle.setDesiredEndBornDate("20-05-"
+					+ dateCalculationBean.addingYearToCurrentYear(
+							todayDateGetterBean.getCurrentYear(), 1));
+			
+		}
+		else if (selectedHoroscope==3) {
+			sexualIntercourseCycle.setDesiredStartBornDate("21-05-"
+					+ dateCalculationBean.addingYearToCurrentYear(
+							todayDateGetterBean.getCurrentYear(), 1));
+			sexualIntercourseCycle.setDesiredEndBornDate("21-06-"
+					+ dateCalculationBean.addingYearToCurrentYear(
+							todayDateGetterBean.getCurrentYear(), 1));
+			
+		}
+		else if (selectedHoroscope==4) {
+			sexualIntercourseCycle.setDesiredStartBornDate("22-06-"
+					+ dateCalculationBean.addingYearToCurrentYear(
+							todayDateGetterBean.getCurrentYear(), 1));
+			sexualIntercourseCycle.setDesiredEndBornDate("22-07-"
+					+ dateCalculationBean.addingYearToCurrentYear(
+							todayDateGetterBean.getCurrentYear(), 1));
+	
+		}
+		else if (selectedHoroscope==5) {
+			sexualIntercourseCycle.setDesiredStartBornDate("23-07-"
+					+ dateCalculationBean.addingYearToCurrentYear(
+							todayDateGetterBean.getCurrentYear(), 1));
+			sexualIntercourseCycle.setDesiredEndBornDate("23-08-"
+					+ dateCalculationBean.addingYearToCurrentYear(
+							todayDateGetterBean.getCurrentYear(), 1));
+	
+		}
+		else if (selectedHoroscope==6) {
+			sexualIntercourseCycle.setDesiredStartBornDate("24-08-"
+					+ dateCalculationBean.addingYearToCurrentYear(
+							todayDateGetterBean.getCurrentYear(), 1));
+			sexualIntercourseCycle.setDesiredEndBornDate("23-09-"
+					+ dateCalculationBean.addingYearToCurrentYear(
+							todayDateGetterBean.getCurrentYear(), 1));
+	
+		}
+		else if (selectedHoroscope==7) {
+			sexualIntercourseCycle.setDesiredStartBornDate("24-09-"
+					+ dateCalculationBean.addingYearToCurrentYear(
+							todayDateGetterBean.getCurrentYear(), 1));
+			sexualIntercourseCycle.setDesiredEndBornDate("23-10-"
+					+ dateCalculationBean.addingYearToCurrentYear(
+							todayDateGetterBean.getCurrentYear(), 1));
+	
+		}
+		else if (selectedHoroscope==8) {
+			sexualIntercourseCycle.setDesiredStartBornDate("24-10-"
+					+ dateCalculationBean.addingYearToCurrentYear(
+							todayDateGetterBean.getCurrentYear(), 1));
+			sexualIntercourseCycle.setDesiredEndBornDate("22-11-"
+					+ dateCalculationBean.addingYearToCurrentYear(
+							todayDateGetterBean.getCurrentYear(), 1));
+			
+		}
+		else if (selectedHoroscope==9) {
+			sexualIntercourseCycle.setDesiredStartBornDate("23-11-"
+					+ dateCalculationBean.addingYearToCurrentYear(
+							todayDateGetterBean.getCurrentYear(), 1));
+			sexualIntercourseCycle.setDesiredEndBornDate("21-12-"
+					+ dateCalculationBean.addingYearToCurrentYear(
+							todayDateGetterBean.getCurrentYear(), 1));
+		
+		}
+		else if (selectedHoroscope==10) {
+			sexualIntercourseCycle.setDesiredStartBornDate("22-12-"
+					+ dateCalculationBean.addingYearToCurrentYear(
+							todayDateGetterBean.getCurrentYear(), 1));
+			sexualIntercourseCycle.setDesiredEndBornDate("20-01-"
+					+ dateCalculationBean.addingYearToCurrentYear(
+							todayDateGetterBean.getCurrentYear(), 1));
+	
+		}
+		else if (selectedHoroscope==11) {
+			sexualIntercourseCycle.setDesiredStartBornDate("21-01-"
+					+ dateCalculationBean.addingYearToCurrentYear(
+							todayDateGetterBean.getCurrentYear(), 1));
+			sexualIntercourseCycle.setDesiredEndBornDate("19-02-"
+					+ dateCalculationBean.addingYearToCurrentYear(
+							todayDateGetterBean.getCurrentYear(), 1));
+			
+		}
+		else{
+			sexualIntercourseCycle.setDesiredStartBornDate("20-02-"
+					+ dateCalculationBean.addingYearToCurrentYear(
+							todayDateGetterBean.getCurrentYear(), 1));
+			sexualIntercourseCycle.setDesiredEndBornDate("20-03-"
+					+ dateCalculationBean.addingYearToCurrentYear(
+							todayDateGetterBean.getCurrentYear(), 1));
+	
+		}
 		
 		if (userLoginLogout.getCurrentUser().getPregnancies().size() > 0) {
 

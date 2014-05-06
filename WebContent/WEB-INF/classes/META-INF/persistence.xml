@@ -20,7 +20,7 @@
 		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.SurveyAnswer</class>
 		<class>com.ibm.smarterplanet.healtcare.smartbabies.model.User</class>
 		<properties>
-			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.hbm2ddl.auto" value="create" />
 			<property name="hibernate.show_sql" value="true" />
 		</properties>
 	</persistence-unit>

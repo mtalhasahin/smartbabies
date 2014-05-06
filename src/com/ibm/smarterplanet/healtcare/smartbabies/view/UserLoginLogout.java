@@ -4,13 +4,9 @@ import java.io.Serializable;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
-import javax.enterprise.event.Observes;
-import javax.enterprise.event.Reception;
 import javax.enterprise.inject.Produces;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.inject.Inject;
-import javax.persistence.EntityManager;
 
 import com.ibm.smarterplanet.healtcare.smartbabies.controller.UserServiceBean;
 import com.ibm.smarterplanet.healtcare.smartbabies.model.User;
@@ -28,9 +24,6 @@ public class UserLoginLogout implements Serializable {
 	private User user;
 
 	private static User currentUser;
-	
-	@Inject
-	private EntityManager entityManager;
 
 	@EJB
 	UserServiceBean userServiceBean;

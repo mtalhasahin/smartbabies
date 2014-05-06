@@ -23,8 +23,8 @@ import com.ibm.smarterplanet.healtcare.smartbabies.model.User;
 // Son üç menstruasyon tarihine göre olası bir gebelik tarihi üzerinden gebelik takibi oluşturur
 
 @RequestScoped
-@ManagedBean(name = "PregnancyRegistration")
-public class PregnancyRegistration {
+@ManagedBean(name = "PregnancyRegistrationByDate")
+public class PregnancyRegistrationByDate {
 
 	@Inject
 	private FacesContext facesContext;
@@ -57,8 +57,6 @@ public class PregnancyRegistration {
 	private MenstrualCycle menstrualCycle;
 
 	private User user;
-	
-	private int selectedHoroscope;
 
 	public Pregnancy getPregnancy() {
 		return pregnancy;
@@ -93,21 +91,9 @@ public class PregnancyRegistration {
 		this.user = user;
 	}
 
-	public int getSelectedHoroscope() {
-		return selectedHoroscope;
-	}
-
-	public void setSelectedHoroscope(int selectedHoroscope) {
-		this.selectedHoroscope = selectedHoroscope;
-	}
-
 	// olası gebelik tarihi ve kullanıcı bilgilerine göre yeni gebelik kaydı
 	// oluşturur
 	public void registerPregnancy() {
-		
-		sexualIntercourseCycle.setDesiredStartBornDate(dateCalculationBean.addingDaysToDate(todayDateGetterBean.getTodayDate(), 280));
-		sexualIntercourseCycle.setDesiredEndBornDate(dateCalculationBean.addingDaysToDate(todayDateGetterBean.getTodayDate(), 310));
-		
 		if (userLoginLogout.getCurrentUser().getPregnancies().size() > 0) {
 
 			if (dateCalculationBean.differenceBetweenTwoDatesOnlyNegative(

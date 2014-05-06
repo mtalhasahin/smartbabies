@@ -15,7 +15,7 @@ public class UserUpdaterBean {
 	
 	private User updatingUser;
 
-	public User updateUserDetail(User newUser, User currentUser) {
+	public void updateUserDetail(User newUser, User currentUser) {
 
 		try {
 			
@@ -26,11 +26,9 @@ public class UserUpdaterBean {
 			updatingUser.setUserWeight(newUser.getUserWeight());
 			
 			entityManager.persist(updatingUser);
-			return updatingUser;
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			return null;
 		}
 	}
 	

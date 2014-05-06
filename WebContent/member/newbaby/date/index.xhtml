@@ -277,14 +277,14 @@ xmlns:p="http://primefaces.org/ui">
                                       <div class="form-group">
                                           <label class="col-lg-2 control-label">Başlangıç Tarihi</label>
                                           <div class="col-lg-10">
-                                          <h:inputText styleClass="form-control" value="#{PregnancyRegistration.sexualIntercourseCycle.desiredStartBornDate}" />
+                                          <h:inputText styleClass="form-control" value="#{PregnancyRegistrationByDate.sexualIntercourseCycle.desiredStartBornDate}" />
                                              
                                           </div>
                                       </div>
                                       <div class="form-group">
                                           <label class="col-lg-2 control-label">Bitiş Tarihi</label>
                                           <div class="col-lg-10">
-                                          <h:inputText styleClass="form-control" value="#{PregnancyRegistration.sexualIntercourseCycle.desiredEndBornDate}" />
+                                          <h:inputText styleClass="form-control" value="#{PregnancyRegistrationByDate.sexualIntercourseCycle.desiredEndBornDate}" />
                                              
                                           </div>
                                       </div>
@@ -296,21 +296,21 @@ xmlns:p="http://primefaces.org/ui">
                                       <div class="form-group">
                                           <label class="col-lg-2 control-label">Son Menstruasyon Tarihiniz</label>
                                           <div class="col-lg-10">
-                                          <h:inputText styleClass="form-control" value="#{PregnancyRegistration.menstrualCycle.lastMenstruationDate}" />
+                                          <h:inputText styleClass="form-control" value="#{PregnancyRegistrationByDate.menstrualCycle.lastMenstruationDate}" />
                                              
                                           </div>
                                       </div>
                                       <div class="form-group">
                                           <label class="col-lg-2 control-label">Sondan Bir Önceki Menstruasyon Tarihiniz</label>
                                           <div class="col-lg-10">
-                                          <h:inputText styleClass="form-control" value="#{PregnancyRegistration.menstrualCycle.previousMenstruationDate}" />
+                                          <h:inputText styleClass="form-control" value="#{PregnancyRegistrationByDate.menstrualCycle.previousMenstruationDate}" />
                                               
                                           </div>
                                       </div>
                                       <div class="form-group">
                                           <label class="col-lg-2 control-label">Sondan İki Önceki Menstruasyon Tarihiniz</label>
                                           <div class="col-lg-10">
-                                          <h:inputText styleClass="form-control" value="#{PregnancyRegistration.menstrualCycle.twoPreviousMenstruationDate}" />
+                                          <h:inputText styleClass="form-control" value="#{PregnancyRegistrationByDate.menstrualCycle.twoPreviousMenstruationDate}" />
                                              
                                           </div>
                                       </div>
@@ -323,26 +323,28 @@ xmlns:p="http://primefaces.org/ui">
                                        <div class="form-group">
                                           <label class="col-lg-2 control-label">Şuanki Kilonuz</label>
                                           <div class="col-lg-10">
-                                             <h:inputText styleClass="form-control" value="#{PregnancyRegistration.user.userWeight}" /> 
+                                             <h:inputText styleClass="form-control" value="#{PregnancyRegistrationByDate.user.userWeight}" /> 
                                           </div>
                                       </div>
                                       <div class="form-group">
                                           <label class="col-lg-2 control-label">Boyunuz</label>
                                           <div class="col-lg-10">
-                                          <h:inputText styleClass="form-control" value="#{PregnancyRegistration.user.userHeight}" /> 
+                                          <h:inputText styleClass="form-control" value="#{PregnancyRegistrationByDate.user.userHeight}" /> 
                                           </div>
                                       </div>
                                       <div class="form-group">
                                           <label class="col-lg-2 control-label">Doğum Tarihiniz</label>
                                           <div class="col-lg-10"> 
-                                          <h:inputText styleClass="form-control" value="#{PregnancyRegistration.user.userBirthday}" /> 
+                                          <h:inputText styleClass="form-control" value="#{PregnancyRegistrationByDate.user.userBirthday}" /> 
                                           </div>
                                       </div>
-                                      
+                                      <div class="form-group">
+                                      <p:messages id="registerPregnancyMessages" showDetail="true" autoUpdate="true" closable="true" />
+                                       </div>
                                   </fieldset>
                                   
-                                  <h:commandButton styleClass="finish btn btn-danger" value="Gönder" action="#{PregnancyRegistration.registerPregnancy()}" />
-                                  
+                                  <h:commandButton styleClass="finish btn btn-danger" value="Gönder" action="#{PregnancyRegistrationByDate.registerPregnancy()}" />
+                                   
                               </h:form>
                           </div>
                       </section>
