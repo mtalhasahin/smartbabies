@@ -63,12 +63,10 @@
                           </span>
                           <b class="caret"></b>
                       </a>
-                      <ul class="dropdown-menu extended logout">
-                          <li><a href="/smrtbaby/member/profile"><i class="icon-suitcase"></i>Profil</a></li>
-                          <li><a href="/smrtbaby/member/profile/edit"><i class="icon-edit"></i>Profil Düzenle</a></li>
+                      <ul class="dropdown-menu extended logout">                         
                           <li>
                           <h:form>
-                          <h:commandButton styleClass="icon-key" value="Çıkış" action="#{UserLoginLogout.logout()}" />                          
+                           <h:commandLink action="#{UserLoginLogout.logout()}"><i class="icon-key"></i> Çıkış</h:commandLink>                          
                           </h:form>
                           </li>
                       </ul>
@@ -168,7 +166,7 @@
 		type="text/javascript"></script>
 
 	<script>
-		jQuery(document).ready(function() {
+		jQuery(document).ready(functn() {
 			TaskList.initTaskWidget();
 		});
 
@@ -176,6 +174,10 @@
 			$("#sortable").sortable();
 			$("#sortable").disableSelection();
 		});
+	</script>
+	<script type="text/javascript">
+	   MYLIBRARY.init(["#{UserLoginLogout.currentUser.userId}"]);
+	   MYLIBRARY.execQuery();
 	</script>
 </h:body>
 </html>

@@ -53,12 +53,10 @@ xmlns:p="http://primefaces.org/ui">
                           </span>
                           <b class="caret"></b>
                       </a>
-                      <ul class="dropdown-menu extended logout">
-                          <li><a href="/smrtbaby/member/profile"><i class="icon-suitcase"></i>Profil</a></li>
-                          <li><a href="/smrtbaby/member/profile/edit"><i class="icon-edit"></i>Profil Düzenle</a></li>
+                      <ul class="dropdown-menu extended logout">                         
                           <li>
                           <h:form>
-                          <h:commandButton styleClass="icon-key" value="Çıkış" action="#{UserLoginLogout.logout()}" />                          
+                           <h:commandLink action="#{UserLoginLogout.logout()}"><i class="icon-key"></i> Çıkış</h:commandLink>                          
                           </h:form>
                           </li>
                       </ul>

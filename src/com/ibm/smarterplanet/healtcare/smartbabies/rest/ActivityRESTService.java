@@ -2,7 +2,6 @@ package com.ibm.smarterplanet.healtcare.smartbabies.rest;
 
 import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.ejb.Stateful;
 import javax.inject.Inject;
@@ -15,7 +14,6 @@ import javax.ws.rs.core.MediaType;
 
 import com.ibm.smarterplanet.healtcare.smartbabies.controller.ActivityCreatorBean;
 import com.ibm.smarterplanet.healtcare.smartbabies.model.Activity;
-import com.ibm.smarterplanet.healtcare.smartbabies.model.Pregnancy;
 import com.ibm.smarterplanet.healtcare.smartbabies.model.User;
 
 @Path("/member/activity")
