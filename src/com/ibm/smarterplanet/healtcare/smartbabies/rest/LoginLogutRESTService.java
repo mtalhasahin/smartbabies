@@ -10,6 +10,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import com.ibm.smarterplanet.healtcare.smartbabies.controller.UserServiceBean;
@@ -35,12 +36,13 @@ public class LoginLogutRESTService implements Serializable {
 
 	private User user;
 
-	private User currentUser;
+	private static User currentUser;
 	
 	private UserLoginLogout userLoginLogout;
 	
 	@POST
 	@Path("/login")
+	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
 	public String login(@FormParam("userName") String userName, @FormParam("userPassword") String userPassword){
 		
@@ -50,14 +52,12 @@ public class LoginLogutRESTService implements Serializable {
 		if (currentUser == null) {
 			System.out.println("A");
 			user=null;
-			
-			return "<meta http-equiv='refresh' content='0; url=http://192.168.2.50:10080/smartbabies_mobile/apps/services/preview/SmartBabies/common/1.0/default/login.html'/>";
+			return "login";
 		}
 		else {
 			System.out.println("B");
-			userLoginLogout.setCurrentUser(currentUser);
-			
-			return "<meta http-equiv='refresh' content='0; url=http://192.168.2.50:10080/smartbabies_mobile/apps/services/preview/SmartBabies/common/1.0/default/menu.html'/>";
+			userLoginLogout.setCurrentUser(currentUser);			
+			return "menu";
 		}
 		
 	}
@@ -68,7 +68,7 @@ public class LoginLogutRESTService implements Serializable {
 	public String logout(@FormParam("userName") String userName){		
 		currentUser = null;
 		userLoginLogout.setCurrentUser(null);
-		return "<meta http-equiv='refresh' content='0; url=http://192.168.2.50:10080/smartbabies_mobile/apps/services/preview/SmartBabies/common/1.0/default/index.html'/>";
+		return "login";
 	}
 	
 	@PostConstruct

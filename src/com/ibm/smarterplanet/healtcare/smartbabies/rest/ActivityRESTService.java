@@ -25,26 +25,15 @@ public class ActivityRESTService {
 	@EJB
 	ActivityCreatorBean activityCreatorBean;
 
-	private Pregnancy pregnancy;
-
 	@Inject
 	private EntityManager entityManager;
-
-	@GET
-	@Path("/vaccine")
-	@Produces(MediaType.APPLICATION_JSON)
-	public List<Activity> vaccineActivities() {
-		activityCreatorBean.initNewActivity();
-		pregnancy.setPregnancyStartDate("26-04-2014");
-		activityCreatorBean.creatActivity(pregnancy);
-		return activityCreatorBean.getVaccineActivities();
-
-	}
-
+	
 	@GET
 	@Path("/vaccine/{id:[0-9][0-9]*}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Activity> vaccineActivities(@PathParam("id") long id) {
+		
+		System.out.println(id);
 
 		activityCreatorBean
 				.creatActivity(entityManager
@@ -69,11 +58,6 @@ public class ActivityRESTService {
 								.getPregnancies().size() - 1));
 
 		return activityCreatorBean.getCheckActivities();
-	}
-
-	@PostConstruct
-	public void initNewPregnancy() {
-		pregnancy = new Pregnancy();
 	}
 
 }

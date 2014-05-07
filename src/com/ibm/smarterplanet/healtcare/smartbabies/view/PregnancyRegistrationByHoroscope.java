@@ -57,7 +57,7 @@ public class PregnancyRegistrationByHoroscope {
 	private MenstrualCycle menstrualCycle;
 
 	private User user;
-	
+
 	private int selectedHoroscope;
 
 	public Pregnancy getPregnancy() {
@@ -104,115 +104,271 @@ public class PregnancyRegistrationByHoroscope {
 	// olası gebelik tarihi ve kullanıcı bilgilerine göre yeni gebelik kaydı
 	// oluşturur
 	public void registerPregnancy() {
-		
-		if(selectedHoroscope==1){			
-			sexualIntercourseCycle.setDesiredStartBornDate("21-03-"
-					+ dateCalculationBean.addingYearToCurrentYear(
-							todayDateGetterBean.getCurrentYear(), 1));
-			sexualIntercourseCycle.setDesiredEndBornDate("20-04-"
-					+ dateCalculationBean.addingYearToCurrentYear(
-							todayDateGetterBean.getCurrentYear(), 1));			
+
+		if (selectedHoroscope == 1) {
+			String date = "20-04-" + todayDateGetterBean.getCurrentYear();
+
+			if (dateCalculationBean.differenceBetweenTwoDatesOnlyNegative(date,
+					todayDateGetterBean.getTodayDate()) > 285) {
+				sexualIntercourseCycle.setDesiredStartBornDate("21-03-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 0));
+				sexualIntercourseCycle.setDesiredEndBornDate("20-04-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 0));
+			} else {
+				sexualIntercourseCycle.setDesiredStartBornDate("21-03-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 1));
+				sexualIntercourseCycle.setDesiredEndBornDate("20-04-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 1));
+			}
+
 		}
-		else if (selectedHoroscope==2) {
-			sexualIntercourseCycle.setDesiredStartBornDate("21-04-"
-					+ dateCalculationBean.addingYearToCurrentYear(
-							todayDateGetterBean.getCurrentYear(), 1));
-			sexualIntercourseCycle.setDesiredEndBornDate("20-05-"
-					+ dateCalculationBean.addingYearToCurrentYear(
-							todayDateGetterBean.getCurrentYear(), 1));
-			
+
+		else if (selectedHoroscope == 2) {
+			String date = "20-05-" + todayDateGetterBean.getCurrentYear();
+
+			if (dateCalculationBean.differenceBetweenTwoDatesOnlyNegative(date,
+					todayDateGetterBean.getTodayDate()) > 285) {
+				sexualIntercourseCycle.setDesiredStartBornDate("21-04-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 0));
+				sexualIntercourseCycle.setDesiredEndBornDate("20-05-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 0));
+			} else {
+				sexualIntercourseCycle.setDesiredStartBornDate("21-04-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 1));
+				sexualIntercourseCycle.setDesiredEndBornDate("20-05-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 1));
+			}
+
 		}
-		else if (selectedHoroscope==3) {
-			sexualIntercourseCycle.setDesiredStartBornDate("21-05-"
-					+ dateCalculationBean.addingYearToCurrentYear(
-							todayDateGetterBean.getCurrentYear(), 1));
-			sexualIntercourseCycle.setDesiredEndBornDate("21-06-"
-					+ dateCalculationBean.addingYearToCurrentYear(
-							todayDateGetterBean.getCurrentYear(), 1));
-			
+
+		else if (selectedHoroscope == 3) {
+			String date = "21-06-" + todayDateGetterBean.getCurrentYear();
+
+			if (dateCalculationBean.differenceBetweenTwoDatesOnlyNegative(date,
+					todayDateGetterBean.getTodayDate()) > 285) {
+				sexualIntercourseCycle.setDesiredStartBornDate("21-05-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 0));
+				sexualIntercourseCycle.setDesiredEndBornDate("21-06-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 0));
+			} else {
+				sexualIntercourseCycle.setDesiredStartBornDate("21-05-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 1));
+				sexualIntercourseCycle.setDesiredEndBornDate("21-06-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 1));
+			}
+
 		}
-		else if (selectedHoroscope==4) {
-			sexualIntercourseCycle.setDesiredStartBornDate("22-06-"
-					+ dateCalculationBean.addingYearToCurrentYear(
-							todayDateGetterBean.getCurrentYear(), 1));
-			sexualIntercourseCycle.setDesiredEndBornDate("22-07-"
-					+ dateCalculationBean.addingYearToCurrentYear(
-							todayDateGetterBean.getCurrentYear(), 1));
-	
+
+		else if (selectedHoroscope == 4) {
+			String date = "22-07-" + todayDateGetterBean.getCurrentYear();
+
+			if (dateCalculationBean.differenceBetweenTwoDatesOnlyNegative(date,
+					todayDateGetterBean.getTodayDate()) > 285) {
+				sexualIntercourseCycle.setDesiredStartBornDate("22-06-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 0));
+				sexualIntercourseCycle.setDesiredEndBornDate("22-07-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 0));
+			} else {
+				sexualIntercourseCycle.setDesiredStartBornDate("22-06-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 1));
+				sexualIntercourseCycle.setDesiredEndBornDate("22-07-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 1));
+			}
+
 		}
-		else if (selectedHoroscope==5) {
-			sexualIntercourseCycle.setDesiredStartBornDate("23-07-"
-					+ dateCalculationBean.addingYearToCurrentYear(
-							todayDateGetterBean.getCurrentYear(), 1));
-			sexualIntercourseCycle.setDesiredEndBornDate("23-08-"
-					+ dateCalculationBean.addingYearToCurrentYear(
-							todayDateGetterBean.getCurrentYear(), 1));
-	
+
+		else if (selectedHoroscope == 5) {
+			String date = "23-08-" + todayDateGetterBean.getCurrentYear();
+
+			if (dateCalculationBean.differenceBetweenTwoDatesOnlyNegative(date,
+					todayDateGetterBean.getTodayDate()) > 285) {
+				sexualIntercourseCycle.setDesiredStartBornDate("23-07-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 0));
+				sexualIntercourseCycle.setDesiredEndBornDate("23-08-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 0));
+			} else {
+				sexualIntercourseCycle.setDesiredStartBornDate("23-08-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 1));
+				sexualIntercourseCycle.setDesiredEndBornDate("23-08-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 1));
+			}
+
 		}
-		else if (selectedHoroscope==6) {
-			sexualIntercourseCycle.setDesiredStartBornDate("24-08-"
-					+ dateCalculationBean.addingYearToCurrentYear(
-							todayDateGetterBean.getCurrentYear(), 1));
-			sexualIntercourseCycle.setDesiredEndBornDate("23-09-"
-					+ dateCalculationBean.addingYearToCurrentYear(
-							todayDateGetterBean.getCurrentYear(), 1));
-	
+
+		else if (selectedHoroscope == 6) {
+			String date = "23-09-" + todayDateGetterBean.getCurrentYear();
+
+			if (dateCalculationBean.differenceBetweenTwoDatesOnlyNegative(date,
+					todayDateGetterBean.getTodayDate()) > 285) {
+				sexualIntercourseCycle.setDesiredStartBornDate("24-08-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 0));
+				sexualIntercourseCycle.setDesiredEndBornDate("23-09-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 0));
+			} else {
+				sexualIntercourseCycle.setDesiredStartBornDate("24-08-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 1));
+				sexualIntercourseCycle.setDesiredEndBornDate("23-09-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 1));
+			}
+
 		}
-		else if (selectedHoroscope==7) {
-			sexualIntercourseCycle.setDesiredStartBornDate("24-09-"
-					+ dateCalculationBean.addingYearToCurrentYear(
-							todayDateGetterBean.getCurrentYear(), 1));
-			sexualIntercourseCycle.setDesiredEndBornDate("23-10-"
-					+ dateCalculationBean.addingYearToCurrentYear(
-							todayDateGetterBean.getCurrentYear(), 1));
-	
+
+		else if (selectedHoroscope == 7) {
+			String date = "23-10-" + todayDateGetterBean.getCurrentYear();
+
+			if (dateCalculationBean.differenceBetweenTwoDatesOnlyNegative(date,
+					todayDateGetterBean.getTodayDate()) > 285) {
+				sexualIntercourseCycle.setDesiredStartBornDate("24-09-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 0));
+				sexualIntercourseCycle.setDesiredEndBornDate("23-10-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 0));
+			} else {
+				sexualIntercourseCycle.setDesiredStartBornDate("24-09-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 1));
+				sexualIntercourseCycle.setDesiredEndBornDate("23-10-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 1));
+			}
+
 		}
-		else if (selectedHoroscope==8) {
-			sexualIntercourseCycle.setDesiredStartBornDate("24-10-"
-					+ dateCalculationBean.addingYearToCurrentYear(
-							todayDateGetterBean.getCurrentYear(), 1));
-			sexualIntercourseCycle.setDesiredEndBornDate("22-11-"
-					+ dateCalculationBean.addingYearToCurrentYear(
-							todayDateGetterBean.getCurrentYear(), 1));
-			
+
+		else if (selectedHoroscope == 8) {
+			String date = "22-11-" + todayDateGetterBean.getCurrentYear();
+
+			if (dateCalculationBean.differenceBetweenTwoDatesOnlyNegative(date,
+					todayDateGetterBean.getTodayDate()) > 285) {
+				sexualIntercourseCycle.setDesiredStartBornDate("24-10-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 0));
+				sexualIntercourseCycle.setDesiredEndBornDate("22-11-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 0));
+			} else {
+				sexualIntercourseCycle.setDesiredStartBornDate("24-10-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 1));
+				sexualIntercourseCycle.setDesiredEndBornDate("22-11-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 1));
+			}
+
 		}
-		else if (selectedHoroscope==9) {
-			sexualIntercourseCycle.setDesiredStartBornDate("23-11-"
-					+ dateCalculationBean.addingYearToCurrentYear(
-							todayDateGetterBean.getCurrentYear(), 1));
-			sexualIntercourseCycle.setDesiredEndBornDate("21-12-"
-					+ dateCalculationBean.addingYearToCurrentYear(
-							todayDateGetterBean.getCurrentYear(), 1));
-		
+
+		else if (selectedHoroscope == 9) {
+			String date = "21-12-" + todayDateGetterBean.getCurrentYear();
+
+			if (dateCalculationBean.differenceBetweenTwoDatesOnlyNegative(date,
+					todayDateGetterBean.getTodayDate()) > 285) {
+				sexualIntercourseCycle.setDesiredStartBornDate("23-11-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 0));
+				sexualIntercourseCycle.setDesiredEndBornDate("21-12-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 0));
+			} else {
+				sexualIntercourseCycle.setDesiredStartBornDate("23-11-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 1));
+				sexualIntercourseCycle.setDesiredEndBornDate("21-12-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 1));
+			}
+
 		}
-		else if (selectedHoroscope==10) {
-			sexualIntercourseCycle.setDesiredStartBornDate("22-12-"
-					+ dateCalculationBean.addingYearToCurrentYear(
-							todayDateGetterBean.getCurrentYear(), 1));
-			sexualIntercourseCycle.setDesiredEndBornDate("20-01-"
-					+ dateCalculationBean.addingYearToCurrentYear(
-							todayDateGetterBean.getCurrentYear(), 1));
-	
+
+		else if (selectedHoroscope == 10) {
+			String date = "20-01-" + todayDateGetterBean.getCurrentYear();
+
+			if (dateCalculationBean.differenceBetweenTwoDatesOnlyNegative(date,
+					todayDateGetterBean.getTodayDate()) > 285) {
+				sexualIntercourseCycle.setDesiredStartBornDate("22-12-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 0));
+				sexualIntercourseCycle.setDesiredEndBornDate("20-01-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 0));
+			} else {
+				sexualIntercourseCycle.setDesiredStartBornDate("22-12-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 1));
+				sexualIntercourseCycle.setDesiredEndBornDate("20-01-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 1));
+			}
+
 		}
-		else if (selectedHoroscope==11) {
-			sexualIntercourseCycle.setDesiredStartBornDate("21-01-"
-					+ dateCalculationBean.addingYearToCurrentYear(
-							todayDateGetterBean.getCurrentYear(), 1));
-			sexualIntercourseCycle.setDesiredEndBornDate("19-02-"
-					+ dateCalculationBean.addingYearToCurrentYear(
-							todayDateGetterBean.getCurrentYear(), 1));
-			
+
+		else if (selectedHoroscope == 11) {
+			String date = "19-02-" + todayDateGetterBean.getCurrentYear();
+
+			if (dateCalculationBean.differenceBetweenTwoDatesOnlyNegative(date,
+					todayDateGetterBean.getTodayDate()) > 285) {
+				sexualIntercourseCycle.setDesiredStartBornDate("21-01-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 0));
+				sexualIntercourseCycle.setDesiredEndBornDate("19-02-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 0));
+			} else {
+				sexualIntercourseCycle.setDesiredStartBornDate("21-01-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 1));
+				sexualIntercourseCycle.setDesiredEndBornDate("19-02-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 1));
+			}
+
 		}
-		else{
-			sexualIntercourseCycle.setDesiredStartBornDate("20-02-"
-					+ dateCalculationBean.addingYearToCurrentYear(
-							todayDateGetterBean.getCurrentYear(), 1));
-			sexualIntercourseCycle.setDesiredEndBornDate("20-03-"
-					+ dateCalculationBean.addingYearToCurrentYear(
-							todayDateGetterBean.getCurrentYear(), 1));
-	
+
+		else {
+			String date = "20-02-" + todayDateGetterBean.getCurrentYear();
+
+			if (dateCalculationBean.differenceBetweenTwoDatesOnlyNegative(date,
+					todayDateGetterBean.getTodayDate()) > 285) {
+				sexualIntercourseCycle.setDesiredStartBornDate("20-03-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 0));
+				sexualIntercourseCycle.setDesiredEndBornDate("20-02-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 0));
+			} else {
+				sexualIntercourseCycle.setDesiredStartBornDate("20-03-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 1));
+				sexualIntercourseCycle.setDesiredEndBornDate("20-02-"
+						+ dateCalculationBean.addingYearToCurrentYear(
+								todayDateGetterBean.getCurrentYear(), 1));
+			}
+
 		}
-		
+
 		if (userLoginLogout.getCurrentUser().getPregnancies().size() > 0) {
 
 			if (dateCalculationBean.differenceBetweenTwoDatesOnlyNegative(
@@ -227,12 +383,14 @@ public class PregnancyRegistrationByHoroscope {
 				facesContext.addMessage(null, new FacesMessage(
 						FacesMessage.SEVERITY_ERROR, "Not Registered!",
 						"Registration unsuccessful"));
-				
-				facesContext.addMessage(null, new FacesMessage(
-						FacesMessage.SEVERITY_ERROR, "Aktif gebelik kaydı var veya sağlıklı yeni bir gebelik için uygun zaman geçmemiş!",
-						"Sağlıklı bir gebelik için yaptığınız son doğum üzerinden en az 2 yıl geçmiş olması gerekmektedir."));
-				
-				
+
+				facesContext
+						.addMessage(
+								null,
+								new FacesMessage(
+										FacesMessage.SEVERITY_ERROR,
+										"Aktif gebelik kaydı var veya sağlıklı yeni bir gebelik için uygun zaman geçmemiş!",
+										"Sağlıklı bir gebelik için yaptığınız son doğum üzerinden en az 2 yıl geçmiş olması gerekmektedir."));
 
 			}
 

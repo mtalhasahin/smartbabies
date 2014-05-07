@@ -43,10 +43,15 @@
 		<h:form styleClass="form-signin">
 			<h2 class="form-signin-heading">Kaydol</h2>
 			<div class="login-wrap">
-				<h:inputText id="firstName" styleClass="form-control" value="#{UserRegistration.user.userName}" />
+				<h:outputLabel value="İsim"/>
+				<h:inputText  id="firstName"  styleClass="form-control" value="#{UserRegistration.user.userName}" />
+				<h:outputLabel value="Soyisim"/>
 				<h:inputText id="lastName" styleClass="form-control" value="#{UserRegistration.user.userSurname}" />
+				<h:outputLabel value="e-Mail"/>
 				<h:inputText id="email" styleClass="form-control" value="#{UserRegistration.user.userEmail}" />
+				<h:outputLabel value="Mobile"/>
 				<h:inputText id="phone" styleClass="form-control" value="#{UserRegistration.user.userPhone}" />
+				<h:outputLabel value="Şifre"/>
 				<h:inputSecret id="password" styleClass="form-control" value="#{UserRegistration.user.userPassword}" />
 				<h:commandButton id="submit"
 					styleClass="btn btn-lg btn-login btn-block" value="Gönder" action="#{UserRegistration.registerUser()}" />
@@ -56,34 +61,6 @@
 
 			</div>
 		</h:form>
-
-
-
-
-		<!-- <form class="form-signin" action="/smrtbaby/">
-        <h2 class="form-signin-heading">Kaydol</h2>
-        <div class="login-wrap">
-            <p>Kişisel bilgilerinizi aşağıya girin</p>
-            <input id="txtFirstName" type="text" class="form-control" placeholder="İsim" />
-            <input id="txtLastName" type="text" class="form-control" placeholder="Soyisim" />
-            <input id="txtEmail" type="text" class="form-control" placeholder="Email" />            
-
-            <p>Hesap detaylarınızı aşağıya girin</p>
-            <input id="txtUserName" type="text" class="form-control" placeholder="Kullanıcı Adı" />
-            <input id="txtUserPwd" type="password" class="form-control" placeholder="Şifre"/>
-            <input id="txtUserRePwd" type="password" class="form-control" placeholder="Şifre Tekrar"/>
-            <button id="btnSubmit" class="btn btn-lg btn-login btn-block" type="submit">Gönder</button>
-
-            <div class="registration">
-                Zaten Kayıtlıyım.
-                <a class="" href="/smrtbaby/login">
-                    Giriş
-                </a>
-            </div>
-
-        </div>
-
-      </form> -->
 
 	</div>
 

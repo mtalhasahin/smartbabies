@@ -36,7 +36,9 @@ xmlns:p="http://primefaces.org/ui">
       <h:form styleClass="form-signin">
         <h2 class="form-signin-heading">Giriş Yap</h2>
         <div class="login-wrap">
+        <h:outputLabel value="e-Mail" />
         <h:inputText styleClass="form-control" value="#{UserLoginLogout.user.userEmail}" />
+        <h:outputLabel value="Şifre" />
         <h:inputSecret styleClass="form-control" value="#{UserLoginLogout.user.userPassword}" />
             <label class="checkbox">
                 <span class="pull-right">

@@ -41,143 +41,26 @@ xmlns:p="http://primefaces.org/ui">
           <!--logo start-->
           <a href="/smrtbaby" class="logo" >Smart<span>Babies</span></a>
           <!--logo end-->
-          <div class="nav notify-row" id="top_menu">
-            <!--  notification start -->
-            <ul class="nav top-menu">
-              <!-- inbox dropdown start-->
-              <li id="header_inbox_bar" class="dropdown">
-                  <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                      <i class="icon-envelope-alt"></i>
-                      <span class="badge bg-important">5</span>
-                  </a>
-                  <ul class="dropdown-menu extended inbox">
-                      <div class="notify-arrow notify-arrow-red"></div>
-                      <li>
-                          <p class="red">You have 5 new messages</p>
-                      </li>
-                      <li>
-                          <a href="#">
-                              <span class="photo"><img alt="avatar" src="../../../frontend/member/img/avatar-mini.jpg"/></span>
-                                    <span class="subject">
-                                    <span class="from">Jonathan Smith</span>
-                                    <span class="time">Just now</span>
-                                    </span>
-                                    <span class="message">
-                                        Hello, this is an example msg.
-                                    </span>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#">
-                              <span class="photo"><img alt="avatar" src="../../../frontend/member/img/avatar-mini2.jpg"/></span>
-                                    <span class="subject">
-                                    <span class="from">Jhon Doe</span>
-                                    <span class="time">10 mins</span>
-                                    </span>
-                                    <span class="message">
-                                     Hi, Jhon Doe Bhai how are you ?
-                                    </span>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#">
-                              <span class="photo"><img alt="avatar" src="../../../frontend/member/img/avatar-mini3.jpg"/></span>
-                                    <span class="subject">
-                                    <span class="from">Jason Stathum</span>
-                                    <span class="time">3 hrs</span>
-                                    </span>
-                                    <span class="message">
-                                        This is awesome dashboard.
-                                    </span>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#">
-                              <span class="photo"><img alt="avatar" src="../../../frontend/member/img/avatar-mini4.jpg"/></span>
-                                    <span class="subject">
-                                    <span class="from">Jondi Rose</span>
-                                    <span class="time">Just now</span>
-                                    </span>
-                                    <span class="message">
-                                        Hello, this is metrolab
-                                    </span>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#">See all messages</a>
-                      </li>
-                  </ul>
-              </li>
-              <!-- inbox dropdown end -->
-              <!-- notification dropdown start-->
-              <li id="header_notification_bar" class="dropdown">
-                  <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-
-                      <i class="icon-bell-alt"></i>
-                      <span class="badge bg-warning">7</span>
-                  </a>
-                  <ul class="dropdown-menu extended notification">
-                      <div class="notify-arrow notify-arrow-yellow"></div>
-                      <li>
-                          <p class="yellow">You have 7 new notifications</p>
-                      </li>
-                      <li>
-                          <a href="#">
-                              <span class="label label-danger"><i class="icon-bolt"></i></span>
-                              Server #3 overloaded.
-                              <span class="small italic">34 mins</span>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#">
-                              <span class="label label-warning"><i class="icon-bell"></i></span>
-                              Server #10 not respoding.
-                              <span class="small italic">1 Hours</span>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#">
-                              <span class="label label-danger"><i class="icon-bolt"></i></span>
-                              Database overloaded 24%.
-                              <span class="small italic">4 hrs</span>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#">
-                              <span class="label label-success"><i class="icon-plus"></i></span>
-                              New user registered.
-                              <span class="small italic">Just now</span>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#">
-                              <span class="label label-info"><i class="icon-bullhorn"></i></span>
-                              Application error.
-                              <span class="small italic">10 mins</span>
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#">See all notifications</a>
-                      </li>
-                  </ul>
-              </li>
-              <!-- notification dropdown end -->
-          </ul>
-          </div>
+          
           <div class="top-nav ">
               <ul class="nav pull-right top-menu">
                   <!-- user login dropdown start-->
                   <li class="dropdown">
                       <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                          <img alt="" src="../../../frontend/member/img/avatar1_small.jpg"/>
-                          <span class="username">Batuhan ÇIKRIKCI</span>
+                          <img alt="" src="../../frontend/member/img/avatar1_small.jpg"/>
+                          <span class="username">
+                          #{UserLoginLogout.currentUser.userName} #{UserLoginLogout.currentUser.userSurname}
+                          </span>
                           <b class="caret"></b>
                       </a>
                       <ul class="dropdown-menu extended logout">
                           <li><a href="/smrtbaby/member/profile"><i class="icon-suitcase"></i>Profil</a></li>
                           <li><a href="/smrtbaby/member/profile/edit"><i class="icon-edit"></i>Profil Düzenle</a></li>
-                          <li><a href="/smrtbaby/member/profile/activity"><i class="icon-bell-alt"></i>Aktiviteler</a></li>
-                          <li><a href="/smrtbaby/login"><i class="icon-key"></i>Çıkış</a></li>
+                          <li>
+                          <h:form>
+                          <h:commandButton styleClass="icon-key" value="Çıkış" action="#{UserLoginLogout.logout()}" />                          
+                          </h:form>
+                          </li>
                       </ul>
                   </li>
                   <!-- user login dropdown end -->
@@ -236,12 +119,6 @@ xmlns:p="http://primefaces.org/ui">
                           <li><a href="/smrtbaby/member/pregnancy/psychological">Psikolojik</a></li>
                       </ul>
                   </li>
-                  <li>
-                      <a href="/smrtbaby/member/calendar">
-                          <i class="icon-calendar"></i>
-                          <span>Takvim</span>
-                      </a>
-                  </li>
                   <li class="sub-menu" >
                       <a href="javascript:;">
                           <i class="icon-user-md"></i>
@@ -267,15 +144,14 @@ xmlns:p="http://primefaces.org/ui">
                       <section class="panel">
                           <div class="user-heading round">
                               <a href="#">
-                                  <img src="../../../frontend/member/img/profile-avatar.jpg" alt=""/>
+                                  <img src="../../frontend/member/img/profile-avatar.jpg" alt=""/>
                               </a>
-                              <h1>Jonathan Smith</h1>
-                              <p>jsmith@flatlab.com</p>
+                              <h1>#{UserLoginLogout.currentUser.userName} #{UserLoginLogout.currentUser.userSurname}</h1>
+                              <p>#{UserLoginLogout.currentUser.userEmail}</p>
                           </div>
 
                           <ul class="nav nav-pills nav-stacked">
                               <li><a href="/smrtbaby/member/profile"> <i class="icon-user"></i> Profil </a></li>
-                              <li><a href="/smrtbaby/member/profile/activity"> <i class="icon-bell-alt"></i> Aktiviteler</a></li>
                               <li class="active"><a href="/smrtbaby/member/profile/edit"> <i class="icon-edit"></i> Profil Düzenle </a></li>
                           </ul>
 
@@ -284,43 +160,38 @@ xmlns:p="http://primefaces.org/ui">
                   <aside class="profile-info col-lg-9">
                       <section class="panel">
                           <div class="bio-graph-heading">
-                              Aliquam ac magna metus. Nam sed arcu non tellus fringilla fringilla ut vel ispum. Aliquam ac magna metus.
+                             Smart Babies'e Hosgeldiniz.<br/> Smarter healthcare for a smarter planet.
                           </div>
                           <div class="panel-body bio-graph-info">
-                              <h1> Profile Info</h1>
+                              <h1> Profile</h1>
                               <form class="form-horizontal" role="form">
+                                  
                                   <div class="form-group">
-                                      <label  class="col-lg-2 control-label">About Me</label>
-                                      <div class="col-lg-10">
-                                          <textarea name="" id="" class="form-control" cols="30" rows="10"></textarea>
-                                      </div>
-                                  </div>
-                                  <div class="form-group">
-                                      <label  class="col-lg-2 control-label">First Name</label>
+                                      <label  class="col-lg-2 control-label">İsim</label>
                                       <div class="col-lg-6">
                                           <input type="text" class="form-control" id="f-name" placeholder=" "/>
                                       </div>
                                   </div>
                                   <div class="form-group">
-                                      <label  class="col-lg-2 control-label">Last Name</label>
+                                      <label  class="col-lg-2 control-label">Soyisim</label>
                                       <div class="col-lg-6">
                                           <input type="text" class="form-control" id="l-name" placeholder=" "/>
                                       </div>
                                   </div>
                                   <div class="form-group">
-                                      <label  class="col-lg-2 control-label">Country</label>
+                                      <label  class="col-lg-2 control-label">e-Mail</label>
                                       <div class="col-lg-6">
                                           <input type="text" class="form-control" id="c-name" placeholder=" "/>
                                       </div>
                                   </div>
                                   <div class="form-group">
-                                      <label  class="col-lg-2 control-label">Birthday</label>
+                                      <label  class="col-lg-2 control-label">Mobile</label>
                                       <div class="col-lg-6">
                                           <input type="text" class="form-control" id="b-day" placeholder=" "/>
                                       </div>
                                   </div>
                                   <div class="form-group">
-                                      <label  class="col-lg-2 control-label">Occupation</label>
+                                      <label  class="col-lg-2 control-label">Doğum Tarihi</label>
                                       <div class="col-lg-6">
                                           <input type="text" class="form-control" id="occupation" placeholder=" "/>
                                       </div>
@@ -338,16 +209,8 @@ xmlns:p="http://primefaces.org/ui">
                                       </div>
                                   </div>
                                   <div class="form-group">
-                                      <label  class="col-lg-2 control-label">Website URL</label>
-                                      <div class="col-lg-6">
-                                          <input type="text" class="form-control" id="url" placeholder="http://www.demowebsite.com "/>
-                                      </div>
-                                  </div>
-
-                                  <div class="form-group">
                                       <div class="col-lg-offset-2 col-lg-10">
-                                          <button type="submit" class="btn btn-success">Save</button>
-                                          <button type="button" class="btn btn-default">Cancel</button>
+                                          <button type="submit" class="btn btn-success">Kaydet</button>
                                       </div>
                                   </div>
                               </form>
@@ -355,39 +218,31 @@ xmlns:p="http://primefaces.org/ui">
                       </section>
                       <section>
                           <div class="panel panel-primary">
-                              <div class="panel-heading"> Sets New Password  Avatar</div>
+                              <div class="panel-heading"> Şifre Değiştirme</div>
                               <div class="panel-body">
                                   <form class="form-horizontal" role="form">
                                       <div class="form-group">
-                                          <label  class="col-lg-2 control-label">Current Password</label>
+                                          <label  class="col-lg-2 control-label">Geçerli Şifre</label>
                                           <div class="col-lg-6">
                                               <input type="password" class="form-control" id="c-pwd" placeholder=" "/>
                                           </div>
                                       </div>
                                       <div class="form-group">
-                                          <label  class="col-lg-2 control-label">New Password</label>
+                                          <label  class="col-lg-2 control-label">Yeni Şifre</label>
                                           <div class="col-lg-6">
                                               <input type="password" class="form-control" id="n-pwd" placeholder=" "/>
                                           </div>
                                       </div>
                                       <div class="form-group">
-                                          <label  class="col-lg-2 control-label">Re-type New Password</label>
+                                          <label  class="col-lg-2 control-label">Yeni Şifre(Tekrar)</label>
                                           <div class="col-lg-6">
                                               <input type="password" class="form-control" id="rt-pwd" placeholder=" "/>
                                           </div>
                                       </div>
 
                                       <div class="form-group">
-                                          <label  class="col-lg-2 control-label">Change Avatar</label>
-                                          <div class="col-lg-6">
-                                              <input type="file" class="file-pos" id="exampleInputFile"/>
-                                          </div>
-                                      </div>
-
-                                      <div class="form-group">
                                           <div class="col-lg-offset-2 col-lg-10">
-                                              <button type="submit" class="btn btn-info">Save</button>
-                                              <button type="button" class="btn btn-default">Cancel</button>
+                                              <button type="submit" class="btn btn-info">Kaydet</button>
                                           </div>
                                       </div>
                                   </form>
